@@ -1,0 +1,99 @@
+name: emilia
+
+services:
+  emilia:
+    image: ${TAG:-emilia:local}
+    pull_policy: build
+    build:
+      context: .
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 5m
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    environment:
+      TOKEN: ${TOKEN:-}
+      API_ID: ${API_ID:-}
+      API_HASH: ${API_HASH:-}
+      OWNER_ID: ${OWNER_ID:-}
+      SESSION_STRING: ${SESSION_STRING:-}
+      BACKUP_CHANNEL_ID: ${BACKUP_CHANNEL_ID:-}
+      MONGO_DB_URL: ${MONGO_DB_URL:-}
+      REDIS_URL: redis://redis:6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?Set REDIS_PASSWORD}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      BOT_NAME: ${BOT_NAME:-Emilia}
+      SUPPORT_CHAT: ${SUPPORT_CHAT:-}
+      UPDATE_CHANNEL: ${UPDATE_CHANNEL:-}
+      START_PIC: ${START_PIC:-}
+      DEV_USERS: ${DEV_USERS:-}
+      EVENT_LOGS: ${EVENT_LOGS:-}
+      CARTESIA_API_KEY: ${CARTESIA_API_KEY:-}
+      WALL_API: ${WALL_API:-}
+      SAUCENAO_API_KEY: ${SAUCENAO_API_KEY:-}
+      GIPHY_API_KEY: ${GIPHY_API_KEY:-}
+      ANILIST_CLIENT: ${ANILIST_CLIENT:-}
+      ANILIST_SECRET: ${ANILIST_SECRET:-}
+      ZIPLINE_URL: ${ZIPLINE_URL:-}
+      ZIPLINE_TOKEN: ${ZIPLINE_TOKEN:-}
+      ZIPLINE_USERNAME: ${ZIPLINE_USERNAME:-}
+      ZIPLINE_PASSWORD: ${ZIPLINE_PASSWORD:-}
+      ZIPLINE_AUTH_URL: ${ZIPLINE_AUTH_URL:-}
+      AD_URL: ${AD_URL:-}
+      CAS_API_KEY: ${CAS_API_KEY:-}
+    volumes:
+      - ${COOKIE_FILE:-./www.youtube.com_cookies.txt}:/app/www.youtube.com_cookies.txt:ro
+      - sessions:/app/sessions
+      - state:/app/state
+      - downloads:/app/downloads
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=512m,mode=1777
+      - /home/emilia/.cache:rw,nosuid,nodev,size=128m,uid=1000,gid=1000
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - bot
+      - cache
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  redis:
+    image: redis:8.10-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD:?Set REDIS_PASSWORD}", "--appendonly", "yes", "--maxmemory", "512mb", "--maxmemory-policy", "noeviction"]
+    volumes:
+      - redis:/data
+    environment:
+      REDISCLI_AUTH: ${REDIS_PASSWORD:?Set REDIS_PASSWORD}
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks:
+      - cache
+
+  quote-api:
+    image: ${QUOTE_TAG:-emilia-quote-api:local}
+    pull_policy: build
+    build:
+      context: https://github.com/LyoSU/quote-api.git
+    restart: unless-stopped
+    environment:
+      PORT: "3000"
+    networks:
+      - bot
+
+networks:
+  bot:
+  cache:
+    internal: true
+volumes:
+  sessions:
+  state:
+  downloads:
+  redis:

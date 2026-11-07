@@ -1,0 +1,1632 @@
+{
+  "Emilia.modules.admin.get_admin": {
+    "usage": "/admins",
+    "description": "List the group admins.",
+    "example": "/admins"
+  },
+  "Emilia.modules.admin.admincach": {
+    "usage": "/admincache",
+    "description": "Refresh the group admin cache.",
+    "example": "/admincache"
+  },
+  "Emilia.modules.admin.promote": {
+    "usage": "/promote [user] [title]",
+    "description": "Promote a user with limited admin rights.",
+    "example": "/promote @username Moderator"
+  },
+  "Emilia.modules.admin.fpromote": {
+    "usage": "/fullpromote [user] [title]",
+    "description": "Promote a user with all available admin rights.",
+    "example": "/fullpromote @username Moderator"
+  },
+  "Emilia.modules.admin.demote": {
+    "usage": "/demote [user]",
+    "description": "Remove a user's admin rights.",
+    "example": "/demote @username"
+  },
+  "Emilia.modules.admin.settitle": {
+    "usage": "/title [user] <title>",
+    "description": "Set an admin's custom title.",
+    "example": "/title @username Moderator"
+  },
+  "Emilia.modules.users.forcecachechat.forcecachechat": {
+    "usage": "/forcecachechat",
+    "description": "Refresh the stored group information.",
+    "example": "/forcecachechat"
+  },
+  "Emilia.modules.admin.set_group_photo": {
+    "usage": "/setgpic",
+    "description": "Reply to a photo or image document to set the group picture.",
+    "example": "/setgpic"
+  },
+  "Emilia.modules.admin.set_group_title": {
+    "usage": "/setgtitle <title>",
+    "description": "Set the group title; maximum 255 characters.",
+    "example": "/setgtitle Anime club"
+  },
+  "Emilia.modules.admin.set_group_des": {
+    "usage": "/setdesc <description>",
+    "description": "Set the group description.",
+    "example": "/setdesc Discuss anime here."
+  },
+  "Emilia.modules.admin.set_group_sticker": {
+    "usage": "/setsticker",
+    "description": "Reply to a sticker to set the supergroup's sticker pack; supports connected private chats.",
+    "example": "/setsticker"
+  },
+  "Emilia.modules.admin.slow_mode": {
+    "usage": "/slowmode [seconds]",
+    "description": "Show or change a supergroup's slow mode; supports connected private chats.",
+    "example": "/slowmode 10"
+  },
+  "Emilia.modules.anon_admin.anon_admin": {
+    "usage": "/anonadmin [on|off]",
+    "description": "Allow ordinary anonymous-admin actions without verification; owner actions still require verification.",
+    "example": "/anonadmin off"
+  },
+  "Emilia.modules.bans.ban": {
+    "usage": "/ban [user] [reason]",
+    "description": "Ban a user.",
+    "example": "/ban @username Spam"
+  },
+  "Emilia.modules.bans.dban": {
+    "usage": "/dban [reason]",
+    "description": "Reply to a message to ban its sender and delete the message.",
+    "example": "/dban Spam"
+  },
+  "Emilia.modules.bans.sban": {
+    "usage": "/sban [user] [reason]",
+    "description": "Ban a user without a public result message.",
+    "example": "/sban @username Spam"
+  },
+  "Emilia.modules.bans.tban": {
+    "usage": "/tban [user] <duration> [reason]",
+    "description": "Ban a user temporarily.",
+    "example": "/tban @username 2h Spam"
+  },
+  "Emilia.modules.bans.unban": {
+    "usage": "/unban [user]",
+    "description": "Allow a banned user to rejoin.",
+    "example": "/unban @username"
+  },
+  "Emilia.modules.bans.kick": {
+    "usage": "/kick [user] [reason]",
+    "description": "Remove a user who may rejoin.",
+    "example": "/kick @username Spam"
+  },
+  "Emilia.modules.bans.dkick": {
+    "usage": "/dkick [reason]",
+    "description": "Reply to a message to kick its sender and delete the message.",
+    "example": "/dkick Spam"
+  },
+  "Emilia.modules.bans.skick": {
+    "usage": "/skick [user] [reason]",
+    "description": "Kick a user without a public result message.",
+    "example": "/skick @username"
+  },
+  "Emilia.modules.mute.mute.mute": {
+    "usage": "/mute [user] [reason]",
+    "description": "Mute a user. Use /dmute by reply to delete their message, or /smute for a silent result.",
+    "example": "/mute @username Spam"
+  },
+  "Emilia.modules.mute.tmute.mute": {
+    "usage": "/tmute [user] <duration> [reason]",
+    "description": "Mute a user temporarily.",
+    "example": "/tmute @username 2h Spam"
+  },
+  "Emilia.modules.mute.unmute.unmute": {
+    "usage": "/unmute [user]",
+    "description": "Restore a user's sending permissions.",
+    "example": "/unmute @username"
+  },
+  "Emilia.modules.bans.dnd": {
+    "usage": "/dnd [on|off]",
+    "description": "Show or change whether new members without usernames are kicked.",
+    "example": "/dnd on"
+  },
+  "Emilia.modules.admin.rm_deletedacc": {
+    "usage": "/zombies [clean]",
+    "description": "Find deleted accounts; add clean to remove them. Supports connected private chats.",
+    "example": "/zombies clean"
+  },
+  "Emilia.modules.admin.kickdead": {
+    "usage": "/kickdead",
+    "description": "Kick members Telegram marks as last seen a long time ago; supports connected private chats.",
+    "example": "/kickdead"
+  },
+  "Emilia.modules.admin.unbanall": {
+    "usage": "/unbanall",
+    "description": "Unban banned users and sender channels in the selected supergroup.",
+    "example": "/unbanall"
+  },
+  "Emilia.modules.admin.unmuteall": {
+    "usage": "/unmuteall",
+    "description": "Restore the selected supergroup's default permissions for current muted members.",
+    "example": "/unmuteall"
+  },
+  "Emilia.modules.admin.purge": {
+    "usage": "/purge",
+    "description": "Reply to the first message to delete it and all messages through this command.",
+    "example": "/purge"
+  },
+  "Emilia.modules.admin.spurge": {
+    "usage": "/spurge",
+    "description": "Purge the same range without a result message.",
+    "example": "/spurge"
+  },
+  "Emilia.modules.admin.delete_messages": {
+    "usage": "/del",
+    "description": "Reply to a message to delete it and your command.",
+    "example": "/del"
+  },
+  "Emilia.modules.admin.purge_from": {
+    "usage": "/purgefrom",
+    "description": "Reply to the first message to mark a range.",
+    "example": "/purgefrom"
+  },
+  "Emilia.modules.admin.purge_to": {
+    "usage": "/purgeto",
+    "description": "Reply to the last message to delete the marked range, including both endpoints.",
+    "example": "/purgeto"
+  },
+  "Emilia.modules.antiflood.flood_func": {
+    "usage": "/flood",
+    "description": "Show the current flood settings.",
+    "example": "/flood"
+  },
+  "Emilia.modules.antiflood.antiflood_func": {
+    "usage": "/setflood <count|on|off>",
+    "description": "Set a consecutive-message limit, resume protection, or disable it.",
+    "example": "/setflood 7"
+  },
+  "Emilia.modules.antiflood.setfloodtimer": {
+    "usage": "/setfloodtimer <count> <seconds>",
+    "description": "Configure timed antiflood; enable protection with /setflood on. Use /setfloodtimer off to disable the timer.",
+    "example": "/setfloodtimer 10 30"
+  },
+  "Emilia.modules.antiflood.floodmode": {
+    "usage": "/setfloodmode <action> [duration]",
+    "description": "Set ban, mute, kick, tban, or tmute; timed actions require a duration.",
+    "example": "/setfloodmode tban 3d"
+  },
+  "Emilia.modules.antiflood.clearflood": {
+    "usage": "/clearflood <on|off>",
+    "description": "Choose whether to delete messages that trigger protection.",
+    "example": "/clearflood on"
+  },
+  "Emilia.modules.antiraid.toggle_antiraid": {
+    "usage": "/antiraid",
+    "description": "Toggle raid protection immediately.",
+    "example": "/antiraid"
+  },
+  "Emilia.modules.antiraid.set_antiraid_duration": {
+    "usage": "/raidtime <hours>",
+    "description": "Set how long protection stays active; use a positive integer.",
+    "example": "/raidtime 6"
+  },
+  "Emilia.modules.antiraid.set_raid_action_time": {
+    "usage": "/raidactiontime <hours>",
+    "description": "Set how long new arrivals are banned; use a positive integer.",
+    "example": "/raidactiontime 1"
+  },
+  "Emilia.modules.antiraid.set_auto_antiraid": {
+    "usage": "/autoantiraid <threshold|off>",
+    "description": "Enable protection when this many members join within a minute, or disable automatic activation; thresholds accept 1–1000.",
+    "example": "/autoantiraid 20"
+  },
+  "Emilia.modules.antichannel._antichannelmode": {
+    "usage": "/antichannelmode <on|off>",
+    "description": "Ban unwanted channel senders.",
+    "example": "/antichannelmode on"
+  },
+  "Emilia.modules.pin.antichannelpin.antichannelpin": {
+    "usage": "/antichannelpin [on|off]",
+    "description": "Show or change whether linked-channel posts are automatically unpinned.",
+    "example": "/antichannelpin on"
+  },
+  "Emilia.modules.pin.cleanlinked.cleanlinked": {
+    "usage": "/cleanlinked [on|off]",
+    "description": "Show or change whether linked-channel messages are deleted.",
+    "example": "/cleanlinked on"
+  },
+  "Emilia.modules.vanitas.vanitas_handerl": {
+    "usage": "/antispam <on|off>",
+    "description": "Enable or disable antispam protection; requires permission to ban users.",
+    "example": "/antispam on"
+  },
+  "Emilia.modules.approval.check_approval": {
+    "usage": "/approval [user]",
+    "description": "Check your approval status, or identify a user by reply, mention, username, or ID.",
+    "example": "/approval @username"
+  },
+  "Emilia.modules.approval.appr": {
+    "usage": "/approve [user] [reason]",
+    "description": "Approve a user; requires permission to ban users.",
+    "example": "/approve @username Trusted member"
+  },
+  "Emilia.modules.approval.dissapprove": {
+    "usage": "/unapprove [user]",
+    "description": "Remove a user's exemption; requires permission to ban users.",
+    "example": "/unapprove @username"
+  },
+  "Emilia.modules.approval.approved": {
+    "usage": "/approved",
+    "description": "List approved members.",
+    "example": "/approved"
+  },
+  "Emilia.modules.approval.unapprove_all": {
+    "usage": "/unapproveall",
+    "description": "Remove every approval after confirmation. This cannot be undone.",
+    "example": "/unapproveall"
+  },
+  "Emilia.modules.blocklists.addblocklist.add_blocklist": {
+    "usage": "/addblocklist <trigger> [reason]",
+    "description": "Add a trigger; quote a multiword phrase.",
+    "example": "/addblocklist \"buy now\" Advertising"
+  },
+  "Emilia.modules.blocklists.rmblocklist.add_blocklist": {
+    "usage": "/rmblocklist <trigger>",
+    "description": "Remove a trigger; supply the full saved phrase.",
+    "example": "/rmblocklist buy now"
+  },
+  "Emilia.modules.blocklists.blocklist.blocklist": {
+    "usage": "/blocklist",
+    "description": "List saved triggers.",
+    "example": "/blocklist"
+  },
+  "Emilia.modules.blocklists.blocklistmode.blocklistmode": {
+    "usage": "/blocklistmode [action] [duration]",
+    "description": "Show or set nothing, ban, mute, kick, warn, tban, or tmute.",
+    "example": "/blocklistmode tmute 2h"
+  },
+  "Emilia.modules.blocklists.blocklistdelete.blocklistdelete": {
+    "usage": "/blocklistdelete [on|off]",
+    "description": "Show or change message deletion; enabled by default.",
+    "example": "/blocklistdelete on"
+  },
+  "Emilia.modules.blocklists.setblocklistreason.setblocklistreason": {
+    "usage": "/setblocklistreason [reason]",
+    "description": "Show or set the default action reason.",
+    "example": "/setblocklistreason Advertising"
+  },
+  "Emilia.modules.blocklists.resetblocklistreason.resetblocklistreason": {
+    "usage": "/resetblocklistreason",
+    "description": "Clear the default reason.",
+    "example": "/resetblocklistreason"
+  },
+  "Emilia.modules.blocklists.unblocklistall.removeblocklistall": {
+    "usage": "/unblocklistall",
+    "description": "Delete every trigger after confirmation. This cannot be undone.",
+    "example": "/unblocklistall"
+  },
+  "Emilia.modules.locks.locktypes.locktypes": {
+    "usage": "/locktypes",
+    "description": "List supported lock names.",
+    "example": "/locktypes"
+  },
+  "Emilia.modules.locks.lock.lock": {
+    "usage": "/lock <type> [type ...]",
+    "description": "Enable one or more locks.",
+    "example": "/lock photo video"
+  },
+  "Emilia.modules.locks.unlock.lock": {
+    "usage": "/unlock <type> [type ...]",
+    "description": "Disable one or more locks.",
+    "example": "/unlock photo video"
+  },
+  "Emilia.modules.locks.locks.locks": {
+    "usage": "/locks",
+    "description": "Show the group's active locks.",
+    "example": "/locks"
+  },
+  "Emilia.modules.locks.lockwarns.lockwarns": {
+    "usage": "/lockwarns [on|off]",
+    "description": "Show or change whether lock violations add warnings.",
+    "example": "/lockwarns on"
+  },
+  "Emilia.modules.locks.allowlist.allowlist": {
+    "usage": "/allowlist [item ...]",
+    "description": "Show or add trusted URLs, bots, or emoji packs.",
+    "example": "/allowlist example.com"
+  },
+  "Emilia.modules.locks.rmallowlist.rmallow": {
+    "usage": "/rmallowlist <item> [item ...]",
+    "description": "Remove saved allowlist entries.",
+    "example": "/rmallowlist example.com"
+  },
+  "Emilia.modules.locks.rmallowlistall.rmallowlistall": {
+    "usage": "/rmallowlistall",
+    "description": "Clear the whole allowlist after confirmation. This cannot be undone.",
+    "example": "/rmallowlistall"
+  },
+  "Emilia.modules.warnings.warns.warns": {
+    "usage": "/warns [user]",
+    "description": "Show your warnings. Only admins may supply another user.",
+    "example": "/warns @username"
+  },
+  "Emilia.modules.warnings.add_warn.addwarn": {
+    "usage": "/warn [user] [reason]",
+    "description": "Warn a user. Use /dwarn by reply to delete their message, or /swarn for a silent warning.",
+    "example": "/warn @username Advertising"
+  },
+  "Emilia.modules.warnings.reset_warns.reset_warn": {
+    "usage": "/resetwarn [user]",
+    "description": "Clear a user's warnings in the selected group; supports connected private chats.",
+    "example": "/resetwarn @username"
+  },
+  "Emilia.modules.warnings.set_warn_limit.setWarnLimit": {
+    "usage": "/warnlimit <number>",
+    "description": "Set the warning limit from 1 to 50; requires permission to change group info.",
+    "example": "/warnlimit 4"
+  },
+  "Emilia.modules.warnings.set_warn_mode.set_warn_mode": {
+    "usage": "/warnmode <action> [duration]",
+    "description": "Set ban, kick, mute, tban, or tmute; timed actions require a duration.",
+    "example": "/warnmode tmute 2h"
+  },
+  "Emilia.modules.warnings.warnings.warnings": {
+    "usage": "/warnings",
+    "description": "Show the group's warning settings.",
+    "example": "/warnings"
+  },
+  "Emilia.modules.warnings.resetallwarns.reset_all_warns": {
+    "usage": "/resetallwarns",
+    "description": "Clear every member's warnings after confirmation. This cannot be undone.",
+    "example": "/resetallwarns"
+  },
+  "Emilia.modules.disabling.disableable.disable_list": {
+    "usage": "/disableable",
+    "description": "List commands that support disabling.",
+    "example": "/disableable"
+  },
+  "Emilia.modules.disabling.disable.disable": {
+    "usage": "/disable <command> [command ...]",
+    "description": "Disable command names without their prefix.",
+    "example": "/disable wiki gif"
+  },
+  "Emilia.modules.disabling.enable.enable": {
+    "usage": "/enable <command> [command ...]",
+    "description": "Enable disabled commands.",
+    "example": "/enable wiki gif"
+  },
+  "Emilia.modules.disabling.disabled.disable": {
+    "usage": "/disabled",
+    "description": "List disabled commands.",
+    "example": "/disabled"
+  },
+  "Emilia.modules.disabling.disabledel.disabledel": {
+    "usage": "/disabledel <on|off>",
+    "description": "Delete attempts to use disabled commands; the bot needs permission to delete messages.",
+    "example": "/disabledel on"
+  },
+  "Emilia.modules.connection.connect.Connect": {
+    "usage": "/connect [group/channel ID or @username]",
+    "description": "Connect to a chat where you and the bot are members. Administrators may connect; other members need /allowconnection enabled.",
+    "example": "/connect -1001234567890"
+  },
+  "Emilia.modules.connection.connection.ConnectionChat": {
+    "usage": "/connection",
+    "description": "Show your connected group in private.",
+    "example": "/connection"
+  },
+  "Emilia.modules.connection.disconnect.diconnectChat": {
+    "usage": "/disconnect",
+    "description": "Disconnect in private.",
+    "example": "/disconnect"
+  },
+  "Emilia.modules.connection.reconnect.reconnectC": {
+    "usage": "/reconnect",
+    "description": "Reconnect to your last group in private.",
+    "example": "/reconnect"
+  },
+  "Emilia.modules.connection.allow_connection.allow_connection": {
+    "usage": "/allowconnection [on|off]",
+    "description": "Show or change whether members may connect to the group.",
+    "example": "/allowconnection on"
+  },
+  "Emilia.modules.notes.get_note.getNote": {
+    "usage": "/get <name>",
+    "description": "Retrieve a saved note. You can also send #name.",
+    "example": "/get rules"
+  },
+  "Emilia.modules.notes.notes.Notes": {
+    "usage": "/notes",
+    "description": "List saved notes.",
+    "example": "/notes"
+  },
+  "Emilia.modules.notes.save_note.saveNote": {
+    "usage": "/save <name> [text]",
+    "description": "Save text, or reply to the content to save.",
+    "example": "/save rules Be kind."
+  },
+  "Emilia.modules.notes.clear_note.Clear_Note": {
+    "usage": "/clear <name>",
+    "description": "Delete a saved note.",
+    "example": "/clear rules"
+  },
+  "Emilia.modules.notes.set_private_notes.PrivateNote": {
+    "usage": "/privatenotes [on|off]",
+    "description": "Show or change whether notes open in private.",
+    "example": "/privatenotes on"
+  },
+  "Emilia.modules.notes.clear_note.ClearAll_Note": {
+    "usage": "/clearall",
+    "description": "Delete every note after confirmation. This cannot be undone.",
+    "example": "/clearall"
+  },
+  "Emilia.modules.filters.filters.filters": {
+    "usage": "/filters",
+    "description": "List the group's filters.",
+    "example": "/filters"
+  },
+  "Emilia.modules.filters.filter.filter": {
+    "usage": "/filter <trigger> [text]",
+    "description": "Save a text reply, or reply to the content to save.",
+    "example": "/filter hello Hello!"
+  },
+  "Emilia.modules.filters.stop.stop": {
+    "usage": "/stop <trigger>",
+    "description": "Remove a filter.",
+    "example": "/stop hello"
+  },
+  "Emilia.modules.filters.stopall.stopall": {
+    "usage": "/stopall",
+    "description": "Delete every filter after confirmation. This cannot be undone.",
+    "example": "/stopall"
+  },
+  "Emilia.modules.greetings.welcome.Welcome": {
+    "usage": "/welcome [on|off|noformat]",
+    "description": "Preview the welcome or toggle it; noformat shows its saved source.",
+    "example": "/welcome on"
+  },
+  "Emilia.modules.greetings.goodbye.Welcome": {
+    "usage": "/goodbye [on|off]",
+    "description": "Preview the goodbye or toggle it.",
+    "example": "/goodbye on"
+  },
+  "Emilia.modules.greetings.set_welcome.set_welcome": {
+    "usage": "/setwelcome",
+    "description": "Reply to text or media to save a welcome. Inline text is not accepted.",
+    "example": "/setwelcome"
+  },
+  "Emilia.modules.greetings.reset_welcome.ResetWelcome": {
+    "usage": "/resetwelcome",
+    "description": "Restore the default welcome.",
+    "example": "/resetwelcome"
+  },
+  "Emilia.modules.greetings.set_goodbye.set_goodbye": {
+    "usage": "/setgoodbye [text]",
+    "description": "Save inline text or replied content as the goodbye.",
+    "example": "/setgoodbye Goodbye, {first}."
+  },
+  "Emilia.modules.greetings.reset_goodbye.ResetGoodbye": {
+    "usage": "/resetgoodbye",
+    "description": "Restore the default goodbye.",
+    "example": "/resetgoodbye"
+  },
+  "Emilia.modules.greetings.clean_service.CleanService": {
+    "usage": "/cleanservice [on|off]",
+    "description": "Show or change service-message deletion; needs permission to delete messages.",
+    "example": "/cleanservice on"
+  },
+  "Emilia.modules.greetings.clean_welcome.CleanWelcome": {
+    "usage": "/cleanwelcome [on|off]",
+    "description": "Show or change deletion of old greeting messages.",
+    "example": "/cleanwelcome on"
+  },
+  "Emilia.modules.greetings.captcha.captcha.Captcha": {
+    "usage": "/captcha [on|off]",
+    "description": "Show or change member verification.",
+    "example": "/captcha on"
+  },
+  "Emilia.modules.greetings.captcha.captcha_modes.CaptchaMode": {
+    "usage": "/captchamode [button|math|text|image]",
+    "description": "Show or choose a challenge; image is an alias for text.",
+    "example": "/captchamode text"
+  },
+  "Emilia.modules.greetings.captcha.captcharules.rulecaptcha": {
+    "usage": "/captcharules [on|off]",
+    "description": "Show or change whether verification also requires accepting the rules.",
+    "example": "/captcharules on"
+  },
+  "Emilia.modules.greetings.captcha.setcaptchatext.SetCaptchatext": {
+    "usage": "/setcaptchatext [text]",
+    "description": "Show or set the verification button label.",
+    "example": "/setcaptchatext Verify"
+  },
+  "Emilia.modules.greetings.captcha.verified_recaptcha.reCaptcha": {
+    "usage": "/recaptcha [on|off]",
+    "description": "Show or change whether returning members must verify again.",
+    "example": "/recaptcha on"
+  },
+  "Emilia.modules.autoapprove.autoapprove_cmd": {
+    "usage": "/autoapprove [mode]",
+    "description": "Show or choose a join-request mode.",
+    "example": "/autoapprove antispam"
+  },
+  "Emilia.modules.bot2bot.bot2bot": {
+    "usage": "/bot2bot [off|admin|all]",
+    "description": "Show or choose which bots may request commands.",
+    "example": "/bot2bot admin"
+  },
+  "Emilia.modules.bot2bot.bot2botskipreview": {
+    "usage": "/bot2botskipreview [on|off]",
+    "description": "Show or change whether allowed bot commands skip admin review.",
+    "example": "/bot2botskipreview off"
+  },
+  "Emilia.modules.pin.pinned.pinned": {
+    "usage": "/pinned",
+    "description": "Open the current pinned message.",
+    "example": "/pinned"
+  },
+  "Emilia.modules.pin.pin.pin": {
+    "usage": "/pin [loud|notify]",
+    "description": "Reply to a message to pin it; loud or notify alerts members.",
+    "example": "/pin loud"
+  },
+  "Emilia.modules.pin.unpin.unpin": {
+    "usage": "/unpin",
+    "description": "Unpin the current pin, or the message you reply to.",
+    "example": "/unpin"
+  },
+  "Emilia.modules.pin.unpinall.unpinall": {
+    "usage": "/unpinall",
+    "description": "Remove every pin after confirmation.",
+    "example": "/unpinall"
+  },
+  "Emilia.modules.pin.pininfo.pininfo": {
+    "usage": "/pininfo",
+    "description": "Explain linked-channel pin compatibility.",
+    "example": "/pininfo"
+  },
+  "Emilia.modules.rules.rules.rules": {
+    "usage": "/rules",
+    "description": "Read the current group rules.",
+    "example": "/rules"
+  },
+  "Emilia.modules.rules.setrules.set_rules": {
+    "usage": "/setrules <text>",
+    "description": "Save group rules; requires permission to change group info.",
+    "example": "/setrules Be kind."
+  },
+  "Emilia.modules.rules.reset_rules.reset_rules": {
+    "usage": "/resetrules",
+    "description": "Restore the default rules.",
+    "example": "/resetrules"
+  },
+  "Emilia.modules.rules.private_rules.private_rules": {
+    "usage": "/privaterules [on|off]",
+    "description": "Show or change private delivery of rules.",
+    "example": "/privaterules on"
+  },
+  "Emilia.modules.rules.set_rules_button.set_rules": {
+    "usage": "/setrulesbutton [label]",
+    "description": "Show or set the label used by the rules button.",
+    "example": "/setrulesbutton Read the rules"
+  },
+  "Emilia.modules.rules.reset_rules_button.reset_rules": {
+    "usage": "/resetrulesbutton",
+    "description": "Restore the default rules button label.",
+    "example": "/resetrulesbutton"
+  },
+  "Emilia.modules.report.report.report": {
+    "usage": "/report",
+    "description": "Reply to a message to report it. You can also mention @admin or @admins in a reply.",
+    "example": "/report"
+  },
+  "Emilia.modules.report.reports.reports": {
+    "usage": "/reports [on|off]",
+    "description": "Show or change whether members may report messages.",
+    "example": "/reports on"
+  },
+  "Emilia.modules.log_channels.logchannel.logcategories": {
+    "usage": "/logchannel",
+    "description": "Show the current log channel.",
+    "example": "/logchannel"
+  },
+  "Emilia.modules.log_channels.unsetlog.unset_log": {
+    "usage": "/unsetlog",
+    "description": "Remove the log channel; requires permission to change group info.",
+    "example": "/unsetlog"
+  },
+  "Emilia.modules.log_channels.setlog.set_log": {
+    "usage": "/setlog [channel ID or @username]",
+    "description": "Set the log destination as group owner and destination channel administrator. You may also reply to a forwarded channel post.",
+    "example": "/setlog"
+  },
+  "Emilia.modules.import_export.export_settings": {
+    "usage": "/export",
+    "description": "Export the group settings as JSON.",
+    "example": "/export"
+  },
+  "Emilia.modules.import_export.import_settings": {
+    "usage": "/import",
+    "description": "Reply to an export JSON document to restore its settings after confirmation.",
+    "example": "/import"
+  },
+  "Emilia.modules.import_export.reset_settings": {
+    "usage": "/chatreset",
+    "description": "Delete the group's stored configuration after confirmation. This cannot be undone.",
+    "example": "/chatreset"
+  },
+  "Emilia.modules.nightmode._nightmode": {
+    "usage": "/nightmode",
+    "description": "Open the night mode control panel.",
+    "example": "/nightmode"
+  },
+  "Emilia.modules.anime.bot.anime_help": {
+    "usage": "/anihelp",
+    "description": "Open the anime help menu.",
+    "example": "/anihelp"
+  },
+  "Emilia.modules.findanime.saucenao_search": {
+    "usage": "/findanime",
+    "description": "Reply to an image to search its source with SauceNAO.",
+    "example": "/findanime"
+  },
+  "Emilia.modules.animequote.quotes": {
+    "usage": "/quote",
+    "description": "Send a random anime quote.",
+    "example": "/quote"
+  },
+  "Emilia.modules.animequote.animequotes": {
+    "usage": "/animequotes",
+    "description": "Send a random anime quote image.",
+    "example": "/animequotes"
+  },
+  "Emilia.modules.anime.anilist.anime_cmd": {
+    "usage": "/anime <query>",
+    "description": "Show an anime with sequel and prequel navigation.",
+    "example": "/anime Frieren"
+  },
+  "Emilia.modules.anime.anilist.anilist_cmd": {
+    "usage": "/anilist <query>",
+    "description": "Browse matching anime.",
+    "example": "/anilist Naruto"
+  },
+  "Emilia.modules.anime.anilist.manga_cmd": {
+    "usage": "/manga <query>",
+    "description": "Browse matching manga.",
+    "example": "/manga Berserk"
+  },
+  "Emilia.modules.anime.anilist.character_cmd": {
+    "usage": "/character <query>",
+    "description": "Browse matching characters.",
+    "example": "/character Frieren"
+  },
+  "Emilia.modules.anime.anilist.studio_cmd": {
+    "usage": "/studio <query>",
+    "description": "Browse matching studios.",
+    "example": "/studio Madhouse"
+  },
+  "Emilia.modules.anime.anilist.airing_cmd": {
+    "usage": "/airing <query>",
+    "description": "Show an anime's airing information.",
+    "example": "/airing One Piece"
+  },
+  "Emilia.modules.anime.anilist.flex_cmd": {
+    "usage": "/user <username>",
+    "description": "Look up an AniList user.",
+    "example": "/user username"
+  },
+  "Emilia.modules.anime.anilist.top_tags_cmd": {
+    "usage": "/top [genre or tag]",
+    "description": "Browse top anime, optionally filtered by genre or tag.",
+    "example": "/top Action"
+  },
+  "Emilia.modules.anime.anilist.list_tags_genres_cmd": {
+    "usage": "/gettags [nsfw]",
+    "description": "List tags; nsfw requests adult tags when the group allows them.",
+    "example": "/gettags"
+  },
+  "Emilia.modules.anime.anilist.browse_cmd": {
+    "usage": "/browse",
+    "description": "Browse popular, trending, and upcoming anime.",
+    "example": "/browse"
+  },
+  "Emilia.modules.anime.tracemoepy.reverse_search": {
+    "usage": "/anireverse",
+    "description": "Reply to a photo, animation, or video to identify an anime scene with trace.moe.",
+    "example": "/anireverse"
+  },
+  "Emilia.modules.anime.jikan.scheduled_anime": {
+    "usage": "/schedule",
+    "description": "Open the weekly anime schedule.",
+    "example": "/schedule"
+  },
+  "Emilia.modules.anime.watch.get_watch_order": {
+    "usage": "/watch <query>",
+    "description": "Find a series' watch order.",
+    "example": "/watch Monogatari"
+  },
+  "Emilia.modules.anime.animefillerslist.fillers_cmd": {
+    "usage": "/fillers <query>",
+    "description": "Find an anime's filler episodes.",
+    "example": "/fillers Naruto"
+  },
+  "Emilia.modules.anime.anilist.auth_link_cmd": {
+    "usage": "/auth",
+    "description": "Open the AniList authorization flow.",
+    "example": "/auth"
+  },
+  "Emilia.modules.anime.anilist.man_code_cmd": {
+    "usage": "/code <authorization code>",
+    "description": "Complete manual authorization in a private chat.",
+    "example": "/code YOUR_AUTHORIZATION_CODE"
+  },
+  "Emilia.modules.anime.anilist.activity_cmd": {
+    "usage": "/activity",
+    "description": "Show your recent AniList activity.",
+    "example": "/activity"
+  },
+  "Emilia.modules.anime.anilist.favourites_cmd": {
+    "usage": "/favourites",
+    "description": "Browse your AniList favorites.",
+    "example": "/favourites"
+  },
+  "Emilia.modules.anime.anilist.logout_cmd": {
+    "usage": "/logout",
+    "description": "Disconnect your AniList account in private.",
+    "example": "/logout"
+  },
+  "Emilia.modules.anime.anilist.settings_cmd": {
+    "usage": "/anisettings",
+    "description": "Open adult-content, notification, and display settings; requires permission to change group info.",
+    "example": "/anisettings"
+  },
+  "Emilia.modules.anime.bot.connect_channel": {
+    "usage": "/aniconnect [chat ID or @username]",
+    "description": "Link a group or channel to your AniList account as its current owner; supply the chat in private.",
+    "example": "/aniconnect -1001234567890"
+  },
+  "Emilia.modules.federations.CF": {
+    "usage": "/chatfed",
+    "description": "Show the group's federation.",
+    "example": "/chatfed"
+  },
+  "Emilia.modules.federations.qf": {
+    "usage": "/quietfed",
+    "description": "Toggle local federation ban messages. This command takes no arguments.",
+    "example": "/quietfed"
+  },
+  "Emilia.modules.federations.jfed": {
+    "usage": "/joinfed <federation_id>",
+    "description": "Join a federation; the bot needs permission to ban users.",
+    "example": "/joinfed 12345678-1234-1234-1234-123456789abc"
+  },
+  "Emilia.modules.federations.lfed": {
+    "usage": "/leavefed",
+    "description": "Leave the group's federation.",
+    "example": "/leavefed"
+  },
+  "Emilia.modules.federations.finfo": {
+    "usage": "/fedinfo [federation_id]",
+    "description": "Show a federation; owners may omit the ID for their own federation.",
+    "example": "/fedinfo 12345678-1234-1234-1234-123456789abc"
+  },
+  "Emilia.modules.federations.fedadmins_": {
+    "usage": "/fedadmins [federation_id]",
+    "description": "List a federation's admins; owners may omit the ID.",
+    "example": "/fedadmins 12345678-1234-1234-1234-123456789abc"
+  },
+  "Emilia.modules.federations.fedstat": {
+    "usage": "/fedstat <federation_id>",
+    "description": "Check your own ban status in a federation.",
+    "example": "/fedstat 12345678-1234-1234-1234-123456789abc"
+  },
+  "Emilia.modules.federations.my_feds": {
+    "usage": "/myfeds",
+    "description": "List federations where you are an admin.",
+    "example": "/myfeds"
+  },
+  "Emilia.modules.federations.fban": {
+    "usage": "/fban [user] [reason]",
+    "description": "Ban a user across the federation. A reason is required when the owner enables that setting.",
+    "example": "/fban @username Spam"
+  },
+  "Emilia.modules.federations.unfban": {
+    "usage": "/unfban [user] [reason]",
+    "description": "Remove a federation ban.",
+    "example": "/unfban @username Resolved"
+  },
+  "Emilia.modules.federations.self_demote": {
+    "usage": "/feddemoteme <federation_id>",
+    "description": "Remove your own federation admin role.",
+    "example": "/feddemoteme 12345678-1234-1234-1234-123456789abc"
+  },
+  "Emilia.modules.federations.newfed": {
+    "usage": "/newfed <name>",
+    "description": "Create a federation; one per user, with a name up to 64 characters.",
+    "example": "/newfed Anime groups"
+  },
+  "Emilia.modules.federations.rename": {
+    "usage": "/renamefed <name>",
+    "description": "Rename your federation; maximum 64 characters.",
+    "example": "/renamefed Anime community"
+  },
+  "Emilia.modules.federations.del_fed": {
+    "usage": "/delfed",
+    "description": "Delete your federation after confirmation. This cannot be undone.",
+    "example": "/delfed"
+  },
+  "Emilia.modules.federations.fed_notif": {
+    "usage": "/fednotif [on|off]",
+    "description": "Show or change private ban notifications.",
+    "example": "/fednotif on"
+  },
+  "Emilia.modules.federations.fed_reason": {
+    "usage": "/fedreason [on|off]",
+    "description": "Show or change whether federation bans require reasons.",
+    "example": "/fedreason on"
+  },
+  "Emilia.modules.federations.fp": {
+    "usage": "/fpromote [user]",
+    "description": "Invite a user to become a federation admin; they must accept.",
+    "example": "/fpromote @username"
+  },
+  "Emilia.modules.federations.fd": {
+    "usage": "/fdemote [user]",
+    "description": "Remove a federation admin.",
+    "example": "/fdemote @username"
+  },
+  "Emilia.modules.federations.transfer_federation": {
+    "usage": "/ftransfer [user]",
+    "description": "Transfer ownership to an existing federation admin after acceptance; you also need group admin access.",
+    "example": "/ftransfer @username"
+  },
+  "Emilia.modules.federations.set_fed_logs": {
+    "usage": "/setfedlog [federation_id]",
+    "description": "Set this group or channel as your federation's log destination; an explicit ID must belong to you. Group use also needs permission to change group info.",
+    "example": "/setfedlog"
+  },
+  "Emilia.modules.federations.un_set_fed_log": {
+    "usage": "/unsetfedlog",
+    "description": "Remove the federation log destination from a group or channel.",
+    "example": "/unsetfedlog"
+  },
+  "Emilia.modules.federations.s_fed": {
+    "usage": "/subfed <federation_id>",
+    "description": "Subscribe your federation to another federation's bans.",
+    "example": "/subfed 12345678-1234-1234-1234-123456789abc"
+  },
+  "Emilia.modules.federations.us_fed": {
+    "usage": "/unsubfed <federation_id>",
+    "description": "Stop receiving another federation's bans.",
+    "example": "/unsubfed 12345678-1234-1234-1234-123456789abc"
+  },
+  "Emilia.modules.federations.fedsubs": {
+    "usage": "/fedsubs",
+    "description": "List federation subscriptions.",
+    "example": "/fedsubs"
+  },
+  "Emilia.modules.federations.fed_export___": {
+    "usage": "/fexport [csv|json|xml]",
+    "description": "Export bans; defaults to CSV.",
+    "example": "/fexport json"
+  },
+  "Emilia.modules.federations.fed_import___": {
+    "usage": "/fimport",
+    "description": "Reply to a CSV or JSON-lines ban export to import it (up to 5 MiB and 10,000 rows).",
+    "example": "/fimport"
+  },
+  "Emilia.modules.levels.register_": {
+    "usage": "/register <name>",
+    "description": "Create your profile with a unique name of up to 20 characters.",
+    "example": "/register EmiliaFan"
+  },
+  "Emilia.modules.levels.rank": {
+    "usage": "/rank",
+    "description": "Show your rank card and progress.",
+    "example": "/rank"
+  },
+  "Emilia.modules.levels._leaderboard": {
+    "usage": "/leaderboard",
+    "description": "Open the group leaderboard; use its buttons for other views.",
+    "example": "/leaderboard"
+  },
+  "Emilia.modules.levels._daily": {
+    "usage": "/daily",
+    "description": "Claim a daily XP bonus; repeated daily claims build a streak.",
+    "example": "/daily"
+  },
+  "Emilia.modules.levels._weekly": {
+    "usage": "/weekly",
+    "description": "Claim a weekly XP bonus after its cooldown.",
+    "example": "/weekly"
+  },
+  "Emilia.modules.levels.rankings": {
+    "usage": "/rankings",
+    "description": "Read rank names and requirements in private.",
+    "example": "/rankings"
+  },
+  "Emilia.modules.levels.prestige_handler": {
+    "usage": "/prestige",
+    "description": "Reset your level at the maximum rank for a prestige badge and XP multiplier.",
+    "example": "/prestige"
+  },
+  "Emilia.modules.levels.reputation_handler": {
+    "usage": "/thanks",
+    "description": "Reply to another member's message to award reputation.",
+    "example": "/thanks"
+  },
+  "Emilia.modules.levels.levelonoff": {
+    "usage": "/level [on|off]",
+    "description": "Show or change whether levels are enabled.",
+    "example": "/level on"
+  },
+  "Emilia.modules.levels.levelset_handler": {
+    "usage": "/levelset event <multiplier>",
+    "description": "Set the group's event XP multiplier; finite values from 0.1 to 100.",
+    "example": "/levelset event 2"
+  },
+  "Emilia.modules.karma.karma_state": {
+    "usage": "/karma <enable|disable>",
+    "description": "Enable or disable karma; requires permission to change group info.",
+    "example": "/karma enable"
+  },
+  "Emilia.modules.birthday.set_birthday_handler": {
+    "usage": "/setbirthday <DD/MM>",
+    "description": "Save your birthday. Use it in a group to associate that group with reminders.",
+    "example": "/setbirthday 25/12"
+  },
+  "Emilia.modules.birthday.get_birthday_handler": {
+    "usage": "/birthday [user]",
+    "description": "Show your birthday or another user's; reply or supply a username or ID.",
+    "example": "/birthday @username"
+  },
+  "Emilia.modules.birthday.del_birthday_handler": {
+    "usage": "/delbirthday",
+    "description": "Delete your birthday.",
+    "example": "/delbirthday"
+  },
+  "Emilia.modules.birthday.add_birthday_handler": {
+    "usage": "/addbirthday <user> <DD/MM>",
+    "description": "Save a birthday for another user in the group; requires permission to change group info.",
+    "example": "/addbirthday @username 25/12"
+  },
+  "Emilia.modules.start.start.starttt": {
+    "usage": "/start",
+    "description": "Open the bot menu or follow a feature link.",
+    "example": "/start"
+  },
+  "Emilia.modules.help.help_command": {
+    "usage": "/help [module]",
+    "description": "Open help in private, or get a link from a group. Use a page name or slug.",
+    "example": "/help notes"
+  },
+  "Emilia.modules.ping.ping": {
+    "usage": "/ping",
+    "description": "Show response time and uptime.",
+    "example": "/ping"
+  },
+  "Emilia.modules.donate.handle_donate": {
+    "usage": "/donate",
+    "description": "Open donation information.",
+    "example": "/donate"
+  },
+  "Emilia.modules.anime.bot.feedback": {
+    "usage": "/feedback",
+    "description": "Find the operator's contact information in private.",
+    "example": "/feedback"
+  },
+  "Emilia.modules.id.ids.getid": {
+    "usage": "/id",
+    "description": "Show chat and sender IDs; reply to a user or forwarded message for its IDs.",
+    "example": "/id"
+  },
+  "Emilia.modules.information.bio._info": {
+    "usage": "/info [user]",
+    "description": "Show your information or another user's; reply or supply a username, mention, or ID.",
+    "example": "/info @username"
+  },
+  "Emilia.modules.information.bio._ginfo": {
+    "usage": "/ginfo <chat>",
+    "description": "Look up a chat by its ID or username.",
+    "example": "/ginfo @groupname"
+  },
+  "Emilia.modules.github.github": {
+    "usage": "/github <username>",
+    "description": "Look up a GitHub profile.",
+    "example": "/github torvalds"
+  },
+  "Emilia.modules.information.bio.setme": {
+    "usage": "/setme <text>",
+    "description": "Set profile text for yourself, or the member you reply to, in a group; maximum 70 characters.",
+    "example": "/setme I like anime."
+  },
+  "Emilia.modules.information.bio.show_me": {
+    "usage": "/me [user]",
+    "description": "Show saved profile text.",
+    "example": "/me @username"
+  },
+  "Emilia.modules.information.bio.setbio": {
+    "usage": "/setbio <text>",
+    "description": "Set a bio for yourself, or the member you reply to, in a group; maximum 70 characters.",
+    "example": "/setbio Anime fan."
+  },
+  "Emilia.modules.information.bio.show_bio": {
+    "usage": "/bio [user]",
+    "description": "Show a saved bio.",
+    "example": "/bio @username"
+  },
+  "Emilia.modules.google.google_search_cmd": {
+    "usage": "/google <query>",
+    "description": "Search Google.",
+    "example": "/google Frieren anime"
+  },
+  "Emilia.modules.wiki.wiki": {
+    "usage": "/wiki <query>",
+    "description": "Look up a Wikipedia article.",
+    "example": "/wiki Tokyo"
+  },
+  "Emilia.modules.ud.define_command": {
+    "usage": "/define <word>",
+    "description": "Look up a dictionary definition.",
+    "example": "/define anime"
+  },
+  "Emilia.modules.ud.ud_command": {
+    "usage": "/ud <word or phrase>",
+    "description": "Look up an Urban Dictionary definition.",
+    "example": "/ud touch grass"
+  },
+  "Emilia.modules.webshot.take_ss": {
+    "usage": "/webss <url>",
+    "description": "Take a screenshot of a website.",
+    "example": "/webss https://example.com"
+  },
+  "Emilia.modules.memify.handler": {
+    "usage": "/mmf <top text> [; bottom text]",
+    "description": "Reply to supported image media to add meme text.",
+    "example": "/mmf Hello ; World"
+  },
+  "Emilia.modules.rmbg.remove_bg_command_handler": {
+    "usage": "/rmbg",
+    "description": "Reply to a photo, image document, or supported sticker to remove its background.",
+    "example": "/rmbg"
+  },
+  "Emilia.modules.logomaker.lego": {
+    "usage": "/logo <text>",
+    "description": "Create a logo image.",
+    "example": "/logo Anime club"
+  },
+  "Emilia.modules.write.writer": {
+    "usage": "/write <text>",
+    "description": "Create an image of handwritten text.",
+    "example": "/write Hello world"
+  },
+  "Emilia.modules.carbon.carbon_image": {
+    "usage": "/carbon [code]",
+    "description": "Create a code image; provide code or reply to text, a caption, or a UTF-8 document.",
+    "example": "/carbon print(1 + 1)"
+  },
+  "Emilia.modules.wallpaper.some1": {
+    "usage": "/wall <query>",
+    "description": "Search for a wallpaper.",
+    "example": "/wall Naruto"
+  },
+  "Emilia.modules.misc.___stat_chat__": {
+    "usage": "/count",
+    "description": "Show the current message ID as a group message counter. Deleted messages leave gaps.",
+    "example": "/count"
+  },
+  "Emilia.modules.mentionall.mentionall": {
+    "usage": "/all [text]",
+    "description": "Mention group members with an optional message. The main bot also accepts @all.",
+    "example": "/all Meeting starts soon."
+  },
+  "Emilia.modules.cleaner._cleancommand": {
+    "usage": "/cleancommand [on|off]",
+    "description": "Show or change automatic command deletion; requires permission to delete messages.",
+    "example": "/cleancommand on"
+  },
+  "Emilia.modules.pokedex.PokeDex": {
+    "usage": "/pokedex <name>",
+    "description": "Look up a Pokémon.",
+    "example": "/pokedex Pikachu"
+  },
+  "Emilia.modules.joke.joke": {
+    "usage": "/joke",
+    "description": "Send a random joke.",
+    "example": "/joke"
+  },
+  "Emilia.modules.shippering.choose_couples_command": {
+    "usage": "/couples",
+    "description": "Choose a daily couple in a group.",
+    "example": "/couples"
+  },
+  "Emilia.modules.misc.some": {
+    "usage": "/gif <query> [; count]",
+    "description": "Find GIFs; defaults to one and accepts a count from 1 to 20.",
+    "example": "/gif cats ; 5"
+  },
+  "Emilia.modules.reactions.react": {
+    "usage": "/react",
+    "description": "Add a random reaction to your message or the message you reply to.",
+    "example": "/react"
+  },
+  "Emilia.modules.truthdare.truth": {
+    "usage": "/truth",
+    "description": "Send a truth question.",
+    "example": "/truth"
+  },
+  "Emilia.modules.truthdare.dare": {
+    "usage": "/dare",
+    "description": "Send a dare challenge.",
+    "example": "/dare"
+  },
+  "Emilia.modules.misc.tts": {
+    "usage": "/tts <language> <text>",
+    "description": "Convert text to speech; use a language code such as en or ja.",
+    "example": "/tts en Hello world"
+  },
+  "Emilia.modules.quote.generate_quote": {
+    "usage": "/q [count] [color] [p] [r]",
+    "description": "Reply to the first message to quote. Use p for a PNG document or r to include its reply.",
+    "example": "/q 5 #ff0000 p r"
+  },
+  "Emilia.modules.quote.show_top_quotes": {
+    "usage": "/qtop",
+    "description": "Browse saved group quotes by rating.",
+    "example": "/qtop"
+  },
+  "Emilia.modules.quote.send_random_quote": {
+    "usage": "/qrand",
+    "description": "Send a random saved group quote.",
+    "example": "/qrand"
+  },
+  "Emilia.modules.quote.quote_rating": {
+    "usage": "/qrate [on|off]",
+    "description": "Show or change rating buttons; requires permission to change group info.",
+    "example": "/qrate on"
+  },
+  "Emilia.modules.stickers._stickidd": {
+    "usage": "/stickerid",
+    "description": "Reply to a sticker to get its file ID.",
+    "example": "/stickerid"
+  },
+  "Emilia.modules.information.bio._ginfo0": {
+    "usage": "/gifid",
+    "description": "Reply to a GIF to get its file ID.",
+    "example": "/gifid"
+  },
+  "Emilia.modules.stickers._stickid0": {
+    "usage": "/getsticker",
+    "description": "Reply to a static sticker to download it as PNG.",
+    "example": "/getsticker"
+  },
+  "Emilia.modules.stickers._vidstick0": {
+    "usage": "/getvideo",
+    "description": "Reply to a GIF to download its video file.",
+    "example": "/getvideo"
+  },
+  "Emilia.modules.stickers._vidstick": {
+    "usage": "/getvidsticker",
+    "description": "Reply to a video sticker to download its video file. TGS animation stickers are not supported here.",
+    "example": "/getvidsticker"
+  },
+  "Emilia.modules.stickers.kang_sticker": {
+    "usage": "/kang [pack_number] [emoji]",
+    "description": "Reply to supported sticker or image media to add it to your pack.",
+    "example": "/kang 2 😀"
+  },
+  "Emilia.modules.stickers.unkang": {
+    "usage": "/unkang",
+    "description": "Reply to a sticker from your pack to remove it.",
+    "example": "/unkang"
+  },
+  "Emilia.modules.stickers.pck_kang__": {
+    "usage": "/pkang [pack_title]",
+    "description": "Reply to a sticker in a pack to copy that pack.",
+    "example": "/pkang My stickers"
+  },
+  "Emilia.modules.topics.list_topics": {
+    "usage": "/topics",
+    "description": "List open topics with close and delete buttons.",
+    "example": "/topics"
+  },
+  "Emilia.modules.topics.create_topic": {
+    "usage": "/newtopic <name>",
+    "description": "Create a topic.",
+    "example": "/newtopic Games"
+  },
+  "Emilia.modules.topics.rename_topic": {
+    "usage": "/renametopic <name> [| topic_id]",
+    "description": "Rename the current topic, or select a topic when outside one.",
+    "example": "/renametopic Games"
+  },
+  "Emilia.modules.topics.open_topic": {
+    "usage": "/opentopic [topic_id]",
+    "description": "Reopen the current topic or choose a closed topic.",
+    "example": "/opentopic"
+  },
+  "Emilia.modules.topics.close_topic": {
+    "usage": "/closetopic [topic_id]",
+    "description": "Close the current topic or choose a topic.",
+    "example": "/closetopic"
+  },
+  "Emilia.modules.topics.delete_topic": {
+    "usage": "/deletetopic [topic_id]",
+    "description": "Delete the current topic or choose a topic.",
+    "example": "/deletetopic"
+  },
+  "Emilia.modules.telegraph._": {
+    "usage": "/tgm",
+    "description": "Reply to media to upload it and receive a link.",
+    "example": "/tgm"
+  },
+  "Emilia.modules.zip.zip_command": {
+    "usage": "/zip",
+    "description": "Reply to a file to compress it into a ZIP archive.",
+    "example": "/zip"
+  },
+  "Emilia.modules.zip.unzip_command": {
+    "usage": "/unzip",
+    "description": "Reply to a ZIP archive to extract its files.",
+    "example": "/unzip"
+  },
+  "Emilia.modules.music.play.play_command": {
+    "usage": "/play [query or link]",
+    "description": "Play audio; provide a search query or link, or reply to text, audio, voice, or video.",
+    "example": "/play Never Gonna Give You Up"
+  },
+  "Emilia.modules.music.play.now_cmd": {
+    "usage": "/now",
+    "description": "Show the current track and playback controls.",
+    "example": "/now"
+  },
+  "Emilia.modules.music.play.queue_cmd": {
+    "usage": "/queue",
+    "description": "List queued tracks.",
+    "example": "/queue"
+  },
+  "Emilia.modules.lyrics.lyrics": {
+    "usage": "/lyrics <song>",
+    "description": "Find lyrics for a song.",
+    "example": "/lyrics Never Gonna Give You Up"
+  },
+  "Emilia.modules.music.play.pause_cmd_msg": {
+    "usage": "/pause",
+    "description": "Pause playback.",
+    "example": "/pause"
+  },
+  "Emilia.modules.music.play.resume_cmd_msg": {
+    "usage": "/resume",
+    "description": "Resume playback.",
+    "example": "/resume"
+  },
+  "Emilia.modules.music.play.skip_cmd_msg": {
+    "usage": "/skip",
+    "description": "Skip the current track.",
+    "example": "/skip"
+  },
+  "Emilia.modules.music.play.end_cmd_msg": {
+    "usage": "/end",
+    "description": "Stop playback and clear the queue.",
+    "example": "/end"
+  },
+  "Emilia.modules.music.play.remove_cmd": {
+    "usage": "/remove <position>",
+    "description": "Remove a track at its position in /queue.",
+    "example": "/remove 2"
+  },
+  "Emilia.modules.music.play.clear_cmd": {
+    "usage": "/clearqueue",
+    "description": "Empty the upcoming queue.",
+    "example": "/clearqueue"
+  },
+  "Emilia.modules.music.play.loop_cmd": {
+    "usage": "/loop <off|one|all>",
+    "description": "Choose whether to repeat the current track or queue.",
+    "example": "/loop one"
+  },
+  "Emilia.modules.music.play.shuffle_cmd": {
+    "usage": "/shuffle <on|off>",
+    "description": "Enable or disable queue shuffling.",
+    "example": "/shuffle on"
+  },
+  "Emilia.modules.music.play.autoplay_cmd_msg": {
+    "usage": "/autoplay [on|off]",
+    "description": "Show or change recommendations when the queue ends.",
+    "example": "/autoplay on"
+  },
+  "Emilia.modules.music.play.playmenu_cmd": {
+    "usage": "/playmenu [on|off]",
+    "description": "Show or change the search-result selection menu.",
+    "example": "/playmenu on"
+  },
+  "Emilia.modules.music.playlist.commands.playlist_command": {
+    "usage": "/playlist [link or ID]",
+    "description": "Open your library, or load a playlist into a group voice chat.",
+    "example": "/playlist"
+  },
+  "Emilia.modules.music.playlist.commands.cancel_pending_cmd": {
+    "usage": "/cancel",
+    "description": "Cancel a pending playlist input prompt.",
+    "example": "/cancel"
+  },
+  "Emilia.modules.clone.clone_bot": {
+    "usage": "/clone <token>",
+    "description": "Register and start your bot.",
+    "example": "/clone YOUR_BOT_TOKEN"
+  },
+  "Emilia.modules.clone.mybots": {
+    "usage": "/mybots",
+    "description": "View, restart, or delete your clones.",
+    "example": "/mybots"
+  },
+  "Emilia.modules.clone.delete_cloned": {
+    "usage": "/deleteclone",
+    "description": "Choose one of your clones to delete.",
+    "example": "/deleteclone"
+  },
+  "Emilia.modules.clone.set_startpic": {
+    "usage": "/setstartpic [image_url]",
+    "description": "Set the start picture by URL or replied photo. Only the clone owner may use it.",
+    "example": "/setstartpic https://example.com/photo.png"
+  },
+  "Emilia.modules.clone.broadcast": {
+    "usage": "/broadcast <-all|-users|-chats>",
+    "description": "Reply to content to broadcast it. Only the clone owner may use it.",
+    "example": "/broadcast -users"
+  },
+  "Emilia.modules.clone.clone_stats": {
+    "usage": "/clonestats",
+    "description": "Show clone user and group totals. Only the clone owner may use it.",
+    "example": "/clonestats"
+  },
+  "Emilia.modules.chatbot.reset_conversation": {
+    "usage": "/reset",
+    "description": "Clear your saved conversation context; available through the main bot, @elf_robot.",
+    "example": "/reset"
+  },
+  "Emilia.modules.chatbot.chatbotcheck": {
+    "usage": "/chatbot <on|off>",
+    "description": "Enable or disable conversational replies in the group; available through the main bot, @elf_robot.",
+    "example": "/chatbot on"
+  },
+  "Emilia.modules.requests.req_cmd": {
+    "usage": "/req [query]",
+    "description": "Search or create a request; provide a query or reply to text or a caption.",
+    "example": "/req One Piece"
+  },
+  "Emilia.modules.requests.req_hashtag": {
+    "usage": "#req [query]",
+    "description": "Request using a hashtag or replied title.",
+    "example": "#req One Piece"
+  },
+  "Emilia.modules.requests.my_reqs_cmd": {
+    "usage": "/reqs",
+    "description": "List your requests.",
+    "example": "/reqs"
+  },
+  "Emilia.modules.requests.req_status_cmd": {
+    "usage": "/reqstatus <id>",
+    "description": "Check a request's status.",
+    "example": "/reqstatus REQUEST_ID"
+  },
+  "Emilia.modules.requests.set_req_cmd": {
+    "usage": "/setreq <channel>",
+    "description": "Set the request destination by -100 ID or username.",
+    "example": "/setreq @requestchannel"
+  },
+  "Emilia.modules.requests.unset_req_cmd": {
+    "usage": "/unsetreq",
+    "description": "Remove the request destination.",
+    "example": "/unsetreq"
+  },
+  "Emilia.modules.requests.add_channel_cmd": {
+    "usage": "/addchannel <channel>",
+    "description": "Add a content channel to search.",
+    "example": "/addchannel @contentchannel"
+  },
+  "Emilia.modules.requests.rm_channel_cmd": {
+    "usage": "/rmchannel <channel>",
+    "description": "Remove a content channel.",
+    "example": "/rmchannel @contentchannel"
+  },
+  "Emilia.modules.requests.channels_cmd": {
+    "usage": "/channels",
+    "description": "Show content channels and request settings.",
+    "example": "/channels"
+  },
+  "Emilia.modules.requests.req_mode_cmd": {
+    "usage": "/reqmode <on|off>",
+    "description": "Enable or disable requests.",
+    "example": "/reqmode on"
+  },
+  "Emilia.modules.requests.req_limit_cmd": {
+    "usage": "/reqlimit [number|off]",
+    "description": "Show or set a daily limit; off or 0 allows unlimited requests.",
+    "example": "/reqlimit 5"
+  },
+  "Emilia.modules.requests.req_done_cmd": {
+    "usage": "/reqdone <id> [post_link]",
+    "description": "Mark a request fulfilled and notify subscribers; a replied media post can supply the link.",
+    "example": "/reqdone REQUEST_ID https://t.me/contentchannel/123"
+  },
+  "Emilia.modules.requests.req_reject_cmd": {
+    "usage": "/reqreject <id> [reason]",
+    "description": "Reject a request and notify subscribers.",
+    "example": "/reqreject REQUEST_ID Unavailable"
+  },
+  "Emilia.modules.sfw._register_nekos.<locals>.handler": {
+    "usage": "/{command}",
+    "description": "Send an anime image or action GIF; reply to a member to include them.",
+    "example": "/{command}"
+  },
+  "Emilia.modules.devstats.devstats": {
+    "usage": "/devstats",
+    "description": "Show deployment metrics.",
+    "example": "/devstats"
+  },
+  "Emilia.modules.clone.stats_": {
+    "usage": "/stats",
+    "description": "Show deployment user and group totals.",
+    "example": "/stats"
+  },
+  "Emilia.modules.clone.clone_status": {
+    "usage": "/clonestatus",
+    "description": "List hosted clone states.",
+    "example": "/clonestatus"
+  },
+  "Emilia.modules.clone.clone_payments_list": {
+    "usage": "/clonepayments",
+    "description": "List recent clone payments on the main bot.",
+    "example": "/clonepayments"
+  },
+  "Emilia.modules.clone.refund_star": {
+    "usage": "/refundstar <payment_id>",
+    "description": "Refund a recorded clone payment and remove its slot grant on the main bot.",
+    "example": "/refundstar PAYMENT_ID"
+  },
+  "Emilia.modules.anime.bot.anime_stats": {
+    "usage": "/anistats",
+    "description": "Show anime module statistics.",
+    "example": "/anistats"
+  },
+  "Emilia.modules.music.playlist.commands.plreports_cmd": {
+    "usage": "/plreports",
+    "description": "List open playlist reports.",
+    "example": "/plreports"
+  },
+  "Emilia.modules.music.playlist.commands.plban_cmd": {
+    "usage": "/plban <playlist_id>",
+    "description": "Ban a playlist and resolve its reports.",
+    "example": "/plban PLAYLIST_ID"
+  },
+  "Emilia.modules.music.playlist.commands.plunban_cmd": {
+    "usage": "/plunban <playlist_id>",
+    "description": "Remove a playlist ban.",
+    "example": "/plunban PLAYLIST_ID"
+  },
+  "Emilia.modules.eval.exec_command": {
+    "usage": "/exec <shell command>",
+    "description": "Execute a shell command.",
+    "example": "/exec pwd"
+  },
+  "Emilia.modules.eval.eval_command": {
+    "usage": "/eval <Python code>",
+    "description": "Evaluate Python with message snapshots.",
+    "example": "/eval print(1 + 1)"
+  },
+  "Emilia.modules.peval.peval_handler": {
+    "usage": "/prun <Python code>",
+    "description": "Evaluate Python with message snapshots.",
+    "example": "/prun print(1 + 1)"
+  },
+  "Emilia.modules.eval.restart_command": {
+    "usage": "/restart",
+    "description": "Restart the deployment process.",
+    "example": "/restart"
+  },
+  "Emilia.modules.eval.logs_command": {
+    "usage": "/logs",
+    "description": "Read the recent deployment log.",
+    "example": "/logs"
+  },
+  "Emilia.modules.anime.bot.db_cleanup": {
+    "usage": "/anidbcleanup",
+    "description": "Run anime database cleanup.",
+    "example": "/anidbcleanup"
+  },
+  "Emilia.modules.anime.bot.anime_eval": {
+    "usage": "/anieval <Python code>",
+    "description": "Evaluate Python with message snapshots.",
+    "example": "/anieval print(1 + 1)"
+  },
+  "Emilia.modules.anime.bot.terminal": {
+    "usage": "/term <shell command>",
+    "description": "Execute a shell command.",
+    "example": "/term pwd"
+  },
+  "Emilia.modules.meme.cursed": {
+    "usage": "/cursed",
+    "description": "Cursed memes",
+    "example": "/cursed"
+  },
+  "Emilia.modules.meme.dank": {
+    "usage": "/dank",
+    "description": "Provides dank memes.",
+    "example": "/dank"
+  },
+  "Emilia.modules.meme.fbi": {
+    "usage": "/fbi",
+    "description": "FBI Memes (pols aagoi pols)",
+    "example": "/fbi"
+  },
+  "Emilia.modules.meme.hmeme": {
+    "usage": "/hmeme",
+    "description": "Horni Memes",
+    "example": "/hmeme"
+  },
+  "Emilia.modules.meme.hornyjail": {
+    "usage": "/hornyjail",
+    "description": "Senpai Arrested :p",
+    "example": "/hornyjail"
+  },
+  "Emilia.modules.meme.lolimeme": {
+    "usage": "/lolimeme",
+    "description": "Loli Memes (fbi locating)",
+    "example": "/lolimeme"
+  },
+  "Emilia.modules.meme.memes": {
+    "usage": "/memes",
+    "description": "General command for memes.",
+    "example": "/memes"
+  },
+  "Emilia.modules.meme.pewds": {
+    "usage": "/pewds",
+    "description": "Pewdiepie Collection",
+    "example": "/pewds"
+  },
+  "Emilia.modules.meme.shitposting": {
+    "usage": "/shitposting",
+    "description": "Random shitposts OwO",
+    "example": "/shitposting"
+  },
+  "Emilia.modules.meme.teen": {
+    "usage": "/teen",
+    "description": "Teenagers meme",
+    "example": "/teen"
+  },
+  "Emilia.modules.meme.wmeme": {
+    "usage": "/wmeme",
+    "description": "Will give you wholesome memes.",
+    "example": "/wmeme"
+  },
+  "Emilia.modules.nsfw._register_nsfw.<locals>.handler": {
+    "usage": "/{command}",
+    "description": "Send an image from the requested adult category when NSFW mode is enabled.",
+    "example": "/{command}"
+  },
+  "Emilia.modules.nsfw.add_nsfw": {
+    "usage": "/addnsfw",
+    "description": "To Activate NSFW commands. (for groups)",
+    "example": "/addnsfw"
+  },
+  "Emilia.modules.nsfw.rem_nsfw": {
+    "usage": "/rmnsfw",
+    "description": "To Deactivate NSFW commands. (for groups)",
+    "example": "/rmnsfw"
+  },
+  "Emilia.modules.help.help_redirect": {
+    "usage": "/start help_<module>",
+    "description": "Open a help page from a bot link.",
+    "example": "/start help_notes"
+  },
+  "Emilia.modules.afk.afk": {
+    "usage": "/afk [reason]",
+    "description": "Mark yourself away on the main bot; another message clears your status.",
+    "example": "/afk Lunch"
+  },
+  "Emilia.modules.mute.mute.dmute": {
+    "usage": "/dmute [user] [reason]",
+    "description": "Reply in the supergroup to mute a user and delete their message.",
+    "example": "/dmute Spam"
+  },
+  "Emilia.modules.warnings.add_warn.dwarn": {
+    "usage": "/dwarn [user] [reason]",
+    "description": "Reply in the group to warn a user and delete their message.",
+    "example": "/dwarn Advertising"
+  }
+}

@@ -1,0 +1,24 @@
+"developer commands, listed here for reference, do not show them in bot's menu"
+
+## Developer commands
+
+- `/devstats`: Show deployment metrics.
+- `/stats`: Show user and group totals.
+- `/clonestatus`: List hosted clone states.
+- `/clonepayments`: List recent clone payments on the main bot.
+- `/refundstar <payment_id>`: Refund a recorded clone payment and remove its slot grant on the main bot.
+- `/anistats`: Show anime module statistics.
+- `/plreports`: List open playlist reports.
+- `/plban <playlist_id>`: Ban a playlist and resolve its reports.
+- `/plunban <playlist_id>`: Remove a playlist ban.
+
+## Owner commands
+
+- `/exec <shell command>`: Execute a shell command.
+- `/eval <Python code>`: Evaluate Python with message snapshots.
+- `/prun <Python code>`: Evaluate Python with message snapshots. Alias: `/peval`.
+- `/restart`: Restart the deployment process.
+- `/logs`: Read the recent deployment log.
+- `/anidbcleanup`: Run anime database cleanup.
+- `/anieval <Python code>`: Evaluate Python with message snapshots.
+- `/term <shell command>`: Execute a shell command.
