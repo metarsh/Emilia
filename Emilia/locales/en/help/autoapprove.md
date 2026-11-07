@@ -5,21 +5,19 @@ children = ["captcha"]
 
 # Join requests
 
-Process Telegram join requests.
+Automatically process Telegram join requests.
 
 ## Admin commands
 
-- `/autoapprove [mode]`: Show or choose a join-request mode.
+- `/autoapprove [mode]`: View or set mode to `off`, `on`, `antispam`, `rules`, or `captcha`.
 
 ## Modes
 
-| Mode | Behavior |
-| --- | --- |
-| `off` | Leave requests for admins; default. |
-| `on` | Approve every request. |
-| `antispam` | Check federation bans and antispam system before approval. |
-| `rules` | Run antispam checks, then requires user to accept the rules. |
-| `captcha` | Run antispam checks, then requires user to solve private captcha. |
+- `off`: Leave requests for admins. Default.
+- `on`: Auto-approve all join requests.
+- `antispam`: Check antispam and fed bans before approving.
+- `rules`: Check bans, then require agreeing to rules in PM.
+- `captcha`: Check bans, then require solving captcha in PM.
 
 ## Example
 

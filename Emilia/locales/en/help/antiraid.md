@@ -4,18 +4,19 @@ title = "Antiraid"
 
 # Antiraid
 
-Temporarily ban new members when they arrive during a raid.
+Temporarily ban new members who join during a raid.
 
 ## Admin commands
 
 - `/antiraid`: Toggle raid protection immediately.
-- `/raidtime <hours>`: Set how long protection stays active; use a positive integer.
-- `/raidactiontime <hours>`: Set how long new arrivals are banned; use a positive integer.
-- `/autoantiraid <threshold|off>`: Enable protection when this many members join within a minute, or disable automatic activation; thresholds accept 1–1000.
+- `/raidtime <hours>`: Set protection duration in hours.
+- `/raidactiontime <hours>`: Set newcomer ban duration in hours.
+- `/autoantiraid <threshold|off>`: Auto-enable when join rate reaches 1–1000 members per minute, or off.
 
-## Defaults
+## Usage notes
 
-Protection lasts 6 hours; new arrivals are banned for 1 hour. Once raid settings exist, automatic activation defaults to 20 joins per minute. Configure it explicitly with `/autoantiraid`.
+- Defaults: protection lasts 6 hours; newcomers banned 1 hour.
+- Automatic raid trigger defaults to 20 joins per minute once configured.
 
 ## Example
 

@@ -4,7 +4,7 @@ title = "Chatbot"
 
 # Chatbot
 
-Chat with the bot when conversational replies are enabled.
+Chat with the bot via conversational AI.
 
 ## User commands
 
@@ -12,4 +12,4 @@ Chat with the bot when conversational replies are enabled.
 
 ## Admin commands
 
-- `/chatbot <on|off>`: Enable or disable conversational replies in the group.
+- `/chatbot <on|off>`: Toggle conversational replies in the group.

@@ -4,23 +4,25 @@ title = "NSFW"
 
 # NSFW
 
-Sometimes a lil bit of horni-stuff is fine, check this module for fine stuff!
+Adult and NSFW media commands for permitted groups.
 
-**Admins Only**:
-- `/addnsfw`: To Activate NSFW commands. (for groups)
-- `/rmnsfw`: To Deactivate NSFW commands. (for groups)
+## Admin commands
 
-**Following are the NSFW commands**:
-- /nsfwneko (or /nneko)
-- /blowjob (or /bj)
-- /anal
-- /cum
-- /fuck
-- /pussylick
-- /solo
-- /solomale
-- /threesomefff
-- /threesomeffm
-- /threesomemmf
-- /yaoi
-- /yuri
+- `/addnsfw`: Enable NSFW commands in group.
+- `/rmnsfw`: Disable NSFW commands in group.
+
+## Available commands
+
+- `/nsfwneko`, alias `/nneko`
+- `/blowjob`, alias `/bj`
+- `/anal`
+- `/cum`
+- `/fuck`
+- `/pussylick`
+- `/solo`
+- `/solomale`
+- `/threesomefff`
+- `/threesomeffm`
+- `/threesomemmf`
+- `/yaoi`
+- `/yuri`

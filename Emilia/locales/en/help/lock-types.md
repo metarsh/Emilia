@@ -5,46 +5,44 @@ hidden = true
 
 # Lock types
 
-Use these names with `/lock` and `/unlock`. These won't work on admins or approved users.
+Supported content lock types for `/lock` and `/unlock`. Admins and approved users are immune.
 
-## Reference
+## Supported lock types
 
-| Type | Content |
-| --- | --- |
-| `all` | All messages. |
-| `album` | Photos or documents sent as albums. |
-| `audio` | Audio media messages. |
-| `bot` | Members adding bots. |
-| `button` | Messages which contain buttons. |
-| `command` | Messages which start with a Telegram command (eg: `/start`). |
-| `comment` | Messages sent by users that are commenting in the linked channel, yet aren't members of the group. |
-| `contact` | Contact media messages. |
-| `document` | Document media messages. This includes photos/videos sent uncompressed. |
-| `email` | Messages which contain emails (as defined by Telegram). |
-| `emojigame` | Telegram mini games like dice, bowling, or darts. |
-| `forward` | Forwarded messages. |
-| `forwardbot` | Messages where the original sender is a bot. |
-| `forwardchannel` | Messages where the original sender is a channel. |
-| `forwarduser` | Messages where the original sender is a user. |
-| `game` | Bot API game messages. |
-| `gif` | GIF media messages. |
-| `inline` | Messages sent through inline bots, like @gif or @pic |
-| `invitelink` | Messages containing private group or channel invite links, including `t.me/+...` and `t.me/joinchat/...`. |
-| `location` | Location messages. |
-| `phone` | Messages which contain phone numbers (as defined by Telegram). |
-| `photo` | Messages containing a photo. |
-| `poll` | Poll messages. |
-| `rtl` | Messages which contain right-to-left characters. For example, Arabic, Farsi, Hebrew, etc. |
-| `sticker` | All sticker types. |
-| `text` | Messages which contain text, including media captions. |
-| `url` | Messages which contain website links (as defined by Telegram) |
-| `video` | Video media messages. |
-| `videonote` | Video-note media messages. |
-| `voice` | Voice messages. |
-| `reaction` | Reactions added to messages. Non-admin, non-approved user reactions are removed. |
-| `outsidereaction` | Reactions from users who are not members of the group. |
-| `guestbot` | Messages sent through Telegram guest bots. Allowlist trusted guest bots if needed. |
-| `emojicustom` | Messages containing custom emoji; allow trusted packs with `/allowlist`. |
-| `spoiler` | Messages containing spoiler formatting (often used to hide spam links). |
-| `format` | Messages containing markdown formatting like bold, italic, underline, strikethrough, or blockquote. |
-| `code` | Messages containing monospace/code formatting. |
+- `all`: All messages.
+- `album`: Photos or documents sent as albums.
+- `audio`: Audio media files.
+- `bot`: Prevents non-admins from adding bots.
+- `button`: Messages containing inline URL buttons.
+- `command`: Messages starting with a bot command like `/start`.
+- `comment`: Comments from users who have not joined the group.
+- `contact`: Shared Telegram contacts.
+- `document`: File documents and uncompressed media.
+- `email`: Messages containing email addresses.
+- `emojigame`: Interactive Telegram dice and emoji games.
+- `forward`: Any forwarded message.
+- `forwardbot`: Forwards from bots.
+- `forwardchannel`: Forwards from channels.
+- `forwarduser`: Forwards from users.
+- `game`: Telegram Bot API games.
+- `gif`: GIF animations.
+- `inline`: Messages sent via inline bots like @gif.
+- `invitelink`: Telegram group or channel invite links.
+- `location`: Shared location messages.
+- `phone`: Messages containing phone numbers.
+- `photo`: Photo media.
+- `poll`: Telegram polls.
+- `rtl`: Right-to-left text like Arabic, Persian, or Hebrew.
+- `sticker`: All sticker types.
+- `text`: Regular text messages and captions.
+- `url`: Web URLs and links.
+- `video`: Video files.
+- `videonote`: Round video notes.
+- `voice`: Voice notes.
+- `reaction`: Message emoji reactions.
+- `outsidereaction`: Reactions from non-group members.
+- `guestbot`: Messages sent via Telegram guest bots.
+- `emojicustom`: Custom emoji. Trust packs with `/allowlist`.
+- `spoiler`: Text with spoiler formatting.
+- `format`: Formatted markdown text like bold, italic, or strikethrough.
+- `code`: Monospace and code formatting.

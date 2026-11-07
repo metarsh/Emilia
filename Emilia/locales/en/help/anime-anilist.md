@@ -6,21 +6,21 @@ anime = true
 
 # AniList searches
 
-Search AniList with a title, name, or supported AniList ID.
+Search AniList by title, name, or ID.
 
 ## User commands
 
-- `/anime <query>`: Show an anime's information.
+- `/anime <query>`: View anime details.
 - `/anilist <query>`: Browse matching anime.
 - `/manga <query>`: Browse matching manga.
 - `/character <query>`: Browse matching characters.
 - `/studio <query>`: Browse matching studios.
-- `/airing <query>`: Show an anime's airing information.
+- `/airing <query>`: View airing status and schedule.
 - `/user <username>`: Look up an AniList user.
-- `/top [genre or tag]`: Browse top anime, optionally filtered by genre or tag.
-- `/gettags [nsfw]`: List tags.
+- `/top [genre or tag]`: Browse top anime, optionally filtered.
+- `/gettags [nsfw]`: List AniList tags.
 - `/getgenres`: List available genres.
-- `/browse`: Browse popular, trending, and upcoming anime.
+- `/browse`: Browse popular, trending, and upcoming titles.
 
 ## Example
 

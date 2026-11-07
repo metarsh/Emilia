@@ -5,22 +5,22 @@ children = ["anti-channel"]
 
 # Pins
 
-Manage pinned messages.
+Manage group pinned messages.
 
 ## User commands
 
-- `/pinned`: Open the current pinned message.
+- `/pinned`: View the latest pinned message in group.
 
 ## Admin commands
 
-- `/pin [loud|notify]`: Reply to a message to pin it; loud or notify alerts members.
-- `/unpin`: Unpin the current pin, or the message you reply to.
-- `/unpinall`: Remove every pin after confirmation.
-- `/pininfo`: Explain linked-channel pin compatibility.
+- `/pin [loud|notify]`: Reply to pin a message. Use `loud` or `notify` to alert members.
+- `/unpin`: Unpin current or replied pinned message.
+- `/unpinall`: Remove all pins after confirmation.
+- `/pininfo`: View linked-channel pin compatibility info.
 
 ## Example
 
-Reply to the message to pin without a notification:
+Reply to a message:
 
 ```
 /pin

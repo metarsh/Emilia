@@ -4,17 +4,19 @@ title = "Logging"
 
 # Logging
 
-Record bot actions in a channel. The bot and the administrator choosing the destination must have permission to post there.
+Record moderation and bot actions in a designated channel.
 
 ## Commands
 
-- `/logchannel`: Show the current destination.
-- `/unsetlog`: Remove the destination.
-- `/setlog [channel ID or @username]`: The group owner sets the destination in the group or a connected PM. You may also reply to a forwarded channel post; keep its channel attribution visible.
+- `/logchannel`: Show current log channel.
+- `/unsetlog`: Unlink and disable log channel.
+- `/setlog [channel ID or @username]`: Set log destination. Group owner only, run in group or connected PM, or reply to a forwarded channel post.
+
+## Usage notes
+
+- Both you and the bot must have admin posting rights in the destination channel.
 
 ## Example
-
-Add the bot to your log channel as an administrator, then send this in the group or a connected PM as group owner:
 
 ```
 /setlog @my_log_channel

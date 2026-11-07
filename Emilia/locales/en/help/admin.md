@@ -9,29 +9,28 @@ Manage administrators and group settings.
 
 ## User commands
 
-- `/admins`: List the group admins. Alias: `/adminlist`.
-- `/admincache`: Refresh the group admin cache. Use when you think admin commands are not working properly.
+- `/admins`: List group admins. Alias: `/adminlist`.
+- `/admincache`: Refresh admin cache.
 
 ## Admin commands
 
-- `/promote [user] [title]`: Promote a user with limited admin rights.
-- `/fullpromote [user] [title]`: Promote a user with all available admin rights.
-- `/demote [user]`: Remove user from admin.
-- `/title [user] <title>`: Set an admin's custom title.
-- `/forcecachechat`: Refresh the stored group information.
-- `/setgpic`: Reply to a photo or image document to set the group picture.
-- `/setgtitle <title>`: Set the group title.
-- `/setdesc <description>`: Set the group description.
-- `/setsticker`: Reply to a sticker from a pack to set a supergroup's sticker pack.
-- `/slowmode [seconds]`: Show or change a supergroup's slow mode.
-- `/anonadmin [on|off]`: Allow anonymous group admins to perform ordinary admin actions without verification. Owner and named-account actions still require verification.
+- `/promote [user] [title]`: Promote with limited rights.
+- `/fullpromote [user] [title]`: Promote with full rights.
+- `/demote [user]`: Demote an admin.
+- `/title [user] <title>`: Set custom admin title.
+- `/forcecachechat`: Refresh cached group info.
+- `/setgpic`: Set group photo by reply.
+- `/setgtitle <title>`: Set group title.
+- `/setdesc <description>`: Set group description.
+- `/setsticker`: Set group sticker pack by reply.
+- `/slowmode [seconds]`: View or set slow mode.
+- `/anonadmin [on|off]`: Toggle anonymous admin verification. Owner actions always require verification.
 
 ## Usage notes
 
-For user commands above, reply to the target or supply a username, mention, or numeric ID. Demoting an admin who can promote others requires the group owner.
-
-Administrator management, `/admins`, `/admincache`, `/setgpic`, `/setgtitle`, `/setdesc`, `/setsticker`, `/slowmode` and `/anonadmin` support connected private chats. For `/setgpic` and `/setsticker`, reply to the photo or sticker in your private chat. Group message deletion and purge require a reply in the original group.
-
-Slow mode accepts `0`, `5`, `10`, `30`, `60`, `300`, `900`, or `3600` seconds; `0` disables it.
-
-When anonymous bypass is off, tap the verification button using an account with the required group rights. A channel posting into the group gains no group-admin rights.
+- Target users by reply, username, mention, or ID.
+- Only the group owner can demote admins who can promote others.
+- Connected PM supports admin commands, `/admins`, `/admincache`, `/setgpic`, `/setgtitle`, `/setdesc`, `/setsticker`, `/slowmode`, and `/anonadmin`.
+- `/setgpic` and `/setsticker` work via PM reply. Purges and deleting replied messages require the group chat.
+- Slow mode values: `0` to disable, or `5`, `10`, `30`, `60`, `300`, `900`, `3600` seconds.
+- Without anon bypass, verify with an account holding required rights. Linked channels gain no admin rights.

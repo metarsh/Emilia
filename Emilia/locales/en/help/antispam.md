@@ -4,15 +4,15 @@ title = "Anti-spam"
 
 # Anti-spam
 
-Remove users listed by our antispam service.
+Automatically remove spammers blacklisted by the global antispam service.
 
 ## Admin commands
 
-- `/antispam <on|off>`: Enable or disable antispam protection.
+- `/antispam <on|off>`: Toggle global antispam protection.
 
-## Appeals
+## Usage notes
 
-Contact {support_contact} to appeal a ban or report a spammer.
+- Contact {support_contact} to appeal a ban or report spam.
 
 ## Example
 

@@ -4,17 +4,17 @@ title = "Group tools"
 
 # Group tools
 
-Use group counters, member mentions, and command cleanup.
+Group counters, member mentions, and command cleanup.
 
 ## User commands
 
-- `/count`: Shows the number of messages group has ever sent in total. Alias: `/gstat`.
+- `/count`: View total messages sent in group. Alias: `/gstat`.
 
 ## Admin commands
 
-- `/all [text]`: Mention group members with an optional message. The bot also accepts @all.
-- `/cleancommand [on|off]`: Show or change automatic command deletion. Aliases: `/cleancommands`, `/cleancmd`, `/cleanblue`.
-- `/nocleancommand`: Disable automatic command deletion. Alias: `/keepcommand`.
+- `/all [text]`: Mention all members with an optional message. Also triggers via `@all`.
+- `/cleancommand [on|off]`: Toggle automatic command deletion. Aliases: `/cleancommands`, `/cleancmd`, `/cleanblue`.
+- `/nocleancommand`: Disable command deletion. Alias: `/keepcommand`.
 
 ## Example
 

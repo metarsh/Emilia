@@ -4,19 +4,19 @@ title = "Reports"
 
 # Reports
 
-Ask admins to review a group message.
+Alert group admins to review problematic messages.
 
 ## User commands
 
-- `/report`: Reply to a message to report it. You can also mention @admin or @admins in a reply.
+- `/report`: Reply to a message to report it to admins. Also triggers by replying with `@admin` or `@admins`.
 
 ## Admin commands
 
-- `/reports [on|off]`: Show or change whether members may report messages.
+- `/reports [on|off]`: Toggle user reporting in group.
 
 ## Example
 
-Reply to the message that needs review:
+Reply to a message:
 
 ```
 /report

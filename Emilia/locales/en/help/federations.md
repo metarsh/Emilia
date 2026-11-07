@@ -5,14 +5,14 @@ children = ["federation-users", "federation-admin", "federation-owner"]
 
 # Federations
 
-Share bans across groups that join a federation. Choose a guide below for member queries, ban administration, or federation ownership.
+Share ban lists across multiple groups through a common federation.
 
 ## Group admin commands
 
-- `/chatfed`: Show the group's federation.
-- `/quietfed`: Toggle local federation ban messages.
+- `/chatfed`: View the group's connected federation.
+- `/quietfed`: Toggle federation ban alerts in chat.
 
 ## Group owner commands
 
-- `/joinfed <federation_id>`: Join a federation.
-- `/leavefed`: Leave the group's federation.
+- `/joinfed <federation_id>`: Link group to a federation.
+- `/leavefed`: Disconnect group from its federation.

@@ -4,30 +4,28 @@ title = "Quotes"
 
 # Quotes
 
-Turn replied messages into a quote sticker or image, then browse saved group quotes.
+Generate quote stickers or images from replied messages and browse quotes.
 
 ## User commands
 
-- `/q [count] [color] [p] [r]`: Reply to the first message to quote. Use p for a PNG document or r to include its reply.
-- `/qtop`: Open an inline browser of saved quotes by rating; group members can select a quote to send.
-- `/qrand`: Send a random saved quote from the current group.
+- `/q [count] [color] [p] [r]`: Reply to create quote sticker. Use `p` for PNG or `r` to include reply context.
+- `/qtop`: Browse top-rated group quotes.
+- `/qrand`: Send a random saved quote from this group.
 
 ## Admin commands
 
-- `/qrate [on|off]`: Show or change rating buttons.
+- `/qrate [on|off]`: Toggle rating buttons on quotes.
 
 ## Options
 
-| Option | Value |
-| --- | --- |
-| `count` | 1–25 consecutive messages; defaults to 1. `/q 5` requests 5. |
-| `color` | A CSS color name, `#rgb`, or `#rrggbb`. |
-| `p` | Send a PNG document. |
-| `r` | Include the quoted message's reply in a small bubble when quoting one message. |
+- `count`: 1–25 consecutive messages, default 1.
+- `color`: CSS color name, `#rgb`, or `#rrggbb`.
+- `p`: Send PNG document instead of sticker.
+- `r`: Include replied message bubble.
 
 ## Example
 
-Reply to the first message to quote:
+Reply to a message:
 
 ```
 /q 5 #ff0000 p

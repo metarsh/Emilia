@@ -4,16 +4,16 @@ title = "Clones"
 
 # Clones
 
-Host a bot created through @BotFather
+Host your own custom clone bot created with @BotFather.
 
-## Main bot in private
+## Main bot commands in PM
 
-- `/clone <token>`: Register and start your bot.
+- `/clone <token>`: Register and start your clone bot.
 - `/mybots`: View, restart, or delete your clones.
-- `/deleteclone`: Choose one of your clones to delete.
+- `/deleteclone`: Select a clone bot to delete.
 
-## Inside your clone
+## Clone owner commands in clone
 
-- `/setstartpic [image_url]`: Set the start picture by URL or replied photo. Only the clone owner may use it.
-- `/broadcast <-all|-users|-chats>`: Reply to content to broadcast it. Only the clone owner may use it.
-- `/clonestats`: Show clone user and group totals. Only the clone owner may use it.
+- `/setstartpic [image_url]`: Set custom `/start` picture via URL or replied image.
+- `/broadcast <-all|-users|-chats>`: Broadcast replied message across clone chats or users.
+- `/clonestats`: View total users and groups in your clone.

@@ -5,9 +5,9 @@ hidden = true
 
 # Note examples
 
-Save a note, retrieve it, and remove it when it is no longer needed.
+Examples for saving, retrieving, formatting, and clearing notes.
 
-## Text
+## Text note
 
 ```
 /save rules Be kind.
@@ -15,29 +15,24 @@ Save a note, retrieve it, and remove it when it is no longer needed.
 #rules
 ```
 
-## Media
+## Media note
 
-Reply to a photo, sticker, or other supported media:
+Reply to a photo, sticker, or media file:
 
 ```
 /save welcome
 ```
 
-## Delivery and access
+## Access tags
 
 ```
 /save staff Admin information. {admin}
 /save contact Contact the admins. {private}
 /save public Public information. {noprivate}
-```
-
-## Rules button
-
-```
 /save info Read the group rules. {rules}
 ```
 
-## Remove a note
+## Remove notes
 
 ```
 /clear welcome

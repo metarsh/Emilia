@@ -8,9 +8,9 @@ Control messages sent on behalf of channels.
 
 ## Admin commands
 
-- `/antichannelmode <on|off>`: Ban unwanted channel senders. Alias: `/antichannel`.
-- `/antichannelpin [on|off]`: Show or change whether linked-channel posts are automatically unpinned.
-- `/cleanlinked [on|off]`: Show or change whether linked-channel messages are deleted.
+- `/antichannelmode <on|off>`: Automatically ban channel senders. Alias: `/antichannel`.
+- `/antichannelpin [on|off]`: Toggle auto-unpinning linked-channel posts.
+- `/cleanlinked [on|off]`: Toggle auto-deleting linked-channel messages.
 
 ## Example
 

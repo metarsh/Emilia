@@ -5,13 +5,13 @@ hidden = true
 
 # Federation queries
 
-Inspect federation information and check your own ban status.
+Look up federation details and check ban statuses.
 
 ## User commands
 
-- `/fedinfo [federation_id]`: Show a federation.
-- `/fedadmins [federation_id]`: List a federation's admins.
-- `/fedstat <federation_id>`: Check your own ban status in a federation.
+- `/fedinfo [federation_id]`: Show federation details.
+- `/fedadmins [federation_id]`: List admins of a federation.
+- `/fedstat <federation_id>`: Check your personal ban status in a federation.
 - `/myfeds`: List federations where you are an admin.
 
 ## Example

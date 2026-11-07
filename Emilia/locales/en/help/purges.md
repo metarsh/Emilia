@@ -4,37 +4,30 @@ title = "Purges"
 
 # Purges
 
-Delete group messages.
+Bulk delete group messages.
 
 ## Admin commands
 
-- `/purge`: Reply to the first message to delete it and all messages through this command.
-- `/spurge`: Purge the same range but silently.
-- `/del`: Reply to a message to delete it and your command.
-- `/purgefrom`: Reply to the first message to mark a range.
-- `/purgeto`: Reply to the last message to delete the marked range, including both endpoints.
+- `/purge`: Delete all messages from replied message up to command.
+- `/spurge`: Delete the same range silently.
+- `/del`: Delete replied message and the command.
+- `/purgefrom`: Mark start message of a purge range.
+- `/purgeto`: Mark end message and delete everything in the marked range.
 
-## Example
+## Examples
 
-Reply to the first unwanted message:
-
+Single-point purge:
+Reply to first unwanted message:
 ```
 /purge
 ```
 
-<details>
-<summary>Delete a bounded range</summary>
-
-Reply to its first message:
-
+Bounded range purge:
+Reply to first message:
 ```
 /purgefrom
 ```
-
-Reply to its last message:
-
+Reply to last message:
 ```
 /purgeto
 ```
-
-</details>

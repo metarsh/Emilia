@@ -8,14 +8,12 @@ Give respect points by replying to group messages.
 
 ## Admin commands
 
-- `/karma <enable|disable>`: Enable or disable karma.
+- `/karma <enable|disable>`: Enable or disable karma tracking in group.
 
-## Voting
+## Voting replies
 
-| Vote | Reply text |
-| --- | --- |
-| Upvote | `+`, `++`, `+1`, `thx`, `tnx`, `ty`, `thank you`, `thanx`, `thanks`, `pro`, `cool`, `good`, `👍`, `nice`, `noice`, `piro` |
-| Downvote | `-`, `--`, `-1`, `👎`, `noob`, `gross`, `fuck off` |
+- Upvote triggers: `+`, `++`, `+1`, `thx`, `tnx`, `ty`, `thank you`, `thanx`, `thanks`, `pro`, `cool`, `good`, `👍`, `nice`, `noice`, `piro`
+- Downvote triggers: `-`, `--`, `-1`, `👎`, `noob`, `gross`, `fuck off`
 
 ## Example
 
