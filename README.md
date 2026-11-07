@@ -17,7 +17,7 @@ If you face any issues, feel free to contact [SpiralTechDivision](https://t.me/S
         <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="Built with Love">
     </a>
     <br>
-    <img src="https://img.shields.io/github/license/metarsh/Emilia?style=for-the-badge&logo=appveyor" alt="License">
+    <img src="https://img.shields.io/github/license/metarsh/Emilia?style=for-the-badge&logo=appveyor&v=1" alt="License">
 </p>
 
 ## Installation
