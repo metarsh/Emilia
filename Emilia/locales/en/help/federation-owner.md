@@ -5,37 +5,37 @@ hidden = true
 
 # Federation ownership
 
-Create and manage your federation.
+Create, configure, and manage your federation.
 
-## Private chat commands
+## Private commands
 
-- `/newfed <name>`: Create a federation; one per user, with a name up to 64 characters.
-- `/renamefed <name>`: Rename your federation; maximum 64 characters.
-- `/delfed`: Delete your federation after confirmation. This cannot be undone.
-- `/fednotif [on|off]`: Show or change private ban notifications.
-- `/fedreason [on|off]`: Show or change whether federation bans require reasons.
+- `/newfed <name>`: Create a federation; limit 1 per user, up to 64 chars.
+- `/renamefed <name>`: Rename your federation.
+- `/delfed`: Delete your federation permanently after confirmation.
+- `/fednotif [on|off]`: Toggle private ban notifications.
+- `/fedreason [on|off]`: Require reasons for federation bans.
 
 ## Group commands
 
-- `/fpromote [user]`: Invite a user to become a federation admin; they must accept.
-- `/fdemote [user]`: Remove a federation admin.
-- `/ftransfer [user]`: Transfer ownership to an existing federation admin after acceptance. Alias: `/fedtransfer`.
-- `/setfedlog [federation_id]`: Set this group or channel as your federation's log destination; also supports a connected private chat.
-- `/unsetfedlog`: Remove your federation's log destination from a group, channel or connected private chat.
-
-Log commands require your named federation-owner account and permission to change the selected chat's settings. The bot needs posting rights when the destination is a channel.
+- `/fpromote [user]`: Invite a user as fed admin; requires acceptance.
+- `/fdemote [user]`: Demote a federation admin.
+- `/ftransfer [user]`: Transfer federation ownership to a fed admin. Alias: `/fedtransfer`.
+- `/setfedlog [federation_id]`: Set group or channel as federation log destination.
+- `/unsetfedlog`: Remove federation log channel.
 
 ## Subscriptions and backups
 
-- `/subfed <federation_id>`: Subscribe your federation to another federation's bans.
-- `/unsubfed <federation_id>`: Stop receiving another federation's bans.
-- `/fedsubs`: List federation subscriptions.
-- `/fexport [csv|json|xml]`: Export bans; defaults to CSV. Alias: `/fedexport`.
-- `/fimport`: Reply to a CSV, JSON, or XML ban export to import it. Alias: `/fedimport`.
+- `/subfed <federation_id>`: Subscribe to another federation's bans.
+- `/unsubfed <federation_id>`: Unsubscribe from a federation.
+- `/fedsubs`: List subscribed federations.
+- `/fexport [csv|json|xml]`: Export federation bans; default CSV. Alias: `/fedexport`.
+- `/fimport`: Reply to an exported ban file to import bans. Alias: `/fedimport`.
+
+## Usage notes
+
+- Setting log channels requires owner status and posting rights in channels.
 
 ## Example
-
-Create a federation in private chat:
 
 ```
 /newfed Emilia community

@@ -5,32 +5,31 @@ hidden = true
 
 # Blocklist examples
 
-Choose triggers that match the content you want to block.
+Common blocklist triggers and examples.
 
 ## Words and phrases
 
 ```
-/addblocklist <spam> <reason>
 /addblocklist "buy now" Advertising
 /rmblocklist buy now
 ```
 
-## Patterns
+## Wildcards
 
 ```
 /addblocklist *.exe Executable files
-/addblocklist https://short.example/* Shortened links
+/addblocklist https://short.example/* Short links
 ```
 
-## Custom emoji
+## Custom emoji packs
 
-Reply to a message containing the custom emoji:
+Reply to a message with the custom emoji:
 
 ```
 /addblocklist emojipack:<>
 ```
 
-## Timed action
+## Timed punishments
 
 ```
 /blocklistmode tmute 2h

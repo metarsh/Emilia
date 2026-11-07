@@ -5,38 +5,33 @@ hidden = true
 
 # Greeting examples
 
-Compose welcome content first, then save it by reply.
+Examples for setting custom welcome and goodbye messages.
 
-## Welcome
+## Custom welcome
 
-Send `Welcome, {mention}, to {chatname}!` as a message, then reply:
+Send your message like `Welcome, {mention}, to {chatname}!` and reply to it:
 
 ```
 /setwelcome
-```
-
-Enable welcomes:
-
-```
 /welcome on
 ```
 
-## Photo welcome
+## Media welcome
 
-Reply to a photo with your welcome text in its caption:
+Reply to a photo or video with caption:
 
 ```
 /setwelcome
 ```
 
-## Goodbye
+## Custom goodbye
 
 ```
 /setgoodbye Goodbye, {first}.
 /goodbye on
 ```
 
-## Reset
+## Reset greetings
 
 ```
 /resetwelcome

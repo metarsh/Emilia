@@ -5,23 +5,23 @@ children = ["karma"]
 
 # Levels
 
-Earn XP through group activity, claim bonuses, and view rank progress. Register a profile before claiming rewards.
+Earn XP through group activity, gain ranks, and climb the leaderboard.
 
 ## User commands
 
-- `/register <name>`: Create your profile with a unique name of up to 20 characters.
-- `/rank`: Show your rank card and progress.
-- `/leaderboard`: Open the group leaderboard; use its buttons for other views.
-- `/daily`: Claim a daily XP bonus; repeated daily claims build a streak.
-- `/weekly`: Claim a weekly XP bonus after its cooldown.
-- `/rankings`: Read rank names and requirements in private.
-- `/prestige`: Reset your level at the maximum rank for a prestige badge and XP multiplier.
-- `/thanks`: Reply to another member's message to award reputation. Alias: `/rep`.
+- `/register <name>`: Create a level profile with a unique name up to 20 characters.
+- `/rank`: View rank card, level, and XP progress.
+- `/leaderboard`: Open group activity leaderboard.
+- `/daily`: Claim daily XP bonus and maintain streak.
+- `/weekly`: Claim weekly XP bonus.
+- `/rankings`: View rank progression tiers in private chat.
+- `/prestige`: Reset level at max tier for a prestige multiplier badge.
+- `/thanks`: Reply to award member reputation. Alias: `/rep`.
 
 ## Admin commands
 
-- `/level [on|off]`: Show or change whether levels are enabled.
-- `/levelset event <multiplier>`: Set the group's event XP multiplier; finite values from 0.1 to 100.
+- `/level [on|off]`: Toggle leveling system in group.
+- `/levelset event <multiplier>`: Set event XP multiplier between 0.1 and 100.
 
 ## Example
 

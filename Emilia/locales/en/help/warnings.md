@@ -4,33 +4,33 @@ title = "Warnings"
 
 # Warnings
 
-Track warnings and act when a member reaches the limit.
+Track member warnings and enforce limits.
 
 ## User commands
 
-- `/warns [user]`: Show your warnings. Only admins may supply another user.
+- `/warns [user]`: View warning count. Only admins can view others.
 
 ## Admin commands
 
-- `/warn [user] [reason]`: Warn a user. Use `/dwarn` by reply to delete their message, or `/swarn` for a silent warning. Aliases: `/swarn`, `/dwarn`.
-- `/resetwarn [user]`: Clear a user's warnings; reply or supply a user. Aliases: `/rmwarns`, `/resetwarns`.
-- `/warnlimit <number>`: Set the warning limit from 1 to 50; requires permission to change group info. Aliases: `/setwarnlimit`.
-- `/warnmode <action> [duration]`: Set ban, kick, mute, tban, or tmute; timed actions require a duration. Aliases: `/setwarnmode`.
-- `/warnings`: Show the group's warning settings.
+- `/warn [user] [reason]`: Warn a user. Aliases: `/dwarn` to delete replied message, `/swarn` for silent.
+- `/resetwarn [user]`: Clear a user's warnings. Aliases: `/rmwarns`, `/resetwarns`.
+- `/warnlimit <number>`: Set warning limit 1 to 50. Requires change info rights. Alias: `/setwarnlimit`.
+- `/warnmode <action> [duration]`: Set action to ban, kick, mute, tban, tmute. Timed actions require duration. Alias: `/setwarnmode`.
+- `/warnings`: View warning settings.
 
 ## Owner commands
 
-- `/resetallwarns`: Clear every member's warnings after confirmation. This cannot be undone.
+- `/resetallwarns`: Clear all chat warnings after confirmation. This cannot be undone.
 
 ## Usage notes
 
-Warning commands, including `/resetwarn` and `/resetallwarns`, support connected private chats. `/dwarn` requires a reply in the original group. Warning actions that mute or temporarily ban require a supergroup.
-
-Automated lock and blocklist warnings apply to named users and record the bot as the issuer. Sender channels and anonymous group identities cannot receive user warnings.
+- Works in connected PM except `/dwarn` which requires a group reply.
+- Mute and timed ban actions require a supergroup.
+- Channels and anon admins cannot receive warnings.
 
 ## Example
 
-Reply to the member's message:
+Reply to a message:
 
 ```
 /warn Advertising

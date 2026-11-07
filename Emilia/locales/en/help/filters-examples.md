@@ -5,43 +5,39 @@ hidden = true
 
 # Filter examples
 
-Use inline text for a short reply, or save a message by replying to it.
+Examples for creating text, media, and dice triggers.
 
-## Text
+## Text response
 
 ```
 /filter hello Hello, {first}!
 ```
 
-## Multiword trigger
+## Multi-word trigger
 
-Reply to the message you want to save:
-
-```
-/filter "good morning"
-```
-
-You can also save inline text:
+Wrap multiple words in quotes:
 
 ```
 /filter "good morning" Good morning, {first}!
 ```
 
-## Media
+## Media filter
 
-Reply to a photo or sticker:
+Reply to a photo, document, video, or sticker:
 
 ```
 /filter cat
 ```
 
-## Dice
+## Dice trigger
+
+Match animated emoji results:
 
 ```
 /filter dice:6 You rolled six!
 ```
 
-## Remove a filter
+## Remove filters
 
 ```
 /stop hello

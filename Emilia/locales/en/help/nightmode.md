@@ -4,15 +4,13 @@ title = "Night mode"
 
 # Night mode
 
-Schedule group restrictions for the night. (starting at 23:59, ending at 6:01)
+Automatically mute group chats overnight from 23:59 to 06:01.
 
 ## Admin commands
 
-- `/nightmode`: Open the night mode control panel.
+- `/nightmode`: Open night mode panel to enable or disable it.
 
 ## Example
-
-Open the panel, then choose Enable or Disable:
 
 ```
 /nightmode

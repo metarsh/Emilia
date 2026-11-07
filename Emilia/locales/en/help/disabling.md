@@ -4,17 +4,20 @@ title = "Disabling"
 
 # Disabling
 
-Disable selected bot commands, including anime commands, in a group or channel or through a connected private chat. Administrators can still use disabled commands.
+Disable specific commands in a group, channel, or via connected PM. Admins can always use disabled commands.
 
 ## Admin commands
 
-- `/disableable`: List commands that support disabling.
-- `/disable <command> [command ...]`: Disable command names.
-- `/enable <command> [command ...]`: Enable disabled commands.
-- `/disabled`: List disabled commands.
-- `/disabledel <on|off>`: Delete attempts to use disabled commands.
+- `/disableable`: List commands that can be disabled.
+- `/disable <command ...>`: Disable one or more commands.
+- `/enable <command ...>`: Re-enable disabled commands.
+- `/disabled`: List currently disabled commands.
+- `/disabledel <on|off>`: Toggle deleting disabled command attempts in chat.
 
-Use names listed by `/disableable`. Declared alias groups such as `pkang|packkang` can be disabled together, or you can disable an individual alias. Deletion applies to commands sent in the selected chat; a connected private-chat attempt is kept in private.
+## Usage notes
+
+- Disable aliases together or individually based on `/disableable`.
+- Deletion applies in chat; attempts in connected PM are not deleted.
 
 ## Example
 

@@ -4,34 +4,24 @@ title = "Antiflood"
 
 # Antiflood
 
-Act on consecutive messages or a burst within a time window. The bot needs permission to ban users and delete messages.
+Protect the chat against message flooding and fast bursts. Requires ban and delete rights.
 
 ## User commands
 
-- `/flood`: Show the current flood settings.
+- `/flood`: Show current flood settings.
 
 ## Admin commands
 
-- `/setflood <count|on|off>`: Set a consecutive-message limit, resume protection, or disable it. Alias: `/antiflood`.
-- `/setfloodtimer <count> <seconds>`: Enable a timed limit; use `/setfloodtimer` off to disable it.
-- `/setfloodmode <action> [duration]`: Set ban, mute, kick, tban, or tmute; tban and tmute require a duration. Alias: `/floodmode`.
-- `/clearflood <on|off>`: Choose whether to delete messages that trigger protection.
+- `/setflood <count|on|off>`: Set consecutive message limit or toggle protection. Alias: `/antiflood`.
+- `/setfloodtimer <count> <seconds>`: Limit messages allowed within seconds. Use `/setfloodtimer off` to disable.
+- `/setfloodmode <action> [duration]`: Set action to ban, mute, kick, tban, or tmute. Timed actions require duration. Alias: `/floodmode`.
+- `/clearflood <on|off>`: Toggle deleting flood-triggering messages.
 
 ## Example
-
-```
-/setflood on
-/setfloodtimer 10 30
-```
-
-<details>
-<summary>More examples</summary>
 
 ```
 /setflood 7
 /setfloodmode tmute 2h
 /clearflood on
-/setfloodtimer off
+/setfloodtimer 10 30
 ```
-
-</details>

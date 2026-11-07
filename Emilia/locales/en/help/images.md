@@ -4,16 +4,16 @@ title = "Images"
 
 # Images
 
-Create or edit images, or search for a wallpaper.
+Create or edit images and search wallpapers.
 
 ## User commands
 
-- `/mmf <top text> [; bottom text]`: Reply to image to add meme text.
-- `/rmbg`: Reply to a photo, image document, or sticker to remove its background.
-- `/logo <text>`: Create a logo image.
-- `/write <text>`: Create an image of handwritten text.
-- `/carbon [code]`: Create a code image; provide code or reply to text, a caption, or a UTF-8 document.
-- `/wall <query>`: Search for a wallpaper.
+- `/mmf <top text> [; bottom text]`: Reply to image or sticker to add meme captions.
+- `/rmbg`: Reply to photo or sticker to remove its background.
+- `/logo <text>`: Generate stylized logo image.
+- `/write <text>`: Generate handwriting image from text.
+- `/carbon [code]`: Generate code snippet image from text or reply.
+- `/wall <query>`: Search wallpapers.
 
 ## Example
 

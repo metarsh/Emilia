@@ -5,45 +5,31 @@ hidden = true
 
 # Placeholders
 
-Insert context fields in saved content.
+Dynamic variables and formatting tags for greetings, notes, and filters.
 
-## Context fields
+## User & Chat variables
 
-| Field | Replacement |
-| --- | --- | --- |
-| `{first}` | First name. |
-| `{last}` | Last name, or empty. |
-| `{fullname}` | Full name. |
-| `{username}` | Username, or a mention. |
-| `{mention}` | User mention. |
-| `{id}` | User ID. |
-| `{chatname}` | Chat title. |
-| `{count}` | Member count. |
+- `{first}`: User's first name.
+- `{last}`: User's last name, or empty if none.
+- `{fullname}`: User's full name.
+- `{username}`: Username, falling back to a mention.
+- `{mention}`: Clickable user mention.
+- `{id}`: User's Telegram numeric ID.
+- `{chatname}`: Title of the chat.
+- `{count}`: Current member count.
 
-## Message tags
+## Behavioral tags
 
-| Tag | Behavior |
-| --- | --- |
-| `{rules}` | Add a rules button. |
-| `{preview}` | Enable link previews for this message. |
-| `{replytag}` | Make a filter reply to the triggering message's reply target. |
-| `{admin}` | Allow only admins to retrieve a note. |
-| `{private}` | Open a note in private. |
-| `{noprivate}` | Send a note in the group. |
+- `{rules}`: Attach interactive button opening group rules.
+- `{preview}`: Enable web link previews for this message.
+- `{replytag}`: Make filter responses reply to the trigger message's reply target.
+- `{admin}`: Restrict note retrieval exclusively to admins.
+- `{private}`: Send note response in private chat.
+- `{noprivate}`: Send note response in group chat.
 
-## Example
+## Examples
 
 ```
 /filter hello Hello, {first}!
-```
-
-<details>
-<summary>Rules and greeting examples</summary>
-
-```
 /save info Read the group rules. {rules}
 ```
-
-For a welcome, send `Welcome, {mention}, to {chatname}!` and reply to it with `/setwelcome`.
-
-</details>

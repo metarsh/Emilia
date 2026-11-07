@@ -5,24 +5,25 @@ children = ["filters-examples", "formatting"]
 
 # Filters
 
-Reply automatically when a message matches a saved trigger.
+Automatically reply when messages match a saved trigger.
 
 ## User commands
 
-- `/filters`: List the group's filters.
+- `/filters`: List active group filters.
 
 ## Admin commands
 
-- `/filter <trigger> [text]`: Save a text reply, or reply to the content to save.
-- `/stop <trigger>`: Remove a filter.
+- `/filter <trigger> [text]`: Save trigger with text or by reply. Wrap multi-word triggers in quotes.
+- `/stop <trigger>`: Delete a saved filter.
 
 ## Owner commands
 
-- `/stopall`: Delete every filter after confirmation. This cannot be undone.
+- `/stopall`: Delete all filters after confirmation. This cannot be undone.
 
 ## Usage notes
 
-Provide text or reply to text or media when saving. Dice triggers include the dice emoji, `dice:6`, and `🎲:6`. Formatting and placeholders are described below.
+- Dice triggers support dice emoji and roll results, like `dice:6` or `🎲:6`.
+- Supports formatting, markdown buttons, and dynamic placeholders.
 
 ## Example
 

@@ -4,17 +4,15 @@ title = "Bot-to-bot"
 
 # Bot-to-bot
 
-Choose which other bots may send commands to this bot.
+Configure which other bots can trigger commands with this bot.
 
 ## Admin commands
 
-- `/bot2bot [off|admin|all]`: Show or choose which bots may request commands.
-- `/bot2botskipreview [on|off]`: Show or change whether allowed bot commands skip admin review.
+- `/bot2bot [off|admin|all]`: Set allowed bots to off, admin, or all.
+- `/bot2botskipreview [on|off]`: Toggle skipping admin review for allowed bots.
 
 ## Modes
 
-| Mode | Allowed senders |
-| --- | --- |
-| `off` | No other bots; default. |
-| `admin` | Bots that are group admins. |
-| `all` | Any bot in the group. |
+- `off`: No other bots allowed. Default.
+- `admin`: Only group admin bots allowed.
+- `all`: Any bot in the group allowed.

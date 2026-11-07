@@ -5,16 +5,16 @@ hidden = true
 
 # Lock examples
 
-Use lock names exactly as `/locktypes` lists them.
+Examples for locking media, links, custom emoji, and reactions.
 
-## Media
+## Media locks
 
 ```
 /lock photo video gif
 /unlock photo video
 ```
 
-## Links and exceptions
+## Links and allowlists
 
 ```
 /lock url invitelink
@@ -22,9 +22,9 @@ Use lock names exactly as `/locktypes` lists them.
 /rmallowlist example.com
 ```
 
-## Custom emoji
+## Custom emoji packs
 
-Reply to a custom emoji message when adding its packs:
+Reply to a message with the custom emoji:
 
 ```
 /lock emojicustom

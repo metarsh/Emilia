@@ -5,27 +5,23 @@ children = ["memes", "sfw", "quotes"]
 
 # Fun
 
-Play short games, send GIFs, or mark yourself away.
+Mini-games, GIFs, text-to-speech, and AFK status.
 
 ## User commands
 
-- `/pokedex <name>`: Look up a Pokémon.
+- `/pokedex <name>`: Look up Pokémon details.
 - `/joke`: Send a random joke. Aliases: `/jokes`, `/funny`.
-- `/couples`: Choose a daily couple in a group.
-- `/gif <query> [; count]`: Find GIFs; defaults to one and accepts a count from 1 to 20.
-- `/react`: Add a random reaction to your message or the message you reply to.
-- `/truth`: Send a truth question.
-- `/dare`: Send a dare challenge.
+- `/couples`: Pick daily couple in group.
+- `/gif <query> [; count]`: Search GIFs with optional count 1–20.
+- `/react`: Add a random emoji reaction to a message.
+- `/truth`: Send a random truth question.
+- `/dare`: Send a random dare challenge.
 - `/afk [reason]`: Mark yourself away from keyboard.
+- `/tts [language] <text>`: Convert text to speech, or reply to text. Default language `en`.
 
 ## AFK shortcuts
 
-You can also do `+afk`, `!afk`, `?afk`, `.afk`, `brb`, and `i go away`
-
-## Speech
-
-- `/tts <language> <text>`: Convert text to speech; use a language code such as en or ja.
-- `/tts [language]`: Reply to text or a caption; the language defaults to en. A single inline word also uses en.
+- Triggers: `+afk`, `!afk`, `?afk`, `.afk`, `brb`, `i go away`.
 
 ## Example
 

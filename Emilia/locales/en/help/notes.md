@@ -5,22 +5,22 @@ children = ["notes-examples", "formatting"]
 
 # Notes
 
-Save reusable text or media for your group.
+Store reusable text messages, media, and announcements for your group.
 
 ## User commands
 
-- `/get <name>`: Retrieve a saved note. You can also send #name.
-- `/notes`: List saved notes. Aliases: `/saved`.
+- `/get <name>`: Retrieve a saved note. Also triggers via `#name`.
+- `/notes`: List all group notes. Alias: `/saved`.
 
 ## Admin commands
 
-- `/save <name> [text]`: Save text, or reply to the content to save.
+- `/save <name> [text]`: Save note with text, or by reply.
 - `/clear <name>`: Delete a saved note.
-- `/privatenotes [on|off]`: Show or change whether notes open in private.
+- `/privatenotes [on|off]`: Toggle delivering notes in private chat.
 
 ## Owner commands
 
-- `/clearall`: Delete every note after confirmation. This cannot be undone.
+- `/clearall`: Delete all notes after confirmation. This cannot be undone.
 
 ## Example
 
