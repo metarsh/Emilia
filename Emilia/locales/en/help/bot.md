@@ -1,5 +1,5 @@
 +++
-title = "Bot commands"
+title = "Bot"
 +++
 
 # Bot commands

@@ -87,7 +87,6 @@ async def build_start_message(client):
         url=start_pic_url or f"https://t.me/{bot_username(client)}",
     )
     buttons.append([_hanabi_button()])
-    welcome += "\n" + tr("start.hanabi_intro")
     if Config.SOURCE_URL:
         buttons.append([InlineKeyboardButton(tr("start.source_code"), url=Config.SOURCE_URL)])
 

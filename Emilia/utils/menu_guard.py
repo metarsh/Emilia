@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from inspect import isawaitable
 
 from pyrogram.enums import ChatType
+from pyrogram.types import RichBlockButtons
 
 from Emilia.application import redis_client
 from Emilia.locales import tr
@@ -32,10 +33,19 @@ def callback_is_present(client, query) -> bool:
     if not channel_post and (author is None or author.id != bot_id(client)):
         return False
     markup = getattr(message, "reply_markup", None)
-    return bool(query.data) and any(
-        query.data == button.callback_data
-        for row in (getattr(markup, "inline_keyboard", None) or ())
-        for button in row
+    rich_message = getattr(message, "rich_message", None)
+    return bool(query.data) and (
+        any(
+            query.data == button.callback_data
+            for row in (getattr(markup, "inline_keyboard", None) or ())
+            for button in row
+        )
+        or any(
+            query.data == button.callback_data
+            for block in (getattr(rich_message, "blocks", None) or ())
+            if isinstance(block, RichBlockButtons)
+            for button in block.buttons
+        )
     )
 
 

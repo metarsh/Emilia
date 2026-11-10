@@ -1,5 +1,5 @@
 +++
-title = "Bot-to-bot"
+title = "Bot2Bot"
 +++
 
 # Bot-to-bot

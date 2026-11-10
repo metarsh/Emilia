@@ -83,7 +83,7 @@ def _page_content(client, page, history: tuple[str, ...] = ()):
 async def _show_start(message, text: str, keyboard, *, edit: bool = False):
     options = {
         "reply_markup": keyboard,
-        "link_preview_options": LinkPreviewOptions(is_disabled=True),
+        "link_preview_options": LinkPreviewOptions(is_disabled=False),
     }
     # The start screen uses its existing message format.
     if edit and (message.text or getattr(message, "rich_message", None)):

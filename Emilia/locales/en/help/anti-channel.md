@@ -1,5 +1,5 @@
 +++
-title = "Anti-channel"
+title = "Antichannel"
 +++
 
 # Anti-channel

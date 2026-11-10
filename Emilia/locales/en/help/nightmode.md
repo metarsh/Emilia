@@ -1,5 +1,5 @@
 +++
-title = "Night mode"
+title = "Nightmode"
 +++
 
 # Night mode

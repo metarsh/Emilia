@@ -1,5 +1,5 @@
 +++
-title = "Search tools"
+title = "Search"
 +++
 
 # Search tools

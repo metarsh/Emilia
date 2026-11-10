@@ -1,5 +1,5 @@
 +++
-title = "Anime reactions"
+title = "SFW"
 +++
 
 # Anime reactions

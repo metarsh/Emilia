@@ -1,5 +1,5 @@
 +++
-title = "Files and uploads"
+title = "Upload"
 +++
 
 # Files and uploads

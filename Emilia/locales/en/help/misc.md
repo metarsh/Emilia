@@ -1,5 +1,5 @@
 +++
-title = "Group tools"
+title = "Group"
 +++
 
 # Group tools

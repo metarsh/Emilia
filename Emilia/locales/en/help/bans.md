@@ -1,5 +1,5 @@
 +++
-title = "Bans and mutes"
+title = "Bans"
 +++
 
 # Bans and mutes

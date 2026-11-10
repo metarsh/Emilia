@@ -1,5 +1,5 @@
 +++
-title = "Anti-spam"
+title = "Antispam"
 +++
 
 # Anti-spam
