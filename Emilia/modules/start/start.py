@@ -35,6 +35,14 @@ from Emilia.utils.client_context import bot_name, bot_username
 from Emilia.utils.decorators import leavemute
 from Emilia.utils.menu_guard import CallbackAccess, remember_menu
 
+HANABI_URL = "https://tryhanabi.com"
+
+
+def _hanabi_button():
+    return InlineKeyboardButton(
+        tr("start.build_my_idea"), url=HANABI_URL, style=ButtonStyle.SUCCESS
+    )
+
 
 async def build_start_message(client):
     current_bot_id = int(client.bot_token.split(":")[0])
@@ -73,17 +81,29 @@ async def build_start_message(client):
         )
     if links:
         buttons.insert(1, links)
+    welcome = tr(
+        "start.welcome",
+        name=bot_name(client),
+        url=start_pic_url or f"https://t.me/{bot_username(client)}",
+    )
+    buttons.append([_hanabi_button()])
+    welcome += "\n" + tr("start.hanabi_intro")
     if Config.SOURCE_URL:
         buttons.append([InlineKeyboardButton(tr("start.source_code"), url=Config.SOURCE_URL)])
 
     return (
-        tr(
-            "start.welcome",
-            name=bot_name(client),
-            url=start_pic_url or f"https://t.me/{bot_username(client)}",
-        ),
+        welcome,
         InlineKeyboardMarkup(buttons),
         photo,
+    )
+
+
+@command("build")
+async def build_command(client, message):
+    await message.reply_text(
+        tr("start.hanabi_intro"),
+        reply_markup=InlineKeyboardMarkup([[_hanabi_button()]]),
+        link_preview_options=LinkPreviewOptions(is_disabled=True),
     )
 
 
@@ -226,7 +246,9 @@ async def callback_query_handler(client, callback_query):
     await callback_query.answer()
     if callback_query.data == "clone_help":
         await callback_query.message.reply_text(
-            clone_help, reply_markup=InlineKeyboardMarkup(button)
+            clone_help,
+            reply_markup=InlineKeyboardMarkup(button),
+            link_preview_options=LinkPreviewOptions(is_disabled=True),
         )
         await callback_query.message.delete()
         return
@@ -238,6 +260,8 @@ async def callback_query_handler(client, callback_query):
         return
 
 
-clone_help = tr("clones.setup_guide")
+clone_help = (
+    tr("clones.setup_guide") + "\n\n" + tr("clones.business_bot_offer", url=HANABI_URL)
+)
 
 help_text = tr("clones.hosting_notice")

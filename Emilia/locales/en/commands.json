@@ -984,6 +984,11 @@
     "description": "Save a birthday for another user in the group; requires permission to change group info.",
     "example": "/addbirthday @username 25/12"
   },
+  "Emilia.modules.start.start.build_command": {
+    "usage": "/build",
+    "description": "Explore Hanabi's custom development services and discuss your project.",
+    "example": "/build"
+  },
   "Emilia.modules.start.start.starttt": {
     "usage": "/start",
     "description": "Open the bot menu or follow a feature link.",
