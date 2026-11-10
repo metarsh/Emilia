@@ -17,7 +17,7 @@ Choose how anime features work in your group or channel. Chat owners can also li
 
 **Chat owner commands:**
 
-- `/aniconnect [chat ID or @username]`: Link your group or channel to your AniList account. Give the chat in private, or use your own owner account in that chat. Use `/id` there to find its ID.
+- `/aniconnect [chat ID or @username]`: Link your group or channel to your AniList account. In private, use the buttons to choose a chat, or give its ID or @username. You can also run the command in the group as its owner.
 - `/anidisconnect [chat ID or @username]`: Remove that account link.
 
 **Tips:**

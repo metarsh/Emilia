@@ -1,3 +1,5 @@
+import json
+import math
 import sys
 import tempfile
 from pathlib import Path
@@ -32,6 +34,41 @@ print(fps)
 """
 
 
+async def _upload_video(message, path, options):
+    result = await run_process(
+        "ffprobe",
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-show_entries",
+        "stream=width,height:format=duration",
+        "-of",
+        "json",
+        str(path),
+    )
+    if result.returncode:
+        raise ValueError("Could not read the welcome video")
+    try:
+        metadata = json.loads(result.stdout)
+        stream = metadata["streams"][0]
+        width, height = int(stream["width"]), int(stream["height"])
+        duration = float(metadata["format"]["duration"])
+    except (ValueError, KeyError, IndexError, TypeError) as error:
+        raise ValueError("Invalid welcome video metadata") from error
+    if width <= 0 or height <= 0 or not math.isfinite(duration) or duration <= 0:
+        raise ValueError("Invalid welcome video dimensions or duration")
+    sent = await message.reply_video(
+        str(path),
+        supports_streaming=True,
+        width=width,
+        height=height,
+        duration=math.ceil(duration),
+        **options,
+    )
+    return sent.video.file_id, SavedMessageType.video.value
+
+
 async def convert_welcome_media(client, message, text, data_type):
     """Upload captionable media and return a reusable Telegram file ID."""
     source = message.reply_to_message or message
@@ -47,8 +84,7 @@ async def convert_welcome_media(client, message, text, data_type):
             # Video notes already contain MP4 video; re-upload it as a regular video.
             video = Path(directory) / "welcome.mp4"
             Path(downloaded).rename(video)
-            sent = await message.reply_video(str(video), supports_streaming=True, **options)
-            return sent.video.file_id, SavedMessageType.video.value
+            return await _upload_video(message, video, options)
 
         sticker = source.sticker
         input_options = []
@@ -90,8 +126,7 @@ async def convert_welcome_media(client, message, text, data_type):
             )
             if result.returncode or not Path(video).is_file():
                 raise ValueError("Could not convert the sticker to video")
-            sent = await message.reply_video(video, supports_streaming=True, **options)
-            return sent.video.file_id, SavedMessageType.video.value
+            return await _upload_video(message, video, options)
         else:
             from Emilia.modules.stickers import resize_image_sync
 

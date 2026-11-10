@@ -184,7 +184,7 @@ async def _connection_picker(message, action):
                     button_id=first_id + int(channel),
                     chat_is_channel=channel,
                     chat_is_created=True,
-                    bot_is_member=True,
+                    bot_is_member=True if action == "anidisconnect" else None,
                     bot_administrator_rights=(
                         ChatAdministratorRights(can_manage_chat=True)
                         if action == "aniconnect"

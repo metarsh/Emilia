@@ -776,7 +776,7 @@
   },
   "Emilia.modules.anime.bot.connect_channel": {
     "usage": "/aniconnect [chat ID or @username]",
-    "description": "Link a group or channel to your AniList account as its current owner; supply the chat in private.",
+    "description": "Link a group or channel as its owner. In private, choose a chat using the buttons or supply its ID or @username.",
     "example": "/aniconnect -1001234567890"
   },
   "Emilia.modules.federations.CF": {
