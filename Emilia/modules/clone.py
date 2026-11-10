@@ -61,11 +61,15 @@ async def validate_token(token: str):
         if not data.get("ok"):
             return False, "network", None
         me = data["result"]
-        return True, "ok", User(
-            id=me["id"],
-            is_bot=me["is_bot"],
-            first_name=me["first_name"],
-            username=me.get("username"),
+        return (
+            True,
+            "ok",
+            User(
+                id=me["id"],
+                is_bot=me["is_bot"],
+                first_name=me["first_name"],
+                username=me.get("username"),
+            ),
         )
     except (aiohttp.ClientError, OSError, ValueError, KeyError, TypeError) as exc:
         LOGGER.warning("Clone token validation failed: %s", type(exc).__name__)
@@ -113,9 +117,7 @@ async def clone(owner_id, token, bot_id, *, restart=False):
         if doc:
             bot = f"@{doc['bot_username']}" if doc.get("bot_username") else str(bot_id)
             try:
-                await pgram.send_message(
-                    owner_id, tr("clone.invalid_token_retry_stopped", bot=bot)
-                )
+                await pgram.send_message(owner_id, tr("clone.invalid_token_retry_stopped", bot=bot))
             except (RPCError, OSError) as exc:
                 LOGGER.warning("Could not notify clone %s owner: %s", bot_id, type(exc).__name__)
     return result
