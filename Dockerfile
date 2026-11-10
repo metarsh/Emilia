@@ -18,7 +18,10 @@ ENV PATH="/opt/venv/bin:$PATH" PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 WORKDIR /app
 COPY Emilia /app/Emilia
 COPY LICENSE /app/LICENSE
-RUN useradd --uid 1000 --create-home emilia && mkdir -p /app/sessions /app/state /app/downloads && chown -R emilia:emilia /app
+RUN useradd --uid 1000 --create-home emilia \
+    && mkdir -p /app/sessions /app/state /app/downloads \
+    && chown -R emilia:emilia /app \
+    && ln -s /app/state/unknown_errors.txt /app/unknown_errors.txt
 USER 1000:1000
 STOPSIGNAL SIGTERM
 

@@ -4,31 +4,29 @@ import re
 import time
 from urllib.parse import urlparse
 
+import aiohttp
 from pymongo.errors import PyMongoError
 from pyrogram import Client, filters
 from pyrogram.enums import ButtonStyle, ChatType
 from pyrogram.errors import (
-    AccessTokenExpired,
-    AccessTokenInvalid,
     ChatWriteForbidden,
     MessageNotModified,
     RPCError,
     UserIsBlocked,
     UserNotParticipant,
 )
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, LabeledPrice
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, LabeledPrice, User
 
-from Emilia.application import LOGGER, db
+from Emilia.application import LOGGER, db, pgram
 from Emilia.config import Config
 from Emilia.custom_filter import auth, callbackquery, command, listen
 from Emilia.database.common import atomic_upsert
 from Emilia.locales import tr
-from Emilia.services.client_lifecycle import stop_client
 from Emilia.services.clone_runtime import clone_manager
+from Emilia.utils import http
 from Emilia.utils.command_help import reply_usage
 from Emilia.utils.menu_guard import CallbackAccess
 from Emilia.utils.net_guard import is_safe_url
-from Emilia.utils.tasks import finish_cleanup
 from Emilia.utils.tg_safe import flood_safe
 
 clone_db = db.clone
@@ -47,25 +45,31 @@ async def get_clone_info_by_bot_id(bot_id):
 
 
 async def validate_token(token: str):
-    client = Client(
-        "clone_token_validation",
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
-        in_memory=True,
-        no_updates=True,
-    )
     try:
-        async with asyncio.timeout(Config.CLONE_START_TIMEOUT):
-            await client.connect()
-            me = await client.sign_in_bot(token)
-        return True, "ok", me
-    except (AccessTokenInvalid, AccessTokenExpired):
-        return False, "invalid", None
-    except (RPCError, OSError):
-        LOGGER.exception("Clone token validation failed over MTProto")
+        # Check the token without creating a fresh MTProto authorization.
+        response = await http.get(
+            f"https://api.telegram.org/bot{token}/getMe",
+            timeout=Config.CLONE_START_TIMEOUT,
+            retries=1,
+            public_only=False,
+        )
+        if response.status in {401, 404}:
+            return False, "invalid", None
+        if response.status != 200:
+            return False, "network", None
+        data = response.json()
+        if not data.get("ok"):
+            return False, "network", None
+        me = data["result"]
+        return True, "ok", User(
+            id=me["id"],
+            is_bot=me["is_bot"],
+            first_name=me["first_name"],
+            username=me.get("username"),
+        )
+    except (aiohttp.ClientError, OSError, ValueError, KeyError, TypeError) as exc:
+        LOGGER.warning("Clone token validation failed: %s", type(exc).__name__)
         return False, "network", None
-    finally:
-        await finish_cleanup(stop_client(client))
 
 
 @auth(pattern="stats")
@@ -95,7 +99,26 @@ async def delete_clone_by_bot_id(bot_id: int, *, owner_id=None) -> bool:
 async def clone(owner_id, token, bot_id, *, restart=False):
     from Emilia.services.clones import register_clone
 
-    return await register_clone(owner_id, token, bot_id, validate_token, restart=restart)
+    result = await register_clone(owner_id, token, bot_id, validate_token, restart=restart)
+    if result[0] == "invalid":
+        doc = await clone_db.find_one_and_update(
+            {
+                "_id": bot_id,
+                "owner_id": owner_id,
+                "token": token,
+                "status": {"$nin": ["dead", "deleting"]},
+            },
+            {"$set": {"status": "dead"}},
+        )
+        if doc:
+            bot = f"@{doc['bot_username']}" if doc.get("bot_username") else str(bot_id)
+            try:
+                await pgram.send_message(
+                    owner_id, tr("clone.invalid_token_retry_stopped", bot=bot)
+                )
+            except (RPCError, OSError) as exc:
+                LOGGER.warning("Could not notify clone %s owner: %s", bot_id, type(exc).__name__)
+    return result
 
 
 async def clone_start_up():
@@ -108,9 +131,7 @@ async def clone_start_up():
         if not doc.get("token") or not doc.get("owner_id"):
             return
         async with sem:
-            result, _, _ = await clone(doc["owner_id"], doc["token"], doc["_id"])
-            if result == "invalid":
-                await clone_db.update_one({"_id": doc["_id"]}, {"$set": {"status": "dead"}})
+            await clone(doc["owner_id"], doc["token"], doc["_id"])
 
     batch = []
     async for doc in clone_db.find({"status": {"$nin": ["dead", "deleting"]}}):
@@ -133,9 +154,7 @@ async def clone_health_loop():
                 entry = clone_manager.clones.get(doc["_id"])
                 if entry and entry["client"].is_connected:
                     continue
-                result, _, _ = await clone(doc["owner_id"], doc["token"], doc["_id"])
-                if result == "invalid":
-                    await clone_db.update_one({"_id": doc["_id"]}, {"$set": {"status": "dead"}})
+                await clone(doc["owner_id"], doc["token"], doc["_id"])
         except Exception:
             LOGGER.exception("Clone health check failed")
 

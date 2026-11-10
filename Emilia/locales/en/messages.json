@@ -646,6 +646,7 @@
   "clone.invalid_invoice_refund_pending": "This invoice is no longer valid. Your Stars refund is pending; the bot will retry automatically.",
   "clone.invalid_invoice_refunded": "This invoice is no longer valid. Your Stars have been refunded.",
   "clone.invalid_selection": "Invalid selection.",
+  "clone.invalid_token_retry_stopped": "Your clone {bot} has an invalid or revoked token. Generate a new token with @BotFather and use /clone to reconnect it.",
   "clone.invoice_invalid_expired_request_new_one": "This invoice is invalid or expired. Request a new one.",
   "clone.live": "@{username} is live.",
   "clone.manage_my_bots": "Manage my bots",
