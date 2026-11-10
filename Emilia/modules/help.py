@@ -21,12 +21,16 @@ def _find_page(name: str):
     )
 
 
+def _visible_pages():
+    return sorted((page for page in HELP_PAGES.values() if not page.hidden), key=lambda p: p.title)
+
+
 def _index_keyboard(page_number: int = 0):
-    pages = sorted((page for page in HELP_PAGES.values() if not page.hidden), key=lambda p: p.title)
+    pages = _visible_pages()
     total = max(1, (len(pages) + PAGE_SIZE - 1) // PAGE_SIZE)
     number = max(0, min(page_number, total - 1))
     buttons = [
-        InlineKeyboardButton(page.title, callback_data=f"help:page:{page.id}")
+        InlineKeyboardButton(page.title, callback_data=f"help:page:{page.id}:{number}")
         for page in pages[number * PAGE_SIZE : (number + 1) * PAGE_SIZE]
     ]
     rows = [buttons[index : index + 3] for index in range(0, len(buttons), 3)]
@@ -47,13 +51,29 @@ def _index_keyboard(page_number: int = 0):
     return InlineKeyboardMarkup([*rows, navigation])
 
 
-def _page_content(client, page, parent: str | None = None):
+def _page_content(client, page, history: tuple[str, ...] = ()):
+    # Store nearest parents first and the source index last, so Back can pop one level.
+    # Old buttons and direct /help links have no index; use their root guide's index.
+    if not history or not history[-1].isdigit():
+        root = history[-1] if history else page.id
+        number = next(
+            (
+                index // PAGE_SIZE
+                for index, guide in enumerate(_visible_pages())
+                if guide.id == root
+            ),
+            0,
+        )
+        history = (*history, str(number))
+    return_path = ":".join(history)
     buttons = [
-        InlineKeyboardButton(HELP_PAGES[child].title, callback_data=f"help:page:{child}:{page.id}")
+        InlineKeyboardButton(
+            HELP_PAGES[child].title, callback_data=f"help:page:{child}:{page.id}:{return_path}"
+        )
         for child in page.children
     ]
     rows = [buttons[index : index + 2] for index in range(0, len(buttons), 2)]
-    back = f"help:page:{parent}" if parent in HELP_PAGES else "help:list:0"
+    back = f"help:page:{return_path}" if len(history) > 1 else f"help:list:{return_path}"
     rows.append(
         [InlineKeyboardButton(tr("buttons.back"), callback_data=back, style=ButtonStyle.PRIMARY)]
     )
@@ -72,10 +92,12 @@ async def _show_start(message, text: str, keyboard, *, edit: bool = False):
         await message.reply_text(text, **options)
 
 
-async def module_page(client, module: str, message, edit: bool = False, parent: str | None = None):
+async def module_page(
+    client, module: str, message, edit: bool = False, history: tuple[str, ...] = ()
+):
     page = _find_page(module)
     if page:
-        await show_help_page(client, message, page, _page_content(client, page, parent), edit=edit)
+        await show_help_page(client, message, page, _page_content(client, page, history), edit=edit)
     else:
         await show_help_page(client, message, HELP_INDEX, _index_keyboard(), edit=edit)
 
@@ -131,13 +153,13 @@ async def help_button(client, query):
             await show_help_page(
                 client, query.message, HELP_INDEX, _index_keyboard(int(parts[2])), edit=True
             )
-        elif action == "page" and len(parts) in {3, 4}:
+        elif action == "page" and len(parts) >= 3:
             await module_page(
                 client,
                 parts[2],
                 query.message,
                 edit=True,
-                parent=parts[3] if len(parts) == 4 else None,
+                history=tuple(parts[3:]),
             )
     except MessageNotModified:
         pass
