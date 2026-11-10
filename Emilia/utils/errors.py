@@ -28,6 +28,7 @@ _TELEGRAM_ERRORS = {
     errors.ChatNotModified: "errors.chat_title_unchanged",
     errors.TopicDeleted: "errors.topic_deleted",
     errors.ChannelInvalid: "errors.chat_unavailable",
+    errors.UserIdInvalid: "errors.user_unavailable",
 }
 
 

@@ -76,24 +76,6 @@ async def validate_token(token: str):
         return False, "network", None
 
 
-@auth(pattern="stats")
-async def stats_(client, message):
-    users = await db.users.count_documents({})
-    chats = await db.chats.count_documents({})
-    bots = await clone_db.count_documents({})
-    active_clones = len(clone_manager.clones)
-
-    await message.reply_text(
-        tr(
-            "clone.bot_statistics_chats_users_cloned_bots_database_active",
-            chats=chats,
-            users=users,
-            bots=bots,
-            active_clones=active_clones,
-        )
-    )
-
-
 async def delete_clone_by_bot_id(bot_id: int, *, owner_id=None) -> bool:
     from Emilia.services.clones import delete_clone
 

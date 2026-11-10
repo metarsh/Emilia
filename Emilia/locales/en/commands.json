@@ -485,9 +485,9 @@
     "example": "/goodbye on"
   },
   "Emilia.modules.greetings.set_welcome.set_welcome": {
-    "usage": "/setwelcome",
-    "description": "Reply to text or media to save a welcome. Inline text is not accepted.",
-    "example": "/setwelcome"
+    "usage": "/setwelcome [text]",
+    "description": "Save a welcome using text after the command or content you reply to.",
+    "example": "/setwelcome Welcome, {first}!"
   },
   "Emilia.modules.greetings.reset_welcome.ResetWelcome": {
     "usage": "/resetwelcome",
@@ -1460,13 +1460,8 @@
     "example": "/{command}"
   },
   "Emilia.modules.devstats.devstats": {
-    "usage": "/devstats",
-    "description": "Show deployment metrics.",
-    "example": "/devstats"
-  },
-  "Emilia.modules.clone.stats_": {
-    "usage": "/stats",
-    "description": "Show deployment user and group totals.",
+    "usage": "/stats or /devstats",
+    "description": "Show the whole deployment's usage, stored content, database size, live services, and system metrics. Owner/developer access required.",
     "example": "/stats"
   },
   "Emilia.modules.clone.clone_status": {

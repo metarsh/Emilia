@@ -11,12 +11,16 @@ Leave the placeholders as written: `{mention}` mentions the new member, `{chatna
 
 **Examples:**
 
-- Save a welcome. Send this text, then reply to it with `/setwelcome`:\
+- Save a welcome directly:\
+  `/setwelcome Welcome, {mention}, to {chatname}!`
+- Or send this text, then reply to it with `/setwelcome`:\
   `Welcome, {mention}, to {chatname}!`
 - Turn welcome messages on:\
   `/welcome on`
 - Save a photo welcome. Put your welcome text in the photo's caption, then reply to the photo:\
   `/setwelcome`
+- Use a photo with a new caption. Reply to the photo with:\
+  `/setwelcome Welcome, {mention}, to {chatname}!`
 - Save a goodbye:\
   `/setgoodbye Goodbye, {first}.`
 - Turn goodbye messages on:\

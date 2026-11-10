@@ -29,7 +29,13 @@ from Emilia.utils.admins import cache_collection, get_user_reason, update_admin_
 from Emilia.utils.auth import is_dev
 from Emilia.utils.cache import SimpleCache
 from Emilia.utils.chat_context import effective_chat, effective_chat_id
-from Emilia.utils.chat_status import check_user, has_chat_permission, is_user_admin, member_is_admin
+from Emilia.utils.chat_status import (
+    bot_has_permission,
+    check_user,
+    has_chat_permission,
+    is_user_admin,
+    member_is_admin,
+)
 from Emilia.utils.client_context import bot_id
 from Emilia.utils.command_help import reply_usage
 from Emilia.utils.decorators import (
@@ -671,7 +677,13 @@ async def delete_messages(client, event):
         return await reply_usage(event)
     if not await check_user(event, user_id=actor_id(event), privileges="can_delete_messages"):
         return
-    await client.delete_messages(event.chat.id, [message.id, event.id])
+    if not await bot_has_permission(event, privileges="can_delete_messages"):
+        return
+    try:
+        await client.delete_messages(event.chat.id, [message.id, event.id])
+    except MessageDeleteForbidden:
+        if await bot_has_permission(event, privileges="can_delete_messages", fresh=True):
+            await event.reply_text(tr("admin.message_delete_forbidden"))
 
 
 VALID_SLOWMODE_SECONDS = {0, 5, 10, 30, 60, 300, 900, 3600}

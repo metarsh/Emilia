@@ -15,7 +15,7 @@ Replace `<...>` with required input; `[...]` is optional. Do not type those brac
 
 - `/welcome [on|off|noformat]`: Preview the welcome, turn it on or off, or use `noformat` to see the saved text without formatting.
 - `/goodbye [on|off]`: Preview the goodbye or turn it on or off.
-- `/setwelcome`: Reply to text or media to save it as the welcome.
+- `/setwelcome [text]`: Save a welcome using text after the command or content you reply to.
 - `/resetwelcome`: Restore the default welcome.
 - `/setgoodbye [text]`: Save a goodbye using text after the command or content you reply to.
 - `/resetgoodbye`: Restore the default goodbye.
@@ -24,8 +24,8 @@ Replace `<...>` with required input; `[...]` is optional. Do not type those brac
 
 **Examples:**
 
-- Send this message, then reply to it with `/setwelcome`:\
-  `Welcome, {mention}! Read the group rules.`
+- Save a welcome:\
+  `/setwelcome Welcome, {mention}! Read the group rules.`
 - Turn welcome messages on:\
   `/welcome on`
 - Save a goodbye:\

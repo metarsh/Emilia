@@ -1,6 +1,8 @@
+from contextlib import suppress
+
 from pyrogram import filters
 from pyrogram.enums import ButtonStyle, ChatType
-from pyrogram.errors import RPCError
+from pyrogram.errors import MessageDeleteForbidden, RPCError
 from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -249,13 +251,16 @@ async def callback_query_handler(client, callback_query):
             reply_markup=InlineKeyboardMarkup(button),
             link_preview_options=LinkPreviewOptions(is_disabled=True),
         )
-        await callback_query.message.delete()
+        # The next screen is already sent; deletion is only cleanup.
+        with suppress(MessageDeleteForbidden):
+            await callback_query.message.delete()
         return
     if callback_query.data == "bot_clone":
         await callback_query.message.reply_text(
             help_text, link_preview_options=LinkPreviewOptions(is_disabled=True)
         )
-        await callback_query.message.delete()
+        with suppress(MessageDeleteForbidden):
+            await callback_query.message.delete()
         return
 
 
