@@ -259,8 +259,6 @@ async def callback_query_handler(client, callback_query):
         return
 
 
-clone_help = (
-    tr("clones.setup_guide") + "\n\n" + tr("clones.business_bot_offer", url=HANABI_URL)
-)
+clone_help = tr("clones.setup_guide") + "\n\n" + tr("clones.business_bot_offer", url=HANABI_URL)
 
 help_text = tr("clones.hosting_notice")
