@@ -10,22 +10,28 @@ from pyrogram.errors import FloodWait as fw
 from pyrogram.errors import PeerIdInvalid as pi
 from pyrogram.types import (
     CallbackQuery,
+    ChatAdministratorRights,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
+    KeyboardButton,
+    KeyboardButtonRequestChat,
     Message,
+    ReplyKeyboardMarkup,
+    ReplyKeyboardRemove,
 )
 
 from Emilia.application import db
 from Emilia.config import Config
-from Emilia.custom_filter import callbackquery, command
+from Emilia.custom_filter import callbackquery, command, listen
 from Emilia.database.common import atomic_upsert
 from Emilia.locales import tr
 from Emilia.locales.help import ANIME_HELP, HELP_PAGES, HelpPage
+from Emilia.utils.allowlist import is_telegram_invite_url
 from Emilia.utils.anime import AUTH_USERS, get_user_from_channel
 from Emilia.utils.chat_status import has_chat_permission
 from Emilia.utils.client_context import bot_username
-from Emilia.utils.command_help import reply_usage
 from Emilia.utils.decorators import anonadmin_checker
+from Emilia.utils.forward_origin import fwd_chat
 from Emilia.utils.get_user import normalize_peer
 from Emilia.utils.help_rendering import show_help_page
 from Emilia.utils.menu_guard import CallbackAccess, remember_menu
@@ -160,6 +166,66 @@ async def anime_help(client: Client, message: Message):
         )
 
 
+_CONNECTION_ACTIONS = {
+    87101: "aniconnect",
+    87102: "aniconnect",
+    87103: "anidisconnect",
+    87104: "anidisconnect",
+}
+
+
+async def _connection_picker(message, action):
+    first_id = 87101 if action == "aniconnect" else 87103
+    buttons = [
+        [
+            KeyboardButton(
+                tr("anime.choose_channel" if channel else "anime.choose_group"),
+                request_chat=KeyboardButtonRequestChat(
+                    button_id=first_id + int(channel),
+                    chat_is_channel=channel,
+                    chat_is_created=True,
+                    bot_is_member=True,
+                    bot_administrator_rights=(
+                        ChatAdministratorRights(can_manage_chat=True)
+                        if action == "aniconnect"
+                        else None
+                    ),
+                ),
+            )
+        ]
+        for channel in (False, True)
+    ]
+    return await message.reply_text(
+        tr(
+            "anime.choose_chat_to_connect"
+            if action == "aniconnect"
+            else "anime.choose_chat_to_disconnect"
+        ),
+        reply_markup=ReplyKeyboardMarkup(buttons, resize_keyboard=True, one_time_keyboard=True),
+    )
+
+
+async def _set_channel_connection(client, message, peer, action, *, from_picker=False):
+    chat = await client.get_chat(peer)
+    if chat.type not in (ChatType.CHANNEL, ChatType.GROUP, ChatType.SUPERGROUP):
+        return await message.reply_text(tr("errors.group_only"))
+    target = chat.id
+    if not await has_chat_permission(client, target, message.from_user.id, owner=True):
+        return await message.reply_text(tr("anime.channel_owner_required"))
+    if action == "aniconnect":
+        await atomic_upsert(CC, {"_id": str(target)}, {"$set": {"usr": message.from_user.id}})
+        text = tr("anime.bot.successfully_connected_the_channel")
+    else:
+        result = await CC.delete_one({"_id": str(target)})
+        text = tr(
+            "anime.bot.successfully_disconnected_the_channel"
+            if result.deleted_count
+            else "anime.bot.channel_not_connected"
+        )
+    options = {"reply_markup": ReplyKeyboardRemove()} if from_picker else {}
+    await message.reply_text(text, **options)
+
+
 @command(["aniconnect", "anidisconnect"], disable=True)
 async def connect_channel(client: Client, message: Message):
     if not message.from_user or message.sender_chat:
@@ -179,27 +245,29 @@ async def connect_channel(client: Client, message: Message):
     if message.chat.type == ChatType.PRIVATE:
         arguments = (message.text or message.caption or "").split(maxsplit=1)
         if len(arguments) != 2:
-            return await reply_usage(message)
-        peer = normalize_peer(arguments[1].strip())
+            forwarded = fwd_chat(message.reply_to_message) if message.reply_to_message else None
+            if forwarded is None:
+                return await _connection_picker(message, command)
+            peer = forwarded.id
+        else:
+            peer = normalize_peer(arguments[1].strip())
+            if is_telegram_invite_url(str(peer)):
+                return await _connection_picker(message, command)
     else:
         peer = message.chat.id
-    chat = await client.get_chat(peer)
-    if chat.type not in (ChatType.CHANNEL, ChatType.GROUP, ChatType.SUPERGROUP):
-        return await message.reply_text(tr("errors.group_only"))
-    target = chat.id
-    if not await has_chat_permission(client, target, message.from_user.id, owner=True):
-        return await message.reply_text(tr("anime.channel_owner_required"))
-    if command == "aniconnect":
-        await atomic_upsert(CC, {"_id": str(target)}, {"$set": {"usr": message.from_user.id}})
-        text = tr("anime.bot.successfully_connected_the_channel")
-    else:
-        result = await CC.delete_one({"_id": str(target)})
-        text = (
-            tr("anime.bot.successfully_disconnected_the_channel")
-            if result.deleted_count
-            else tr("anime.bot.channel_not_connected")
-        )
-    await message.reply_text(text)
+    await _set_channel_connection(client, message, peer, command)
+
+
+@listen(filters=filters.private & filters.chat_shared, name="anime_chat_selection")
+async def connect_shared_channel(client: Client, message: Message):
+    if not message.from_user or message.sender_chat or message.forward_origin:
+        return
+    action = _CONNECTION_ACTIONS.get(message.chat_shared.button_id)
+    if action is None:
+        return
+    await _set_channel_connection(
+        client, message, message.chat_shared.chat.id, action, from_picker=True
+    )
 
 
 @callbackquery(

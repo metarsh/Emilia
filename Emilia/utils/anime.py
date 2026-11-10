@@ -127,16 +127,26 @@ async def get_user_from_channel(cid, *, client):
 
 async def return_json_senpai(query: str, vars_: dict, auth: bool = False, user: int = None):
     url = "https://graphql.anilist.co"
-    headers = None
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
     if auth:
-        headers = {
-            "Authorization": (
-                "Bearer " + str((await AUTH_USERS.find_one({"id": int(user)}))["token"])
-            ),
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-        }
+        headers["Authorization"] = "Bearer " + str(
+            (await AUTH_USERS.find_one({"id": int(user)}))["token"]
+        )
     response = await post(url, json={"query": query, "variables": vars_}, headers=headers)
+    # AniList uses HTTP 404 for a valid GraphQL query with no matching result.
+    # Let the existing search handlers consume that error envelope.
+    if response.status == 404:
+        try:
+            result = response.json()
+        except ValueError:
+            pass
+        else:
+            if (
+                isinstance(result, dict)
+                and isinstance(result.get("errors"), list)
+                and result["errors"]
+            ):
+                return result
     response.raise_for_status()
     return response.json()
 

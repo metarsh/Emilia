@@ -15,7 +15,6 @@ from Emilia.utils.admins import get_time
 from Emilia.utils.executors import run_in_thread
 from Emilia.utils.process import run_process
 
-
 ENTRY_METRICS = {
     "notes": ("notes", "array", "Saved notes"),
     "filters": ("filters", "array", "Saved filters"),
@@ -350,9 +349,8 @@ async def _redis():
 
 
 async def _runtime():
-    from Emilia.services.clone_runtime import clone_manager
-
     from Emilia.application import pgram
+    from Emilia.services.clone_runtime import clone_manager
 
     running = [
         entry["client"] for entry in clone_manager.clones.values() if entry["state"] == "running"
@@ -450,7 +448,7 @@ async def build_dashboard():
         else:
             sections.extend(result)
     timestamp = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
-    rich = f"<p><b>Bot stats</b></p>" + summary.rich_html()
+    rich = "<p><b>Bot stats</b></p>" + summary.rich_html()
     rich += "".join(
         f"<details><summary>{html.escape(section.title)}</summary>{section.rich_html()}</details>"
         for section in sections
