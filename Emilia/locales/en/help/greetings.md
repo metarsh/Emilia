@@ -5,23 +5,30 @@ children = ["greetings-examples", "captcha", "formatting"]
 
 # Greetings
 
-Welcome new members and send a goodbye when they leave.
+I can welcome new members and say goodbye when they leave. Save your own text or media to make the messages suit your group.
 
-## Admin commands
+In the examples, I replace `{mention}` with a mention of the new member and `{first}` with their first name. Keep the braces when saving.
 
-- `/welcome [on|off|noformat]`: Preview the welcome or toggle it; noformat shows its saved source.
-- `/goodbye [on|off]`: Preview the goodbye or toggle it.
-- `/setwelcome`: Reply to text or media to save a welcome.
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
+
+**Admin commands:**
+
+- `/welcome [on|off|noformat]`: Preview the welcome, turn it on or off, or use `noformat` to see the saved text without formatting.
+- `/goodbye [on|off]`: Preview the goodbye or turn it on or off.
+- `/setwelcome`: Reply to text or media to save it as the welcome.
 - `/resetwelcome`: Restore the default welcome.
-- `/setgoodbye [text]`: Save inline text or replied content as the goodbye.
+- `/setgoodbye [text]`: Save a goodbye using text after the command or content you reply to.
 - `/resetgoodbye`: Restore the default goodbye.
-- `/cleanservice [on|off]`: Show or change service-message deletion.
-- `/cleanwelcome [on|off]`: Show or change deletion of old greeting messages.
+- `/cleanservice [on|off]`: View or change whether join, leave, and other service messages are deleted.
+- `/cleanwelcome [on|off]`: View or change whether old greeting messages are deleted.
 
-## Example
+**Examples:**
 
-Send a message containing `Welcome, {mention}! Read the group rules.` Then reply to it:
+- Send this message, then reply to it with `/setwelcome`:\
+  `Welcome, {mention}! Read the group rules.`
+- Turn welcome messages on:\
+  `/welcome on`
+- Save a goodbye:\
+  `/setgoodbye Goodbye, {first}.`
 
-```
-/setwelcome
-```
+Use the guides below for media examples, member verification, and formatting.

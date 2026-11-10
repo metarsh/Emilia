@@ -5,45 +5,33 @@ hidden = true
 
 # Placeholders
 
-Insert context fields in saved content.
+I can fill in names, mentions, and group details in your saved messages. Add a placeholder exactly as written, including its braces, where you want that information to appear.
 
-## Context fields
+**Names and chat details:**
 
-| Field | Replacement |
-| --- | --- | --- |
-| `{first}` | First name. |
-| `{last}` | Last name, or empty. |
-| `{fullname}` | Full name. |
-| `{username}` | Username, or a mention. |
-| `{mention}` | User mention. |
-| `{id}` | User ID. |
-| `{chatname}` | Chat title. |
-| `{count}` | Member count. |
+- `{first}`: The user's first name.
+- `{last}`: The user's last name, or nothing if they have none.
+- `{fullname}`: The user's full name.
+- `{username}`: Their username, or a mention if they have none.
+- `{mention}`: A mention of the user.
+- `{id}`: The user's ID.
+- `{chatname}`: The chat's name.
+- `{count}`: The member count.
 
-## Message tags
+**Message options:**
 
-| Tag | Behavior |
-| --- | --- |
-| `{rules}` | Add a rules button. |
-| `{preview}` | Enable link previews for this message. |
-| `{replytag}` | Make a filter reply to the triggering message's reply target. |
-| `{admin}` | Allow only admins to retrieve a note. |
-| `{private}` | Open a note in private. |
-| `{noprivate}` | Send a note in the group. |
+- `{rules}`: Add a button to the group rules.
+- `{preview}`: Enable link previews for this message.
+- `{replytag}`: If someone triggers a filter while replying to another message, send the filter reply to that earlier message.
+- `{admin}`: Let only admins retrieve a note.
+- `{private}`: Open a note in private.
+- `{noprivate}`: Send a note in the group.
 
-## Example
+**Examples:**
 
-```
-/filter hello Hello, {first}!
-```
-
-<details>
-<summary>Rules and greeting examples</summary>
-
-```
-/save info Read the group rules. {rules}
-```
-
-For a welcome, send `Welcome, {mention}, to {chatname}!` and reply to it with `/setwelcome`.
-
-</details>
+- Greet a user by name in a filter:\
+  `/filter hello Hello, {first}!`
+- Add a rules button to a note:\
+  `/save info Read the group rules. {rules}`
+- Mention a new member in the welcome. Send this text, then reply to it with `/setwelcome`:\
+  `Welcome, {mention}, to {chatname}!`

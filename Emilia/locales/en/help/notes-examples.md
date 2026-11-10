@@ -5,40 +5,25 @@ hidden = true
 
 # Note examples
 
-Save a note, retrieve it, and remove it when it is no longer needed.
+Save text or media once, then open it by command or hashtag.
 
-## Text
+**Examples:**
 
-```
-/save rules Be kind.
-/get rules
-#rules
-```
-
-## Media
-
-Reply to a photo, sticker, or other supported media:
-
-```
-/save welcome
-```
-
-## Delivery and access
-
-```
-/save staff Admin information. {admin}
-/save contact Contact the admins. {private}
-/save public Public information. {noprivate}
-```
-
-## Rules button
-
-```
-/save info Read the group rules. {rules}
-```
-
-## Remove a note
-
-```
-/clear welcome
-```
+- Save a text note:\
+  `/save faq Ask an admin if you need help.`
+- Open it by command:\
+  `/get faq`
+- Open it by hashtag:\
+  `#faq`
+- Save a photo, sticker, or other supported media as a note named banner. Reply to it:\
+  `/save banner`
+- Save a note only admins can retrieve:\
+  `/save staff Admin information. {admin}`
+- Make a note open in private:\
+  `/save contact Contact the admins. {private}`
+- Make a note appear in the group:\
+  `/save public Public information. {noprivate}`
+- Add a button to the group rules:\
+  `/save info Read the group rules. {rules}`
+- Delete a note:\
+  `/clear banner`

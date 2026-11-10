@@ -5,23 +5,26 @@ children = ["anti-channel"]
 
 # Pins
 
-Manage pinned messages.
+I can pin important messages so members can find them easily.
 
-## User commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
+
+**User commands:**
 
 - `/pinned`: Open the current pinned message.
 
-## Admin commands
+**Admin commands:**
 
-- `/pin [loud|notify]`: Reply to a message to pin it; loud or notify alerts members.
+- `/pin [loud|notify]`: Reply to a message to pin it. Add `loud` or `notify` to alert members.
 - `/unpin`: Unpin the current pin, or the message you reply to.
 - `/unpinall`: Remove every pin after confirmation.
-- `/pininfo`: Explain linked-channel pin compatibility.
+- `/pininfo`: Read how pins work with a linked channel.
 
-## Example
+**Examples:**
 
-Reply to the message to pin without a notification:
+- Pin without a notification. Reply to the message:\
+  `/pin`
+- Pin and notify members. Reply to the message:\
+  `/pin notify`
 
-```
-/pin
-```
+Use the Anti-channel guide below to control pins from your linked channel.

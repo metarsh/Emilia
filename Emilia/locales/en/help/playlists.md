@@ -4,19 +4,22 @@ title = "Playlists"
 
 # Playlists
 
-Create and share playlists through the main bot's playlist menu.
+I can help you create and share playlists through the main bot's playlist menu.
 
-## User commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
+
+**User commands:**
 
 - `/playlist [link or ID]`: Open your library, or load a playlist into a group voice chat.
-- `/cancel`: Cancel a pending playlist input prompt.
+- `/cancel`: Cancel a pending playlist input.
 
-## Library
+**Tips:**
 
-Open the menu to create playlists, add songs, import a supported source, or manage sharing. Tap the heart on a playing track to save it. Open the menu in the intended group to select that voice chat before using Play from private chat.
+- Use the menu to create playlists, add songs, import a supported source, or change sharing.
+- Tap the heart on a playing track to save it.
+- To play from private chat, first open the playlist menu in the group whose voice chat you want to use.
 
-## Example
+**Example:**
 
-```
-/playlist
-```
+- Open your library:\
+  `/playlist`

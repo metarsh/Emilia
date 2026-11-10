@@ -5,40 +5,23 @@ hidden = true
 
 # Greeting examples
 
-Compose welcome content first, then save it by reply.
+Write the message you want members to see, then save it as a welcome or goodbye.
 
-## Welcome
+Leave the placeholders as written: `{mention}` mentions the new member, `{chatname}` becomes the group name, and `{first}` becomes their first name.
 
-Send `Welcome, {mention}, to {chatname}!` as a message, then reply:
+**Examples:**
 
-```
-/setwelcome
-```
-
-Enable welcomes:
-
-```
-/welcome on
-```
-
-## Photo welcome
-
-Reply to a photo with your welcome text in its caption:
-
-```
-/setwelcome
-```
-
-## Goodbye
-
-```
-/setgoodbye Goodbye, {first}.
-/goodbye on
-```
-
-## Reset
-
-```
-/resetwelcome
-/resetgoodbye
-```
+- Save a welcome. Send this text, then reply to it with `/setwelcome`:\
+  `Welcome, {mention}, to {chatname}!`
+- Turn welcome messages on:\
+  `/welcome on`
+- Save a photo welcome. Put your welcome text in the photo's caption, then reply to the photo:\
+  `/setwelcome`
+- Save a goodbye:\
+  `/setgoodbye Goodbye, {first}.`
+- Turn goodbye messages on:\
+  `/goodbye on`
+- Restore the default welcome:\
+  `/resetwelcome`
+- Restore the default goodbye:\
+  `/resetgoodbye`

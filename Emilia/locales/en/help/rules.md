@@ -5,23 +5,29 @@ children = ["formatting"]
 
 # Rules
 
-Save rules for your group and choose whether members read them in the group or in private.
+I can keep your group's rules ready for members to read. Choose whether they open in the group or in private chat.
 
-## User commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-- `/rules`: Read the current group rules.
+**User commands:**
 
-## Admin commands
+- `/rules`: Read the group's rules.
 
-- `/setrules <text>`: Save group rules.
+**Admin commands:**
+
+- `/setrules <text>`: Save your group rules.
 - `/resetrules`: Restore the default rules. Alias: `/clearrules`.
-- `/privaterules [on|off]`: Show or change private delivery of rules.
-- `/setrulesbutton [label]`: Show or set the label used by the rules button.
-- `/resetrulesbutton`: Restore the default rules button label.
+- `/privaterules [on|off]`: View or change whether rules open in private. Private delivery is the default.
+- `/setrulesbutton [label]`: View or change the rules button's label.
+- `/resetrulesbutton`: Restore the default button label.
 
-## Example
+If rules open in private, members use the button to open my chat and may need to press Start there. Saving rules with `/setrules` is separate from saving a note.
 
-```
-/setrules Be kind.
-/privaterules on
-```
+**Examples:**
+
+- Save a rule:\
+  `/setrules Be kind.`
+- Open rules in private:\
+  `/privaterules on`
+
+Use the formatting guide below to style your rules.

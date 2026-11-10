@@ -4,27 +4,44 @@ title = "Connections"
 
 # Connections
 
-Manage a group or channel from a private chat with the bot. Both you and the bot must be current members. Administrators may connect; ordinary members need `/allowconnection on`.
+Want to update your group's notes, filters, or settings without filling the group with commands? Connect to it here, then send me those commands in private.
 
-## Commands
+Both you and I must still be in the chat. Admins can connect by default. Other members can connect only if an admin enables `/allowconnection on`.
 
-- `/connect [chat ID or @username]`: Connect in PM, or get a connection button in a group or channel. Basic-group IDs are supported. Mutes, temporary bans and CAPTCHA require a supergroup; join requests require a supergroup or channel.
-- `/connection`: Show the selected chat and the commands registered for its scope.
-- `/disconnect`: Clear the active connection, including one you can no longer access.
-- `/reconnect`: Recheck access and reconnect to your last chat.
-- `/allowconnection [on|off]`: Administrators can allow or disallow member connections in a group or channel, including from a connected private chat.
+A connection selects the chat your private commands will affect. Check `/connection` before changing settings or moderating a member.
 
-Connected commands retain their normal permissions and disabled-command policy. Group-only commands cannot act on a channel. Settings, notes, filters, requests and explicit-user moderation support connections where listed by `/connection`.
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-Connected groups also support `/resetwarn`, `/zombies` and `/kickdead`. Connected supergroups support `/slowmode`, `/setsticker`, `/unbanall` and `/unmuteall`. Groups and channels support `/disable`, `/enable`, `/disabled`, `/disabledel` and `/disableable`.
+**Commands:**
 
-Commands that delete a replied-to group message, purge messages, pin a replied-to message or manage forum topics require their original group context.
+- `/connect [chat ID or @username]`: Connect to a group or channel from private chat. In the group or channel, get a button to connect to that chat.
+- `/connection`: See your connected chat and the commands you can use there.
+- `/disconnect`: Disconnect, even if you can no longer access the chat.
+- `/reconnect`: Connect to your last chat again, if you still have access.
 
-## Example
+**Admin commands:**
 
-```
-/connect -1001234567890
-/connection
-/ban @username
-/disconnect
-```
+- `/allowconnection [on|off]`: View or change whether ordinary members may connect. You can also change this from a connected private chat.
+
+**Examples:**
+
+- Connect using a chat ID:\
+  `/connect -1001234567890`
+- Connect using a public username:\
+  `/connect @yourgroup`
+- Check which commands are available:\
+  `/connection`
+- Ban a member in the connected group, if you have the required admin rights:\
+  `/ban @username`
+- Leave the connection:\
+  `/disconnect`
+
+**Tips:**
+
+- Use `/id` in your chat to find its ID.
+- Your usual permissions still apply, including any commands disabled in that chat.
+- Basic-group IDs work too. Mutes, temporary bans, and CAPTCHA need a supergroup, Telegram's upgraded group type. Join requests need a supergroup or channel.
+- Settings, notes, filters, requests, and moderation with a specified user work where listed by `/connection`. Group-only commands cannot be used on channels.
+- Connected groups support `/resetwarn`, `/zombies`, and `/kickdead`. Connected supergroups also support `/slowmode`, `/setsticker`, `/unbanall`, and `/unmuteall`.
+- Both groups and channels support `/disable`, `/enable`, `/disabled`, `/disabledel`, and `/disableable`.
+- To delete or purge group messages, pin a message by reply, or manage topics, send the command in the original group.

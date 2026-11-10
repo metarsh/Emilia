@@ -5,17 +5,20 @@ hidden = true
 
 # Federation queries
 
-Inspect federation information and check your own ban status.
+I can show you a federation's information and help you check whether you are banned from it.
 
-## User commands
+Use these lookups in private. In a group, you need group admin rights. Ask the federation owner for its ID, or have a group admin check `/chatfed` in a group that belongs to it.
 
-- `/fedinfo [federation_id]`: Show a federation.
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
+
+**User commands:**
+
+- `/fedinfo [federation_id]`: View federation information. Without an ID, show the federation you own.
 - `/fedadmins [federation_id]`: List a federation's admins.
 - `/fedstat <federation_id>`: Check your own ban status in a federation.
 - `/myfeds`: List federations where you are an admin.
 
-## Example
+**Example:**
 
-```
-/fedstat 12345678-1234-1234-1234-123456789abc
-```
+- Check your ban status using a federation ID:\
+  `/fedstat 12345678-1234-1234-1234-123456789abc`

@@ -5,20 +5,28 @@ hidden = true
 
 # Federation moderation
 
-Federation admins and owners manage federation bans. In a group, commands act on its federation; in private, ban commands require the federation owner and act on their federation.
+I can ban a user across a federation, saving you from banning them in each group separately.
 
-## Federation admin commands
+Federation admins and owners can manage bans in a group belonging to that federation. In private chat, only the federation owner can use ban commands, and they apply to their own federation.
 
-- `/fban [user] [reason]`: Ban a user across the federation. A reason is required when the owner enables that setting.
+Reply to the member you want to moderate, or give their username, mention, or numeric ID.
+
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
+
+**Federation admin commands:**
+
+- `/fban [user] [reason]`: Ban a user across the federation. Include a reason if the owner requires one.
 - `/unfban [user] [reason]`: Remove a federation ban.
-- `/feddemoteme <federation_id>`: Remove your own federation admin role. Alias: `/fdemoteme`.
+- `/feddemoteme <federation_id>`: Give up your federation admin role. Alias: `/fdemoteme`.
 
-## Usage notes
+**Tips:**
 
-Reply to a user or supply their username, mention, or ID. Federation bans can also propagate to subscribed federations. Owners and federation admins cannot be banned from their own federation.
+- Bans can also apply to federations subscribed to yours.
+- A federation's owner and admins cannot be banned from their own federation.
 
-## Example
+**Examples:**
 
-```
-/fban @username Spam
-```
+- Ban a user across the federation:\
+  `/fban @username Spam`
+- Remove their federation ban:\
+  `/unfban @username`

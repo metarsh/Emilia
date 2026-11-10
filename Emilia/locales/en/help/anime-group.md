@@ -6,36 +6,33 @@ anime = true
 
 # Anime group settings
 
-Control anime features in groups or channels and link their sender identity to an AniList account.
+Choose how anime features work in your group or channel. Chat owners can also link an AniList account so searches sent as that chat use their account.
 
-## Admin commands
+**Admin commands:**
 
 - `/anisettings`: Open adult-content, notification, and display settings.
-- `/disable <command> [command ...]`: Disable anime command names.
-- `/enable <command> [command ...]`: Enable anime commands again.
+- `/disable <command> [command ...]`: Turn off anime command names.
+- `/enable <command> [command ...]`: Turn them on again.
 - `/disabled`: List disabled commands in the selected group or channel.
 
-## Chat owner commands
+**Chat owner commands:**
 
-- `/aniconnect [chat ID or @username]`: Link your group or channel to your AniList account. Supply the chat in private, or run it as a named owner in that chat.
+- `/aniconnect [chat ID or @username]`: Link your group or channel to your AniList account. Give the chat in private, or use your own owner account in that chat. Use `/id` there to find its ID.
 - `/anidisconnect [chat ID or @username]`: Remove that account link.
 
-## Usage notes
+**Tips:**
 
-Account links require current ownership and let searches sent as that chat use your account. Ownership is checked again when the link is used. A Telegram discussion link does not authorize AniList account access.
+- You must still own the chat when the linked account is used. Linking a discussion group to a channel does not grant access to an AniList account.
+- `/anisettings`, `/disable`, `/enable`, and `/disabled` work through connected private chats. Admins can still use disabled commands.
+- An AniList account link is separate from a connection used to send bot commands in private.
 
-`/anisettings`, `/disable`, `/enable` and `/disabled` support connected private chats. An AniList account link and a bot command connection are separate settings. Administrators can still use disabled commands.
-
-<details>
-<summary>Anime commands that support disabling</summary>
+**Commands you can disable:**
 
 `anime`, `anilist`, `character`, `manga`, `airing`, `anihelp`, `schedule`, `fillers`, `top`, `anireverse`, `watch`, `flex`, `user`, `ame`, `activity`, `favourites`, `gettags`, `getgenres`, `aniconnect`, `anidisconnect`, `browse`, `studio`.
 
-</details>
+**Examples:**
 
-## Example
-
-```
-/disable anime anilist
-/enable anime anilist
-```
+- Disable anime searches:\
+  `/disable anime anilist`
+- Enable them again:\
+  `/enable anime anilist`

@@ -4,31 +4,30 @@ title = "Quotes"
 
 # Quotes
 
-Turn replied messages into a quote sticker or image, then browse saved group quotes.
+I can turn members' messages into quote stickers or images, and show saved group quotes. This guide uses `/q`; the Anime guide's `/quote` sends a random anime quotation.
 
-## User commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-- `/q [count] [color] [p] [r]`: Reply to the first message to quote. Use p for a PNG document or r to include its reply.
-- `/qtop`: Open an inline browser of saved quotes by rating; group members can select a quote to send.
+**User commands:**
+
+- `/q [count] [color] [p] [r]`: Reply to the first message you want to quote.
+- `/qtop`: Browse saved quotes by rating. Group members can choose one to send.
 - `/qrand`: Send a random saved quote from the current group.
 
-## Admin commands
+**Admin commands:**
 
-- `/qrate [on|off]`: Show or change rating buttons.
+- `/qrate [on|off]`: View or change quote rating buttons.
 
-## Options
+**Options:**
 
-| Option | Value |
-| --- | --- |
-| `count` | 1–25 consecutive messages; defaults to 1. `/q 5` requests 5. |
-| `color` | A CSS color name, `#rgb`, or `#rrggbb`. |
-| `p` | Send a PNG document. |
-| `r` | Include the quoted message's reply in a small bubble when quoting one message. |
+- `count`: Quote 1 to 25 consecutive messages. The default is 1; `/q 5` requests 5.
+- `color`: Choose a color name, such as `red`, or a color code such as `#ff0000`. Short `#rgb` and full `#rrggbb` codes work.
+- `p`: Send an image file instead of a sticker.
+- `r`: Include the quoted message's reply in a small bubble. This works when quoting one message.
 
-## Example
+**Examples:**
 
-Reply to the first message to quote:
-
-```
-/q 5 #ff0000 p
-```
+- Make a quote sticker. Reply to a message:\
+  `/q`
+- Quote 5 messages as a red PNG. Reply to the first:\
+  `/q 5 #ff0000 p`

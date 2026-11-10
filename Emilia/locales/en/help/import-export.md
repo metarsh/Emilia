@@ -4,15 +4,19 @@ title = "Import and export"
 
 # Import and export
 
-Transfer stored group settings with a JSON export.
+I can export your group's saved settings so you can keep a backup or transfer them with a JSON file.
 
-## Owner commands
+**Owner commands:**
 
-- `/export`: Export the group settings as JSON.
-- `/import`: Reply to an export JSON document to restore its settings.
-- `/chatreset`: Delete the group's stored configuration after confirmation. This cannot be undone.
+- `/export`: Download the group's settings as JSON.
+- `/import`: Reply to an exported JSON document to restore its settings.
+- `/chatreset`: Delete the group's saved configuration after confirmation. This cannot be undone.
 
-## Usage notes
+**Examples:**
 
-Import can replace saved settings. Keep an export before importing or resetting.
-CAPTCHA verification, pending challenges and welcome message IDs remain with their original chat.
+- Make a backup:\
+  `/export`
+- Restore it. Reply to the JSON document:\
+  `/import`
+
+Importing can replace saved settings. Keep a backup before importing or resetting. An import does not transfer CAPTCHA verification, pending challenges, or links to existing welcome messages between chats.

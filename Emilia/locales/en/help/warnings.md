@@ -4,34 +4,39 @@ title = "Warnings"
 
 # Warnings
 
-Track warnings and act when a member reaches the limit.
+I can keep track of warnings and take action when a member reaches your limit.
 
-## User commands
+The starting limit is 3 warnings and the action is a ban. After applying the action, I clear that member's warning count. Use `/warnings` to check your group's current settings first.
 
-- `/warns [user]`: Show your warnings. Only admins may supply another user.
+To warn someone, reply to their message or give their username, mention, or numeric ID. Reasons are optional.
 
-## Admin commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-- `/warn [user] [reason]`: Warn a user. Use `/dwarn` by reply to delete their message, or `/swarn` for a silent warning. Aliases: `/swarn`, `/dwarn`.
-- `/resetwarn [user]`: Clear a user's warnings; reply or supply a user. Aliases: `/rmwarns`, `/resetwarns`.
-- `/warnlimit <number>`: Set the warning limit from 1 to 50; requires permission to change group info. Aliases: `/setwarnlimit`.
-- `/warnmode <action> [duration]`: Set ban, kick, mute, tban, or tmute; timed actions require a duration. Aliases: `/setwarnmode`.
-- `/warnings`: Show the group's warning settings.
+**User commands:**
 
-## Owner commands
+- `/warns [user]`: View your warnings. Only admins can check another member.
 
-- `/resetallwarns`: Clear every member's warnings after confirmation. This cannot be undone.
+**Admin commands:**
 
-## Usage notes
+- `/warn [user] [reason]`: Warn a member. Use `/dwarn` by reply to also delete their message. `/swarn` removes your command and sends no confirmation.
+- `/resetwarn [user]`: Clear a member's warnings. Reply to them or specify the user. Aliases: `/rmwarns`, `/resetwarns`.
+- `/warnlimit <number>`: Set the limit from 1 to 50. You need permission to change group info. Alias: `/setwarnlimit`.
+- `/warnmode <action> [duration]`: Choose `ban`, `kick`, `mute`, `tban`, or `tmute`. Timed actions need a duration, such as `2h` for 2 hours. Alias: `/setwarnmode`.
+- `/warnings`: View the group's warning settings.
 
-Warning commands, including `/resetwarn` and `/resetallwarns`, support connected private chats. `/dwarn` requires a reply in the original group. Warning actions that mute or temporarily ban require a supergroup.
+**Owner commands:**
 
-Automated lock and blocklist warnings apply to named users and record the bot as the issuer. Sender channels and anonymous group identities cannot receive user warnings.
+- `/resetallwarns`: Clear everyone's warnings after confirmation. This cannot be undone.
 
-## Example
+**Examples:**
 
-Reply to the member's message:
+- Warn a member by replying to their message:\
+  `/warn Advertising`
+- Set a limit of 3 warnings:\
+  `/warnlimit 3`
 
-```
-/warn Advertising
-```
+**Tips:**
+
+- Warning commands, including `/resetwarn` and `/resetallwarns`, work in connected private chats. `/dwarn` needs a reply in the group.
+- Actions that mute or temporarily ban need a supergroup.
+- Automatic warnings from locks and blocklists apply to users posting from their own accounts. Channel senders and anonymous group identities cannot receive user warnings.

@@ -4,16 +4,15 @@ title = "Night mode"
 
 # Night mode
 
-Schedule group restrictions for the night. (starting at 23:59, ending at 6:01)
+I can close your group to member messages overnight, from 23:59 to 6:01 in India time (Asia/Kolkata, UTC+5:30).
 
-## Admin commands
+During that time, members cannot send messages, media, or reactions, or invite users. At 6:01, I restore the group's permissions from before the night restriction. Disabling night mode while the group is closed also restores them.
 
-- `/nightmode`: Open the night mode control panel.
+**Admin commands:**
 
-## Example
+- `/nightmode`: Open the night mode controls. You need Change group info rights to use them.
 
-Open the panel, then choose Enable or Disable:
+**Example:**
 
-```
-/nightmode
-```
+- Send this in the group, then choose Enable or Disable:\
+  `/nightmode`

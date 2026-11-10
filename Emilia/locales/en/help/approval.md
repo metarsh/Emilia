@@ -4,26 +4,27 @@ title = "Approval"
 
 # Approval
 
-Immune trusted members from locks, blocklists, and antiflood.
+Trust a member to bypass locks, blocklists, and antiflood? Approve them, and I will leave their messages alone when those checks run.
 
-## User commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-- `/approval [user]`: Check your approval status, or identify a user by reply, mention, username, or ID.
+**User commands:**
 
-## Admin commands
+- `/approval [user]`: Check your own approval status or someone else's. Reply to them, or give a mention, username, or ID.
 
-- `/approve [user] [reason]`: Approve a user.
-- `/unapprove [user]`: Remove a user's approval status.
+**Admin commands:**
+
+- `/approve [user] [reason]`: Approve a trusted member.
+- `/unapprove [user]`: Remove a member's approval.
 - `/approved`: List approved members.
 
-## Owner commands
+**Owner commands:**
 
-- `/unapproveall`: Remove every approved user. This cannot be undone.
+- `/unapproveall`: Remove everyone's approval. This cannot be undone.
 
-## Example
+**Examples:**
 
-Reply to the trusted member's message:
-
-```
-/approve
-```
+- Approve a member by replying to their message:\
+  `/approve`
+- Remove a member's approval:\
+  `/unapprove @username`

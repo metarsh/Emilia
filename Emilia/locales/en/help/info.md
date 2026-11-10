@@ -5,22 +5,28 @@ children = ["stickers"]
 
 # Info
 
-Look up Telegram users and chats, or save short profile text.
+I can look up Telegram users and chats, or save short profile text for members. The saved text belongs to this bot; it does not change a Telegram profile.
 
-## User commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-- `/id`: Show chat and sender IDs; reply to a user or forwarded message for its IDs.
-- `/info [user]`: Show your information or another user's; reply or supply a username, mention, or ID.
-- `/ginfo <chat>`: Look up a chat by its ID or username.
+**User commands:**
+
+- `/id`: View chat and sender IDs. Reply to a user or forwarded message to see its IDs.
+- `/info [user]`: View your information or someone else's. Reply to them, or give a username, mention, or ID.
+- `/ginfo <chat>`: Look up a chat using its ID or username.
 - `/github <username>`: Look up a GitHub profile.
-- `/setme <text>`: Set profile text for yourself, or the member you reply to, in a group; maximum 70 characters.
-- `/me [user]`: Show saved profile text.
-- `/setbio <text>`: Set a bio for yourself, or the member you reply to, in a group; maximum 70 characters.
-- `/bio [user]`: Show a saved bio.
+- `/setme <text>`: Save profile text for yourself or the member you reply to in a group. Maximum 70 characters.
+- `/me [user]`: View saved profile text.
+- `/setbio <text>`: Save a bio for yourself or the member you reply to in a group. Maximum 70 characters.
+- `/bio [user]`: View a saved bio.
 
-## Example
+Profile text (`/me`) and bio (`/bio`) are separate saved fields. You can write either for yourself, or reply to a member to write it for them; these setters are not admin-only.
 
-```
-/setme I like anime.
-/me
-```
+**Examples:**
+
+- Save a short profile:\
+  `/setme I like anime.`
+- Read it:\
+  `/me`
+
+Use the Stickers guide below to find sticker and GIF file IDs.

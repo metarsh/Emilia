@@ -5,34 +5,39 @@ children = ["playlists"]
 
 # Music
 
-Play audio or video in a group voice chat through the main bot. Start the voice chat first.
+I can play audio or video in your group voice chat through the main bot. Start the voice chat before asking me to play.
 
-## User commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-- `/play [query or link]`: Play audio; provide a search query or link, or reply to text, audio, voice, or video.
-- `/vplay [query or link]`: Play video using the same input forms.
-- `/now`: Show the current track and playback controls.
+**User commands:**
+
+- `/play [query or link]`: Play audio from a search or link. You can also reply to text, audio, voice, or video.
+- `/vplay [query or link]`: Play video using the same kinds of input.
+- `/now`: View the current track and playback buttons.
 - `/queue`: List queued tracks.
-- `/lyrics <song>`: Find lyrics for a song.
+- `/lyrics <song>`: Find a song's lyrics.
 
-## Session controls
+**Playback controls:**
 
 - `/pause`: Pause playback.
-- `/resume`: Resume playback.
+- `/resume`: Continue playback.
 - `/skip`: Skip the current track.
 - `/end`: Stop playback and clear the queue. Alias: `/cend`.
-- `/remove <position>`: Remove a track at its position in `/queue`.
-- `/clearqueue`: Empty the upcoming queue.
-- `/loop <off|one|all>`: Choose whether to repeat the current track or queue.
-- `/shuffle <on|off>`: Enable or disable queue shuffling.
+- `/remove <position>`: Remove a track using its position in `/queue`.
+- `/clearqueue`: Remove all upcoming tracks.
+- `/loop <off|one|all>`: Turn looping off, repeat the current track, or repeat the queue.
+- `/shuffle <on|off>`: Turn queue shuffling on or off.
 
-## Admin commands
+**Admin commands:**
 
-- `/autoplay [on|off]`: Show or change recommendations when the queue ends. Alias: `/cplay`.
-- `/playmenu [on|off]`: Show or change the search-result selection menu.
+- `/autoplay [on|off]`: View or change whether recommendations play when the queue ends. Alias: `/cplay`.
+- `/playmenu [on|off]`: View or change whether you get a menu to choose search results.
 
-## Example
+**Examples:**
 
-```
-/play Never Gonna Give You Up
-```
+- Search for and play a song:\
+  `/play Never Gonna Give You Up`
+- View upcoming tracks:\
+  `/queue`
+
+Use the Playlists guide below to save and share song collections.

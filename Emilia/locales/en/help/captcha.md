@@ -5,28 +5,29 @@ hidden = true
 
 # CAPTCHA
 
-Restrict new members until they verify.
+I can stop new members from sending messages or adding reactions until they verify. Choose a button, a maths question, or a text challenge.
 
-## Admin commands
+**Admin commands:**
 
-- `/captcha [on|off]`: Show or change member verification.
-- `/captchamode [button|math|text|image]`: Show or choose a challenge; image is same as text.
-- `/captcharules [on|off]`: Show or change whether verification also requires accepting the rules.
-- `/setcaptchatext [text]`: Show or set the verification button label.
-- `/resetcaptchatext`: Restore the default verification button label.
-- `/recaptcha [on|off]`: Show or change whether returning members must verify again.
+- `/captcha [on|off]`: View or change verification for new members.
+- `/captchamode [button|math|text|image]`: View or choose the challenge. `image` is the same as `text`.
+- `/captcharules [on|off]`: View or change whether members must also accept the rules.
+- `/setcaptchatext [text]`: View or change the verification button's label.
+- `/resetcaptchatext`: Restore the default button label.
+- `/recaptcha [on|off]`: View or change whether returning members must verify again.
 
-## Verification
+**Tips:**
 
-Button mode uses the welcome message. Math and text modes open a private image challenge with three attempts; users choose an answer or reply to the challenge. Rules acceptance can follow any mode.
+- Button mode uses the welcome message.
+- Maths and text modes open an image challenge in private. Users have three attempts and can choose an answer or reply to the challenge.
+- You can require rules acceptance after any challenge.
+- Challenges expire after 15 minutes. An admin must review anyone still restricted after that.
+- Use `/connect` to manage settings that support a connected group. For verification before joining, use the Join requests guide.
 
-Challenges expire after 15 minutes. An admin must review members still restricted after expiry. Waiting members cannot send messages or add reactions. `/recaptcha` controls returning-member checks.
+**Examples:**
 
-Use `/connect` for settings that support a connected group, or Autoapprove for join-request verification.
-
-## Example
-
-```
-/captcha on
-/captchamode text
-```
+- Enable verification with a text challenge:\
+  `/captcha on`\
+  `/captchamode text`
+- Ask returning members to verify again:\
+  `/recaptcha on`

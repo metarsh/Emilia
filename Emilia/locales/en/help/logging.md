@@ -4,19 +4,23 @@ title = "Logging"
 
 # Logging
 
-Record bot actions in a channel. The bot and the administrator choosing the destination must have permission to post there.
+I can record bot actions in a channel so you can review them later.
 
-## Commands
+Both I and the admin choosing the channel need permission to post there.
 
-- `/logchannel`: Show the current destination.
-- `/unsetlog`: Remove the destination.
-- `/setlog [channel ID or @username]`: The group owner sets the destination in the group or a connected PM. You may also reply to a forwarded channel post; keep its channel attribution visible.
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-## Example
+**Commands:**
 
-Add the bot to your log channel as an administrator, then send this in the group or a connected PM as group owner:
+- `/logchannel`: View the current log channel.
+- `/unsetlog`: Stop sending logs to that channel.
+- `/setlog [channel ID or @username]`: Set the log channel as group owner. Use this in the group or a connected private chat.
 
-```
-/setlog @my_log_channel
-/logchannel
-```
+**Example:**
+
+- Add me to your log channel as an admin. Then, as group owner, send:\
+  `/setlog @my_log_channel`
+- Check the destination:\
+  `/logchannel`
+
+You can also set the destination by replying to a forwarded channel post. Its channel name must remain visible.

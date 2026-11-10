@@ -4,25 +4,23 @@ title = "Anime reactions"
 
 # Anime reactions
 
-Send an anime image or GIF. Reply to a member's message to include them in a caption.
+I can send anime images and GIFs for the actions below. Reply to a member's message to include them in the caption, or send a command by itself.
 
-## Images
+**Image commands:**
 
-- `/waifu`
-- `/neko`
-- `/husbando`
-- `/kitsune`
+- `/waifu`: Get a waifu image.
+- `/neko`: Get a neko image.
+- `/husbando`: Get a husbando image.
+- `/kitsune`: Get a kitsune image.
 
-## Example
+**Example:**
 
-Reply to a member's message, or send the command by itself:
+- Send a hug reaction. Reply to a member or send:\
+  `/hug`
 
-```
-/hug
-```
+**Action commands:**
 
-<details>
-<summary>All action commands</summary>
+Choose the action you want me to send:
 
 - `/hug`
 - `/kiss`
@@ -87,5 +85,3 @@ Reply to a member's message, or send the command by itself:
 - `/tableflip`
 - `/ngif`
 - `/cringe`
-
-</details>

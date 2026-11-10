@@ -4,16 +4,19 @@ title = "Anti-channel"
 
 # Anti-channel
 
-Control messages sent on behalf of channels.
+I can keep unwanted channel senders out of your group and clean up posts from your linked channel.
 
-## Admin commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-- `/antichannelmode <on|off>`: Ban unwanted channel senders. Alias: `/antichannel`.
-- `/antichannelpin [on|off]`: Show or change whether linked-channel posts are automatically unpinned.
-- `/cleanlinked [on|off]`: Show or change whether linked-channel messages are deleted.
+**Admin commands:**
 
-## Example
+- `/antichannelmode <on|off>`: Enable or disable bans for unwanted channel senders. Alias: `/antichannel`.
+- `/antichannelpin [on|off]`: View or change whether linked-channel posts are automatically unpinned.
+- `/cleanlinked [on|off]`: View or change whether linked-channel messages are deleted.
 
-```
-/antichannelpin on
-```
+**Examples:**
+
+- Unpin posts from the linked channel:\
+  `/antichannelpin on`
+- Delete messages from the linked channel:\
+  `/cleanlinked on`

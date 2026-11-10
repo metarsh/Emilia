@@ -6,17 +6,18 @@ anime = true
 
 # Anime discovery
 
-Find an anime scene, check schedules, or plan the order of a series.
+I can identify an anime scene, show the weekly schedule, or help you work out which order to watch a series in.
 
-## User commands
+**User commands:**
 
-- `/anireverse`: Reply to a photo, animation, or video to identify an anime scene with trace.moe.
+- `/anireverse`: Reply to a photo, animation, or video to identify its anime scene with trace.moe.
 - `/schedule`: Open the weekly anime schedule.
 - `/watch <query>`: Find a series' watch order.
-- `/fillers <query>`: Find an anime's filler episodes.
+- `/fillers <query>`: Find filler episodes, which do not advance the main story.
 
-## Example
+**Examples:**
 
-```
-/watch Monogatari
-```
+- Look up a watch order:\
+  `/watch Monogatari`
+- Check filler episodes:\
+  `/fillers Naruto`

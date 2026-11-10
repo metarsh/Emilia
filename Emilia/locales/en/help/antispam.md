@@ -4,18 +4,17 @@ title = "Anti-spam"
 
 # Anti-spam
 
-Remove users listed by our antispam service.
+I can remove users listed by this bot's anti-spam service when you enable protection. This is a known-spammer list, rather than a check for every unwanted word in a message.
 
-## Admin commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-- `/antispam <on|off>`: Enable or disable antispam protection.
+**Admin commands:**
 
-## Appeals
+- `/antispam <on|off>`: Turn anti-spam protection on or off.
 
-Contact {support_contact} to appeal a ban or report a spammer.
+**Example:**
 
-## Example
+- Enable protection:\
+  `/antispam on`
 
-```
-/antispam on
-```
+To appeal a ban or report a spammer, contact {support_contact}. If no contact is named here, use `/feedback` in private to find the bot owner.

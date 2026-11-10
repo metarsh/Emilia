@@ -4,9 +4,11 @@ title = "Search tools"
 
 # Search tools
 
-Search the web, look up words, and capture a website.
+I can help you search the web, look up a word, or take a screenshot of a website.
 
-## User commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
+
+**User commands:**
 
 - `/google <query>`: Search Google. Alias: `/g`.
 - `/wiki <query>`: Look up a Wikipedia article.
@@ -14,8 +16,9 @@ Search the web, look up words, and capture a website.
 - `/ud <word or phrase>`: Look up an Urban Dictionary definition.
 - `/webss <url>`: Take a screenshot of a website.
 
-## Example
+**Examples:**
 
-```
-/webss https://example.com
-```
+- Look up a word:\
+  `/define hello`
+- Capture a website:\
+  `/webss https://example.com`

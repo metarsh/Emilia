@@ -4,34 +4,36 @@ title = "Antiflood"
 
 # Antiflood
 
-Act on consecutive messages or a burst within a time window. The bot needs permission to ban users and delete messages.
+If one member sends too many messages, I can act automatically. Admins and approved members are exempt.
 
-## User commands
+I need Ban users and Delete messages rights. Protection is off until enabled. Its starting settings are 10 consecutive messages, a ban, and deletion of the messages that trigger it.
 
-- `/flood`: Show the current flood settings.
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-## Admin commands
+**User commands:**
 
-- `/setflood <count|on|off>`: Set a consecutive-message limit, resume protection, or disable it. Alias: `/antiflood`.
-- `/setfloodtimer <count> <seconds>`: Enable a timed limit; use `/setfloodtimer` off to disable it.
-- `/setfloodmode <action> [duration]`: Set ban, mute, kick, tban, or tmute; tban and tmute require a duration. Alias: `/floodmode`.
-- `/clearflood <on|off>`: Choose whether to delete messages that trigger protection.
+- `/flood`: View the current flood settings.
 
-## Example
+**Admin commands:**
 
-```
-/setflood on
-/setfloodtimer 10 30
-```
+- `/setflood <count|on|off>`: Set a consecutive-message limit, enable protection with `on`, or disable it with `off`. Alias: `/antiflood`.
+- `/setfloodtimer <count> <seconds>`: Switch to counting messages from one member within a time window. Use `/setfloodtimer off` to return to consecutive-message counting.
+- `/setfloodmode <action> [duration]`: Choose `ban`, `mute`, `kick`, `tban`, or `tmute`. Timed actions need a duration, such as `2h`. Alias: `/floodmode`.
+- `/clearflood <on|off>`: Choose whether I delete the messages that trigger protection.
 
-<details>
-<summary>More examples</summary>
+**Examples:**
 
-```
-/setflood 7
-/setfloodmode tmute 2h
-/clearflood on
-/setfloodtimer off
-```
+- Check the settings before making changes:\
+  `/flood`
+- Set a limit of 7 consecutive messages:\
+  `/setflood 7`
+- Instead, use a limit of 10 messages within 30 seconds:\
+  `/setfloodtimer 10 30`
+- Mute members who flood for 2 hours:\
+  `/setfloodmode tmute 2h`
+- Delete the messages that trigger protection:\
+  `/clearflood on`
+- Enable protection using its saved settings:\
+  `/setflood on`
 
-</details>
+The timed and consecutive limits are alternatives. While protection is enabled, turning the timer off uses the saved consecutive limit again.

@@ -4,20 +4,21 @@ title = "Birthdays"
 
 # Birthdays
 
-Save birthdays using day/month dates, such as `25/12`.
+I can save birthdays and add reminders in your group. Enter dates as day/month, such as `25/12`.
 
-## User commands
+Replace `<...>` with required input; `[...]` is optional. Do not type those brackets.
 
-- `/setbirthday <DD/MM>`: Save your birthday. Use it in a group to add reminder inside a group chat.
-- `/birthday [user]`: Show your birthday or another user's; reply or supply a username or ID.
+**User commands:**
+
+- `/setbirthday <DD/MM>`: Save your birthday. Use it in a group to add a reminder there.
+- `/birthday [user]`: View your birthday or someone else's. Reply to them, or give their username or ID.
 - `/delbirthday`: Delete your birthday.
 
-## Admin commands
+**Admin commands:**
 
-- `/addbirthday <user> <DD/MM>`: Save a birthday for another user in the group.
+- `/addbirthday <user> <DD/MM>`: Save another user's birthday in the group.
 
-## Example
+**Example:**
 
-```
-/setbirthday 25/12
-```
+- Save 25 December as your birthday:\
+  `/setbirthday 25/12`

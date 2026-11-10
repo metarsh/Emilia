@@ -5,18 +5,23 @@ children = ["sfw"]
 
 # Memes
 
-Memes help you get through tough times, enjoy with our funny and healthy memes.
+I can send memes from the categories below. Choose a command for the kind you want.
 
-**Commands**:
+**User commands:**
 
-- `/memes`: General command for memes.
-- `/wmeme`: Will give you wholesome memes.
-- `/dank`: Provides dank memes.
-- `/cursed`: Cursed memes
-- `/shitposting`: Random shitposts OwO
-- `/fbi`: FBI Memes (pols aagoi pols)
-- `/teen`: Teenagers meme
+- `/memes`: Get a general meme.
+- `/wmeme`: Get a wholesome meme.
+- `/dank`: Get a dank meme.
+- `/cursed`: Get a cursed meme.
+- `/shitposting`: Get a random shitpost.
+- `/fbi`: Get an FBI meme.
+- `/teen`: Get a teenager meme.
 - `/hmeme`: Horni Memes
-- `/pewds`: Pewdiepie Collection
-- `/hornyjail`: Senpai Arrested :p
-- `/lolimeme`: Loli Memes (fbi locating)
+- `/pewds`: Get a PewDiePie meme.
+- `/hornyjail`: Senpai Arrested
+- `/lolimeme`: Loli Memes
+
+**Example:**
+
+- Get a wholesome meme:\
+  `/wmeme`

@@ -5,17 +5,20 @@ children = ["anime-anilist", "anime-additional", "anime-oauth", "anime-group"]
 
 # Anime
 
-Search anime, manga, characters, and studios. Use the guides below for AniList searches, account features, and group settings.
+I can help you find anime, manga, characters, and studios, or identify an image's source.
 
-## User commands
+Use the guides below for AniList searches, watch orders, your account, and group settings.
+
+**User commands:**
 
 - `/anihelp`: Open the anime help menu.
-- `/findanime`: Reply to an image to search its source with SauceNAO.
-- `/quote`: Send a random anime quote.
-- `/animequotes`: Send a random anime quote image.
+- `/findanime`: Reply to an image to find its source with SauceNAO.
+- `/quote`: Get a random anime quote.
+- `/animequotes`: Get a random anime quote image.
 
-## Example
+**Examples:**
 
-```
-/anime Frieren
-```
+- Search for an anime:\
+  `/anime Frieren`
+- Identify an image. Reply to it:\
+  `/findanime`
