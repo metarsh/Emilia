@@ -22,7 +22,7 @@ MAX_JOIN_HISTORY = 1000
 
 
 def _now():
-    return datetime.now(UTC).replace(tzinfo=None)
+    return datetime.now(UTC)
 
 
 collection = db.antiraid_data
