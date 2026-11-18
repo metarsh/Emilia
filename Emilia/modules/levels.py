@@ -444,7 +444,7 @@ async def rank(client, message):
             try:
                 pfp = None
                 async for photo in client.get_chat_photos(user_id, limit=1):
-                    bio = await client.download_media(photo.file_id, in_memory=True)
+                    bio = await client.download_media(photo.big_file_id, in_memory=True)
                     pfp = bio.getvalue() if bio else None
             except (RPCError, OSError):
                 pfp = None
