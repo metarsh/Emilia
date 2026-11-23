@@ -1,6 +1,7 @@
 import os
 import tempfile
 import time
+import traceback
 from pathlib import Path
 
 from aiohttp import ClientError
@@ -12,6 +13,7 @@ from Emilia.custom_filter import command
 from Emilia.locales import tr
 from Emilia.utils.archive import download_bounded
 from Emilia.utils.command_help import reply_usage
+from Emilia.utils.errors import forward_traceback
 from Emilia.utils.executors import run_in_thread
 from Emilia.utils.forward_origin import fwd_date
 from Emilia.utils.tasks import finish_cleanup
@@ -63,6 +65,14 @@ async def _(client, message):
                 media_urls = await upload_local_file(downloaded_file_name)
             except (ClientError, OSError, ValueError, RuntimeError, Image.DecompressionBombError):
                 LOGGER.exception(f"tgm: upload_local_file failed for {downloaded_file_name}")
+                user_id = message.from_user.id if message.from_user else None
+                chat_id = message.chat.id if message.chat else None
+                trace = f"{chat_id}:{message.id}"
+                await forward_traceback(
+                    "tgm",
+                    traceback.format_exc(),
+                    f"User: {user_id} | Chat: {chat_id} | Trace: {trace}",
+                )
                 await h.edit_text(tr("telegraph.upload_unavailable"))
             else:
                 upload_seconds = int(time.monotonic() - start)
