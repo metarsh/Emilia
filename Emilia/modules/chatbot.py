@@ -159,7 +159,7 @@ class GroqChatSession:
                         if not voice_text:
                             raise ValueError("Voice text is empty")
                     except (ValueError, TypeError):
-                        fallback = msg.content or tr("chatbot.m_sorry_don_t_have_answer")
+                        fallback = (msg.content or "").strip() or random.choice(RANDOM_RESPONSES)
                         self.history.append({"role": "assistant", "content": fallback})
                         self._trim_history()
                         return ChatResponse(type="text", text=fallback)
@@ -193,8 +193,13 @@ class GroqChatSession:
                         type="voice",
                         voice_text=voice_text,
                     )
+                else:
+                    fallback = (msg.content or "").strip() or random.choice(RANDOM_RESPONSES)
+                    self.history.append({"role": "assistant", "content": fallback})
+                    self._trim_history()
+                    return ChatResponse(type="text", text=fallback)
 
-            response_text = msg.content or ""
+            response_text = (msg.content or "").strip() or random.choice(RANDOM_RESPONSES)
             self.history.append({"role": "assistant", "content": response_text})
             self._trim_history()
             return ChatResponse(type="text", text=response_text)
@@ -554,21 +559,22 @@ async def message_handler(client, message):
         await message.reply_text(random.choice(RANDOM_RESPONSES))
         return
 
-    if response.type == "voice" and response.voice_text:
+    if response.type == "voice" and response.voice_text and response.voice_text.strip():
         ogg_path = None
         try:
             await client.send_chat_action(message.chat.id, ChatAction.RECORD_AUDIO)
-            ogg_path = await generate_voice_note(response.voice_text)
+            ogg_path = await generate_voice_note(response.voice_text.strip())
 
             if ogg_path:
                 await message.reply_voice(ogg_path)
             else:
-                await sendResponse(message, response.voice_text)
+                await sendResponse(message, response.voice_text.strip())
         finally:
             _safe_remove(ogg_path)
         return
 
-    await sendResponse(message, response.text or "")
+    text = (response.text or "").strip() or random.choice(RANDOM_RESPONSES)
+    await sendResponse(message, text)
 
 
 # utils
@@ -600,12 +606,13 @@ async def readFileText(message) -> str | None:
 
 
 async def sendResponse(message, response: str):
-    if utf16_length(response) > 4096:
-        with BytesIO(response.encode("utf-8")) as document:
+    text = (response or "").strip() or random.choice(RANDOM_RESPONSES)
+    if utf16_length(text) > 4096:
+        with BytesIO(text.encode("utf-8")) as document:
             document.name = "response.txt"
             await message.reply_document(document)
     else:
-        await message.reply_text(response)
+        await message.reply_text(text)
 
 
 # persona
